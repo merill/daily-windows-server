@@ -1,0 +1,13 @@
+# Daily Windows Server News
+
+A readable record of what changed across Windows Server documentation.
+
+- [Latest day](https://daily.windowsserver.admin.news/)
+- [Current week](https://daily.windowsserver.admin.news/week/)
+- [Products](https://daily.windowsserver.admin.news/products/)
+- [Topics](https://daily.windowsserver.admin.news/topics/)
+- [Message Center](https://daily.windowsserver.admin.news/message-center/)
+- [Search the archive](https://daily.windowsserver.admin.news/search/)
+- [Compare a Learn page](https://mx.merill.net/)
+- [About](https://daily.windowsserver.admin.news/about/)
+- [RSS](https://daily.windowsserver.admin.news/rss.xml)

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://daily.windowsserver.admin.news/sitemap.xml
