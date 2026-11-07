@@ -1,17 +1,61 @@
 {
-  "newFiles": [],
+  "newFiles": [
+    {
+      "filename": "WindowsServerDocs/identity/ad-cs/configure-ndes-sid-certificate-requests.md",
+      "status": "added",
+      "additions": 112,
+      "deletions": 0,
+      "changes": 112,
+      "patch": "diff --git a/WindowsServerDocs/identity/ad-cs/configure-ndes-sid-certificate-requests.md b/WindowsServerDocs/identity/ad-cs/configure-ndes-sid-certificate-requests.md\nnew file mode 100644\nindex 0000000..6d08255\n--- /dev/null\n+++ b/WindowsServerDocs/identity/ad-cs/configure-ndes-sid-certificate-requests.md\n@@ -0,0 +1,112 @@\n+---\n+layout: Conceptual\n+title: Configure NDES for SID certificate requests in Windows Server | Microsoft Learn\n+canonicalUrl: https://learn.microsoft.com/en-us/windows-server/identity/ad-cs/configure-ndes-sid-certificate-requests\n+breadcrumb_path: /windows-server/breadcrumbs/toc.json\n+uhfHeaderId: MSDocsHeader-WindowsServer\n+feedback_system: Standard\n+recommendations: true\n+ms.service: windows-server\n+ms.subservice: security\n+ms.update-cycle: 1095-days\n+description: Learn how to configure Network Device Enrollment Service (NDES) to handle certificate requests that contain security identifier (SID) information.\n+author: robinharwood\n+ms.author: roharwoo\n+ms.topic: how-to\n+ms.date: 2026-11-05T00:00:00.0000000Z\n+locale: en-us\n+document_id: aeaa5f0f-9f07-d06c-4e09-39303dd043e9\n+document_version_independent_id: aeaa5f0f-9f07-d06c-4e09-39303dd043e9\n+original_content_git_url: https://github.com/MicrosoftDocs/windowsserverdocs-pr/blob/live/WindowsServerDocs/identity/ad-cs/configure-ndes-sid-certificate-requests.md\n+site_name: Docs\n+depot_name: MSDN.WindowsServerDocs-pr\n+page_type: conceptual\n+toc_rel: ../toc.json\n+pdf_url_template: https://learn.microsoft.com/pdfstore/en-us/MSDN.WindowsServerDocs-pr/{branchName}{pdfName}\n+feedback_product_url: ''\n+feedback_help_link_type: ''\n+feedback_help_link_url: ''\n+asset_id: identity/ad-cs/configure-ndes-sid-certificate-requests\n+moniker_range_name: \n+monikers: []\n+item_type: Content\n+source_path: WindowsServerDocs/identity/ad-cs/configure-ndes-sid-certificate-requests.md\n+cmProducts:\n+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/fc3f72c2-fb6f-4cea-95ee-b444e52254ee\n+spProducts:\n+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/f12cf087-582d-48ac-a085-0c19adf1e391\n+platformId: 21069ff1-a367-c8b8-91f3-6ccdec88d15c\n+---\n+\n+# Configure NDES for SID certificate requests in Windows Server | Microsoft Learn\n+\n+**Applies to:** Windows Server 2012 and later versions\r\n+\r\n+By default, Network Device Enrollment Service (NDES) rejects certificate enrollment requests that contain security identifier (SID) information in either the Subject Alternative Name (SAN) extension or a separate SID extension, unless you configure a custom NDES policy module. This security change was introduced in the October 2026 Windows Server security updates to help prevent certificate-based impersonation attacks.\r\n+\r\n+In this article, you learn how to configure NDES to allow certificate enrollment requests that contain SID information when a trusted component validates that information.\r\n+\r\n+## Security considerations\r\n+\r\n+During certificate-based authentication, the Kerberos Key Distribution Center (KDC) uses SID information in a certificate to establish a strong mapping between the certificate and the authenticating security principal.\r\n+\r\n+An attacker who can supply arbitrary SID information in a certificate enrollment request might obtain a certificate associated with another security principal and impersonate that principal. NDES can't independently verify that the supplied SID belongs to the intended security principal.\r\n+\r\n+You can use a custom NDES policy module to perform additional validation of certificate enrollment requests, including verifying that the supplied SID is associated with the intended security principal. For more information, see [Use a policy module with Network Device Enrollment Service](use-policy-module-with-network-device-enrollment-service).\r\n+\r\n+If you validate SID information through a trusted mechanism other than a custom NDES policy module, administrators can use the registry settings described in the next section to allow these requests.\r\n+\r\n+## Configure NDES to allow SID information in requests\r\n+\r\n+Warning\r\n+\r\n+When you enable these settings, NDES accepts requests that contain SID information without independently validating the supplied SID. Incorrect or insufficient validation might allow attackers to impersonate other security principals, potentially leading to elevation of privilege, including domain administrator privileges.\r\n+\r\n+Enable these settings only when a trusted component, such as a mobile device management (MDM) solution, validates the SID information by using a mechanism other than a custom policy module.\r\n+\r\n+Registry path:\r\n+\r\n+```text\r\n+HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Cryptography\\MSCEP\\OverrideSecureSettings\r\n+```\r\n+\r\n+| Value name | Type | Value | Description |\r\n+| --- | --- | --- | --- |\r\n+| `AllowSIDInSANURI` | `REG_DWORD` | `1` | Allows requests that contain SID information in the SAN URI. |\r\n+| `AllowSIDExtensionInRequest` | `REG_DWORD` | `1` | Allows requests that contain SID information in the NTDS CA security extension. |\r\n+\r\n+Configure only the registry values that correspond to the SID format included in your certificate enrollment requests:\r\n+\r\n+- **SID in a SAN URI:** Set `AllowSIDInSANURI` to `1`.\r\n+- **SID in the NTDS CA security extension:** Set `AllowSIDExtensionInRequest` to `1`.\r\n+- **Both formats:** Set both registry values to `1`.\r\n+\r\n+To apply the registry changes, reset Internet Information Services (IIS) or restart the NDES server. To reset IIS, run the following command from an elevated command prompt:\r\n+\r\n+```console\r\n+iisreset\r\n+```\r\n+\r\n+## Event reference\r\n+\r\n+When NDES rejects a certificate enrollment request that contains SID information, it logs one of the following events in the **Application** event log. The event depends on how the request includes the SID information.\r\n+\r\n+### Event ID 59: Request contains a SID certificate extension\r\n+\r\n+| Information | Details |\r\n+| --- | --- |\r\n+| Event log | Application |\r\n+| Event type | Error |\r\n+| Event source | Microsoft-Windows-NetworkDeviceEnrollmentService |\r\n+| Event ID | 59 |\r\n+| Event text | The Network Device Enrollment Service rejected a certificate request because it contained a security identifier (SID) certificate extension. The SID extension must not be present in SCEP requests when no custom policy module is registered to validate it. |\r\n+\r\n+### Event ID 60: Request contains SID information in a SAN URI\r\n+\r\n+| Information | Details |\r\n+| --- | --- |\r\n+| Event log | Application |\r\n+| Event type | Error |\r\n+| Event source | Microsoft-Windows-NetworkDeviceEnrollmentService |\r\n+| Event ID | 60 |\r\n+| Event text | The Network Device Enrollment Service rejected a certificate request because the Subject Alternative Name (SAN) extension contained a URI entry with a security identifier (SID). SID values must not be present in SCEP request SAN entries when no custom policy module is registered to validate them. |\n\\ No newline at end of file\n",
+      "baseCommitSha": "c1f828317b4e96687da6246bfe18904c20bf1559",
+      "commitSha": "e7f5c3c196471e3f7e5a1a78bfdd00a18fc7bb7e",
+      "commitMessage": "Mirror Learn: 1 added",
+      "commitAuthor": "github-actions[bot]",
+      "commitDate": "2026-11-07 02:39:17 +0000",
+      "githubUrl": "https://github.com/merill/windows-server-docs-mirror/blob/main/WindowsServerDocs/identity/ad-cs/configure-ndes-sid-certificate-requests.md",
+      "publicDocsUrl": "https://learn.microsoft.com/en-us/windows-server/identity/ad-cs/configure-ndes-sid-certificate-requests",
+      "eventId": "windows-server-docs:e7f5c3c196471e3f7e5a1a78bfdd00a18fc7bb7e:added:WindowsServerDocs/identity/ad-cs/configure-ndes-sid-certificate-requests.md",
+      "firstSeenAt": "2026-11-07T14:58:59.294Z",
+      "englishSummary": {
+        "category": "Doc update",
+        "headline": "New guidance for NDES SID certificate requests",
+        "summary": "A new article explains how to configure NDES to accept SID information in certificate requests using registry settings for SAN URI and NTDS CA security extension formats.",
+        "adminImpact": "Only enable these settings when a trusted component validates the SID. Incorrect validation could enable impersonation or elevation of privilege; apply changes by resetting IIS or restarting NDES.",
+        "actionRequired": false,
+        "generatedBy": "openai",
+        "model": "gpt-5.6-luna"
+      }
+    }
+  ],
   "modifiedFiles": [],
   "deletedFiles": [],
   "messageCenterItems": [],
   "summary": {
-    "totalCommits": 0,
-    "totalFiles": 0,
-    "authors": []
+    "totalCommits": 1,
+    "totalFiles": 1,
+    "authors": [
+      "github-actions[bot]"
+    ]
   },
   "englishSummary": {
-    "overview": "No substantive Windows Server documentation changes were detected for this report.",
-    "groups": [],
-    "highlights": [],
+    "overview": "Today's report includes 1 new, 0 updated, and 0 removed Windows Server documentation files across 1 documentation area.",
+    "groups": [
+      {
+        "category": "Doc update",
+        "title": "AD CS",
+        "summary": "A new article explains how to configure NDES to accept SID information in certificate requests using registry settings for SAN URI and NTDS CA security extension formats.",
+        "sourceFiles": [
+          "WindowsServerDocs/identity/ad-cs/configure-ndes-sid-certificate-requests.md"
+        ]
+      }
+    ],
+    "highlights": [
+      {
+        "category": "Doc update",
+        "headline": "AD CS",
+        "detail": "A new article explains how to configure NDES to accept SID information in certificate requests using registry settings for SAN URI and NTDS CA security extension formats."
+      }
+    ],
     "generatedBy": "fallback"
   }
 }

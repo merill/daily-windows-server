@@ -1,24 +1,100 @@
 {
-  "version": 3,
-  "generatedAt": "2026-11-07T02:24:33.947Z",
-  "generator": {
-    "model": "deterministic-backfill",
-    "reasoningEffort": "none"
+  "days": {
+    "2026-11-07": {
+      "headline": "NDES guidance adds SID certificate request settings and validation safeguards",
+      "overview": "A new AD CS article explains how to configure NDES to accept SID information in certificate requests through registry settings for SAN URI and NTDS CA security extension formats.",
+      "adminImpact": "Enable the settings only when a trusted component validates the SID. Incorrect validation could enable impersonation or elevation of privilege; apply the changes by resetting IIS or restarting NDES.",
+      "keyChanges": [
+        {
+          "title": "New AD CS guidance covers SID-enabled NDES requests",
+          "detail": "The article documents registry configuration for accepting SID information in certificate requests, including SAN URI and NTDS CA security extension formats. It advises that a trusted component validate the SID before enabling these settings and specifies resetting IIS or restarting NDES to apply changes.",
+          "product": "AD CS",
+          "sourceId": "doc-2026-11-07-configure-ndes-for-sid-certificate-requests-in-windows-server-01"
+        }
+      ],
+      "generatedBy": "openai",
+      "model": "gpt-5.6-luna",
+      "reasoningEffort": "xhigh",
+      "generatedAt": "2026-11-07T14:59:06.113Z",
+      "usage": {
+        "inputTokens": 853,
+        "outputTokens": 534,
+        "costUsd": 0.000811
+      }
+    }
   },
-  "days": {},
-  "weeks": {},
-  "months": {},
-  "usageByDay": {},
+  "weeks": {
+    "2026-11-02": {
+      "headline": "New NDES guidance covers SID certificate requests through two registry formats",
+      "overview": "The week brought one new AD CS procedure: configuring Network Device Enrollment Service (NDES) to accept SID information in certificate requests through SAN URI and NTDS CA security extension formats.",
+      "adminImpact": "Enable the settings only when a trusted component validates the SID, because incorrect validation could enable impersonation or elevation of privilege. Apply the configuration by resetting IIS or restarting NDES.",
+      "keyChanges": [
+        {
+          "title": "NDES SID request configuration",
+          "detail": "The new AD CS article explains how to use registry settings for the SAN URI and NTDS CA security extension formats when configuring NDES to accept SID information in certificate requests. It also specifies the validation condition and requires an IIS reset or NDES restart after applying the changes.",
+          "product": "AD CS",
+          "sourceId": "doc-2026-11-07-configure-ndes-for-sid-certificate-requests-in-windows-server-01"
+        }
+      ],
+      "generatedBy": "openai",
+      "model": "gpt-5.6-luna",
+      "reasoningEffort": "xhigh",
+      "generatedAt": "2026-11-07T14:59:06.113Z",
+      "usage": {
+        "inputTokens": 856,
+        "outputTokens": 596,
+        "costUsd": 0.000886
+      }
+    }
+  },
+  "months": {
+    "2026-11": {
+      "headline": "New NDES guidance covers SID certificate requests through two registry formats",
+      "overview": "The period’s sole change is a new AD CS procedure for configuring Network Device Enrollment Service (NDES) to accept SID information in certificate requests. It documents registry settings for SAN URI and NTDS CA security extension formats.",
+      "adminImpact": "Enable the settings only when a trusted component validates the SID; incorrect validation could enable impersonation or elevation of privilege. Apply the configuration by resetting IIS or restarting NDES.",
+      "keyChanges": [
+        {
+          "title": "Configure NDES to accept SID information in certificate requests",
+          "detail": "The new procedure documents registry settings for the SAN URI and NTDS CA security extension formats. Administrators should enable them only when a trusted component validates the SID, then reset IIS or restart NDES to apply the configuration.",
+          "product": "AD CS",
+          "sourceId": "doc-2026-11-07-configure-ndes-for-sid-certificate-requests-in-windows-server-01"
+        }
+      ],
+      "generatedBy": "openai",
+      "model": "gpt-5.6-luna",
+      "reasoningEffort": "xhigh",
+      "generatedAt": "2026-11-07T14:59:06.113Z",
+      "usage": {
+        "inputTokens": 957,
+        "outputTokens": 639,
+        "costUsd": 0.000958
+      }
+    }
+  },
+  "version": 3,
+  "generatedAt": "2026-11-07T14:59:06.113Z",
+  "generator": {
+    "model": "gpt-5.6-luna",
+    "reasoningEffort": "xhigh"
+  },
+  "usageByDay": {
+    "2026-11-07": {
+      "inputTokens": 2666,
+      "outputTokens": 1769,
+      "requests": 3,
+      "costUsd": 0.002656
+    }
+  },
   "lastRun": {
-    "inputTokens": 0,
-    "outputTokens": 0,
-    "requests": 0,
-    "costUsd": 0
+    "inputTokens": 2666,
+    "outputTokens": 1769,
+    "requests": 3,
+    "costUsd": 0.002656
   },
   "totalUsage": {
-    "inputTokens": 0,
-    "outputTokens": 0,
-    "requests": 0,
-    "costUsd": 0
+    "inputTokens": 2666,
+    "outputTokens": 1769,
+    "requests": 3,
+    "costUsd": 0.002656
   }
 }
