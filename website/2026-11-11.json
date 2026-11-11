@@ -1,0 +1,205 @@
+{
+  "newFiles": [],
+  "modifiedFiles": [
+    {
+      "filename": "WindowsServerDocs/identity/ad-cs/configure-ndes-sid-certificate-requests.md",
+      "status": "modified",
+      "additions": 1,
+      "deletions": 1,
+      "changes": 2,
+      "patch": "diff --git a/WindowsServerDocs/identity/ad-cs/configure-ndes-sid-certificate-requests.md b/WindowsServerDocs/identity/ad-cs/configure-ndes-sid-certificate-requests.md\nindex 6d08255..1df2c70 100644\n--- a/WindowsServerDocs/identity/ad-cs/configure-ndes-sid-certificate-requests.md\n+++ b/WindowsServerDocs/identity/ad-cs/configure-ndes-sid-certificate-requests.md\n@@ -42,7 +42,7 @@ platformId: 21069ff1-a367-c8b8-91f3-6ccdec88d15c\n \n **Applies to:** Windows Server 2012 and later versions\r\n \r\n-By default, Network Device Enrollment Service (NDES) rejects certificate enrollment requests that contain security identifier (SID) information in either the Subject Alternative Name (SAN) extension or a separate SID extension, unless you configure a custom NDES policy module. This security change was introduced in the October 2026 Windows Server security updates to help prevent certificate-based impersonation attacks.\r\n+By default, Network Device Enrollment Service (NDES) rejects certificate enrollment requests that contain security identifier (SID) information in either the Subject Alternative Name (SAN) extension or a separate SID extension, unless you configure a custom NDES policy module. This behavior is one of several changes introduced in the October 2026 Windows Server security updates to address [CVE-2026-69802](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-69802). These changes help prevent certificate-based impersonation attacks.\r\n \r\n In this article, you learn how to configure NDES to allow certificate enrollment requests that contain SID information when a trusted component validates that information.\r\n \r\n",
+      "baseCommitSha": "5b65e10beab49ec01ce9434afe3978e25bfa5b9f",
+      "commitSha": "cbe9b0c69ec43af5ec07dc98672ffe6c528a9cf2",
+      "commitMessage": "Mirror Learn: 5 changed",
+      "commitAuthor": "github-actions[bot]",
+      "commitDate": "2026-11-10 22:14:15 +0000",
+      "githubUrl": "https://github.com/merill/windows-server-docs-mirror/blob/main/WindowsServerDocs/identity/ad-cs/configure-ndes-sid-certificate-requests.md",
+      "publicDocsUrl": "https://learn.microsoft.com/en-us/windows-server/identity/ad-cs/configure-ndes-sid-certificate-requests",
+      "eventId": "windows-server-docs:cbe9b0c69ec43af5ec07dc98672ffe6c528a9cf2:modified:WindowsServerDocs/identity/ad-cs/configure-ndes-sid-certificate-requests.md",
+      "firstSeenAt": "2026-11-11T09:40:11.138Z",
+      "englishSummary": {
+        "category": "Doc update",
+        "headline": "NDES SID certificate request guidance updated",
+        "summary": "The documentation now describes NDES behavior for certificate requests containing SID information in the SAN or a separate SID extension, including the custom policy module exception.",
+        "adminImpact": "Administrators should review this guidance when troubleshooting or designing NDES certificate enrollment involving SID data.",
+        "actionRequired": false,
+        "generatedBy": "openai",
+        "model": "gpt-5.6-luna"
+      }
+    },
+    {
+      "filename": "WindowsServerDocs/identity/ad-ds/plan/security-best-practices/Avenues-to-Compromise.md",
+      "status": "modified",
+      "additions": 1,
+      "deletions": 1,
+      "changes": 2,
+      "patch": "diff --git a/WindowsServerDocs/identity/ad-ds/plan/security-best-practices/Avenues-to-Compromise.md b/WindowsServerDocs/identity/ad-ds/plan/security-best-practices/Avenues-to-Compromise.md\nindex 3854acd..f7cc6ca 100644\n--- a/WindowsServerDocs/identity/ad-ds/plan/security-best-practices/Avenues-to-Compromise.md\n+++ b/WindowsServerDocs/identity/ad-ds/plan/security-best-practices/Avenues-to-Compromise.md\n@@ -196,7 +196,7 @@ In cross-site scripting, the vulnerability is introduced in the application's ou\n \r\n XSS is often exploited in online banking and e-commerce scenarios where an attacker can make purchases or transfer money in the context of the exploited user. In the case of a targeted attack on a custom web-based identity management application, it can allow an attacker to create their own identities, modify permissions and rights, and lead to a systemic compromise.\r\n \r\n-Although a full discussion of cross-site scripting and SQL injection is outside the scope of this document, the [Open Web Application Security Project (OWASP)](https://www.owasp.org/index.php/Main_Page) publishes a top 10 list with in-depth discussion of the vulnerabilities and countermeasures.\r\n+Although a full discussion of cross-site scripting and SQL injection is outside the scope of this document, the [Open Web Application Security Project (OWASP)](https://top10.owasp.org/2025/) publishes a top 10 list with in-depth discussion of the vulnerabilities and countermeasures.\r\n \r\n Regardless of the investment in infrastructure security, if poorly designed and written applications are deployed within that infrastructure, the environment is made vulnerable to attacks. Even well-secured infrastructures often can't provide effective countermeasures to these application attacks. Compounding the problem, poorly designed applications may require that service accounts be granted excessive permissions for the application to function.\r\n \r\n",
+      "baseCommitSha": "5b65e10beab49ec01ce9434afe3978e25bfa5b9f",
+      "commitSha": "cbe9b0c69ec43af5ec07dc98672ffe6c528a9cf2",
+      "commitMessage": "Mirror Learn: 5 changed",
+      "commitAuthor": "github-actions[bot]",
+      "commitDate": "2026-11-10 22:14:15 +0000",
+      "githubUrl": "https://github.com/merill/windows-server-docs-mirror/blob/main/WindowsServerDocs/identity/ad-ds/plan/security-best-practices/Avenues-to-Compromise.md",
+      "publicDocsUrl": "https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/plan/security-best-practices/Avenues-to-Compromise",
+      "eventId": "windows-server-docs:cbe9b0c69ec43af5ec07dc98672ffe6c528a9cf2:modified:WindowsServerDocs/identity/ad-ds/plan/security-best-practices/Avenues-to-Compromise.md",
+      "firstSeenAt": "2026-11-11T09:40:11.149Z",
+      "englishSummary": {
+        "category": "Doc update",
+        "headline": "Updated OWASP Top 10 link",
+        "summary": "The Active Directory security best-practices documentation now links to OWASP’s 2025 Top 10 page instead of its former index page.",
+        "adminImpact": "Administrators following the guidance will be directed to the current OWASP vulnerability and countermeasure information; no configuration changes are required.",
+        "actionRequired": false,
+        "generatedBy": "openai",
+        "model": "gpt-5.6-luna"
+      }
+    },
+    {
+      "filename": "WindowsServerDocs/identity/ad-fs/operations/Configure-AD-FS-Extranet-Smart-Lockout-Protection.md",
+      "status": "modified",
+      "additions": 3,
+      "deletions": 1,
+      "changes": 4,
+      "patch": "diff --git a/WindowsServerDocs/identity/ad-fs/operations/Configure-AD-FS-Extranet-Smart-Lockout-Protection.md b/WindowsServerDocs/identity/ad-fs/operations/Configure-AD-FS-Extranet-Smart-Lockout-Protection.md\nindex c1d6508..6e9ecb4 100644\n--- a/WindowsServerDocs/identity/ad-fs/operations/Configure-AD-FS-Extranet-Smart-Lockout-Protection.md\n+++ b/WindowsServerDocs/identity/ad-fs/operations/Configure-AD-FS-Extranet-Smart-Lockout-Protection.md\n@@ -33,8 +33,10 @@ monikers: []\n item_type: Content\n source_path: WindowsServerDocs/identity/ad-fs/operations/Configure-AD-FS-Extranet-Smart-Lockout-Protection.md\n cmProducts:\n+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/37da4cc9-0cfc-42a9-ba5e-805706b01ef8\n - https://authoring-docs-microsoft.poolparty.biz/devrel/b1cfdec6-b0c3-4209-818c-736879856e0e\n spProducts:\n+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/3661fb96-d414-4a4e-b7ad-9370637790dd\n - https://authoring-docs-microsoft.poolparty.biz/devrel/2d0723c1-cf38-4c30-ab3d-5df787b33270\n platformId: be756168-412a-7a01-0849-bc6830c2ec0e\n ---\n@@ -45,7 +47,7 @@ Extranet Smart Lockout (ESL) protects your users from experiencing extranet acco\n \r\n ESL enables AD FS to differentiate between sign-in attempts from a familiar location for a user and sign-in attempts from what might be an attacker. AD FS can lock out attackers while letting valid users continue to use their accounts. This distinction prevents and protects against denial-of-service and certain classes of password spray attacks on the user. ESL is available for AD FS in Windows Server 2016 and is built into AD FS in Windows Server 2019.\r\n \r\n-ESL is only available for username and password authentication requests that come through the extranet with the Web Application Proxy or a third party proxy. Any third party proxy must support the MS-ADFSPIP protocol to be used in place of the Web Application Proxy, such as [F5 BIG-IP Access Policy Manager](https://devcentral.f5.com/s/articles/ad-fs-proxy-replacement-on-f5-big-ip-30191). Consult the third party proxy documentation to determine if the proxy supports the MS-ADFSPIP protocol.\r\n+ESL is only available for username and password authentication requests that come through the extranet with the Web Application Proxy or a third party proxy. Any third party proxy must support the MS-ADFSPIP protocol to be used in place of the Web Application Proxy, such as [F5 BIG-IP Access Policy Manager](https://techdocs.f5.com/en-us/bigip-17-0-0/big-ip-access-policy-manager-third-party-integration/apm-as-an-ad-fs-proxy.html). Consult the third party proxy documentation to determine if the proxy supports the MS-ADFSPIP protocol.\r\n \r\n ## Features in AD FS 2019\r\n \r\n",
+      "baseCommitSha": "5b65e10beab49ec01ce9434afe3978e25bfa5b9f",
+      "commitSha": "cbe9b0c69ec43af5ec07dc98672ffe6c528a9cf2",
+      "commitMessage": "Mirror Learn: 5 changed",
+      "commitAuthor": "github-actions[bot]",
+      "commitDate": "2026-11-10 22:14:15 +0000",
+      "githubUrl": "https://github.com/merill/windows-server-docs-mirror/blob/main/WindowsServerDocs/identity/ad-fs/operations/Configure-AD-FS-Extranet-Smart-Lockout-Protection.md",
+      "publicDocsUrl": "https://learn.microsoft.com/en-us/windows-server/identity/ad-fs/operations/Configure-AD-FS-Extranet-Smart-Lockout-Protection",
+      "eventId": "windows-server-docs:cbe9b0c69ec43af5ec07dc98672ffe6c528a9cf2:modified:WindowsServerDocs/identity/ad-fs/operations/Configure-AD-FS-Extranet-Smart-Lockout-Protection.md",
+      "firstSeenAt": "2026-11-11T09:40:11.158Z",
+      "englishSummary": {
+        "category": "Doc update",
+        "headline": "AD FS extranet smart lockout documentation updated",
+        "summary": "The article received updated DevRel metadata links and a minor revision to its description of ESL requests through Web Application Proxy or an MS-ADFSPIP-compatible third-party proxy.",
+        "adminImpact": "No administrator action is required.",
+        "actionRequired": false,
+        "generatedBy": "openai",
+        "model": "gpt-5.6-luna"
+      }
+    },
+    {
+      "filename": "WindowsServerDocs/manage/windows-admin-center/use/migrate-virtual-machines-vm-conversion-extension.md",
+      "status": "modified",
+      "additions": 1,
+      "deletions": 1,
+      "changes": 2,
+      "patch": "diff --git a/WindowsServerDocs/manage/windows-admin-center/use/migrate-virtual-machines-vm-conversion-extension.md b/WindowsServerDocs/manage/windows-admin-center/use/migrate-virtual-machines-vm-conversion-extension.md\nindex 2e80320..828e593 100644\n--- a/WindowsServerDocs/manage/windows-admin-center/use/migrate-virtual-machines-vm-conversion-extension.md\n+++ b/WindowsServerDocs/manage/windows-admin-center/use/migrate-virtual-machines-vm-conversion-extension.md\n@@ -68,7 +68,7 @@ On the Windows Admin Center Gateway machine, ensure you have the following:\n - Administrator privileges, or equivalent, to install the extension and perform migrations.\r\n - Windows Admin Center Gateway version `2410` build number `2.4.12.10` or later.\r\n - The latest version of PowerCLI installed. To download and install PowerCLI, see the [PowerCLI Installation Guide](https://developer.broadcom.com/powercli/installation-guide).\r\n-- [VMware Virtual Disk Development Kit (VDDK) version 8.0.3](https://developer.broadcom.com/sdks/vmware-virtual-disk-development-kit-vddk/latest/) downloaded and extracted to the directory: `C:\\Program Files\\WindowsAdminCenter\\Service\\VDDK`. Ensure you download **VDDK version 8.0.3** specifically. Other versions aren't supported.\r\n+- [VMware Virtual Disk Development Kit (VDDK) version 8.0.3](https://support.broadcom.com/group/ecx/downloads) downloaded and extracted to the directory: `C:\\Program Files\\WindowsAdminCenter\\Service\\VDDK`. Ensure you download **VDDK version 8.0.3** specifically. Other versions aren't supported.\r\n - [Visual Studio 2015 (VC++ 14.0) Redistributable](/en-us/cpp/windows/latest-supported-vc-redist#visual-studio-2015-vc-140-no-longer-supported) and [Visual C++ Redistributable Packages for Visual Studio 2013](https://www.microsoft.com/download/details.aspx?id=40784) installed.\r\n \r\n ## Install the VM Conversion extension\r\n",
+      "baseCommitSha": "5b65e10beab49ec01ce9434afe3978e25bfa5b9f",
+      "commitSha": "cbe9b0c69ec43af5ec07dc98672ffe6c528a9cf2",
+      "commitMessage": "Mirror Learn: 5 changed",
+      "commitAuthor": "github-actions[bot]",
+      "commitDate": "2026-11-10 22:14:15 +0000",
+      "githubUrl": "https://github.com/merill/windows-server-docs-mirror/blob/main/WindowsServerDocs/manage/windows-admin-center/use/migrate-virtual-machines-vm-conversion-extension.md",
+      "publicDocsUrl": "https://learn.microsoft.com/en-us/windows-server/manage/windows-admin-center/use/migrate-virtual-machines-vm-conversion-extension",
+      "eventId": "windows-server-docs:cbe9b0c69ec43af5ec07dc98672ffe6c528a9cf2:modified:WindowsServerDocs/manage/windows-admin-center/use/migrate-virtual-machines-vm-conversion-extension.md",
+      "firstSeenAt": "2026-11-11T09:40:11.165Z",
+      "englishSummary": {
+        "category": "Doc update",
+        "headline": "Updated download link for VMware VDDK 8.0.3",
+        "summary": "The VM conversion guidance now links to Broadcom Support for VMware VDDK 8.0.3 downloads. The required version and extraction path are unchanged.",
+        "adminImpact": "Administrators following the migration procedure should use the updated link to obtain VDDK 8.0.3.",
+        "actionRequired": false,
+        "generatedBy": "openai",
+        "model": "gpt-5.6-luna"
+      }
+    },
+    {
+      "filename": "WindowsServerDocs/manage/windows-admin-center/use/troubleshoot-vm-conversion-extension.md",
+      "status": "modified",
+      "additions": 1,
+      "deletions": 1,
+      "changes": 2,
+      "patch": "diff --git a/WindowsServerDocs/manage/windows-admin-center/use/troubleshoot-vm-conversion-extension.md b/WindowsServerDocs/manage/windows-admin-center/use/troubleshoot-vm-conversion-extension.md\nindex 7dda7aa..14b03bf 100644\n--- a/WindowsServerDocs/manage/windows-admin-center/use/troubleshoot-vm-conversion-extension.md\n+++ b/WindowsServerDocs/manage/windows-admin-center/use/troubleshoot-vm-conversion-extension.md\n@@ -233,7 +233,7 @@ To regenerate valid CBT metadata, you must power cycle the virtual machine.\n For more information about CBT limitations and troubleshooting guidance, see the following Broadcom documentation:\r\n \r\n - [Troubleshooting Changed Block Tracking (CBT) – Broadcom Knowledge Base](https://knowledge.broadcom.com/external/article/320557/changed-block-tracking-cbt-on-virtual-ma.html)\r\n-- [Troubleshooting Changed Block Tracking (CBT) – VDDK Programming Guide](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere-sdks-tools/8-0/virtual-disk-development-kit-programming-guide/error-codes-and-open-source/troubleshooting-changed-block-tracking-cbt.html)\r\n+- [Troubleshooting Changed Block Tracking (CBT) – VDDK Programming Guide](https://developer.broadcom.com/xapis/virtual-disk-api/latest/vddkBkupVadp.9.3.html)\r\n \r\n **Best Practice**\r\n \r\n",
+      "baseCommitSha": "5b65e10beab49ec01ce9434afe3978e25bfa5b9f",
+      "commitSha": "cbe9b0c69ec43af5ec07dc98672ffe6c528a9cf2",
+      "commitMessage": "Mirror Learn: 5 changed",
+      "commitAuthor": "github-actions[bot]",
+      "commitDate": "2026-11-10 22:14:15 +0000",
+      "githubUrl": "https://github.com/merill/windows-server-docs-mirror/blob/main/WindowsServerDocs/manage/windows-admin-center/use/troubleshoot-vm-conversion-extension.md",
+      "publicDocsUrl": "https://learn.microsoft.com/en-us/windows-server/manage/windows-admin-center/use/troubleshoot-vm-conversion-extension",
+      "eventId": "windows-server-docs:cbe9b0c69ec43af5ec07dc98672ffe6c528a9cf2:modified:WindowsServerDocs/manage/windows-admin-center/use/troubleshoot-vm-conversion-extension.md",
+      "firstSeenAt": "2026-11-11T09:40:11.172Z",
+      "englishSummary": {
+        "category": "Doc update",
+        "headline": "Updated CBT troubleshooting reference",
+        "summary": "The VM conversion troubleshooting article now links to a new Broadcom VDDK Programming Guide URL for troubleshooting Changed Block Tracking (CBT).",
+        "adminImpact": "Administrators using the article will be directed to the updated CBT troubleshooting resource; no action is required.",
+        "actionRequired": false,
+        "generatedBy": "openai",
+        "model": "gpt-5.6-luna"
+      }
+    }
+  ],
+  "deletedFiles": [],
+  "messageCenterItems": [],
+  "summary": {
+    "totalCommits": 1,
+    "totalFiles": 5,
+    "authors": [
+      "github-actions[bot]"
+    ]
+  },
+  "englishSummary": {
+    "overview": "Today's report includes 0 new, 5 updated, and 0 removed Windows Server documentation files across 4 documentation areas.",
+    "groups": [
+      {
+        "category": "Doc update",
+        "title": "AD CS",
+        "summary": "The documentation now describes NDES behavior for certificate requests containing SID information in the SAN or a separate SID extension, including the custom policy module exception.",
+        "sourceFiles": [
+          "WindowsServerDocs/identity/ad-cs/configure-ndes-sid-certificate-requests.md"
+        ]
+      },
+      {
+        "category": "Doc update",
+        "title": "Active Directory and identity",
+        "summary": "The Active Directory security best-practices documentation now links to OWASP’s 2025 Top 10 page instead of its former index page.",
+        "sourceFiles": [
+          "WindowsServerDocs/identity/ad-ds/plan/security-best-practices/Avenues-to-Compromise.md"
+        ]
+      },
+      {
+        "category": "Doc update",
+        "title": "AD FS",
+        "summary": "The article received updated DevRel metadata links and a minor revision to its description of ESL requests through Web Application Proxy or an MS-ADFSPIP-compatible third-party proxy.",
+        "sourceFiles": [
+          "WindowsServerDocs/identity/ad-fs/operations/Configure-AD-FS-Extranet-Smart-Lockout-Protection.md"
+        ]
+      },
+      {
+        "category": "Doc update",
+        "title": "Management and Azure Arc",
+        "summary": "The VM conversion guidance now links to Broadcom Support for VMware VDDK 8.0.3 downloads. The required version and extraction path are unchanged. The VM conversion troubleshooting article now links to a new Broadcom VDDK Programming Guide URL for troubleshooting Changed Block Tracking (CBT).",
+        "sourceFiles": [
+          "WindowsServerDocs/manage/windows-admin-center/use/migrate-virtual-machines-vm-conversion-extension.md",
+          "WindowsServerDocs/manage/windows-admin-center/use/troubleshoot-vm-conversion-extension.md"
+        ]
+      }
+    ],
+    "highlights": [
+      {
+        "category": "Doc update",
+        "headline": "AD CS",
+        "detail": "The documentation now describes NDES behavior for certificate requests containing SID information in the SAN or a separate SID extension, including the custom policy module exception."
+      },
+      {
+        "category": "Doc update",
+        "headline": "Active Directory and identity",
+        "detail": "The Active Directory security best-practices documentation now links to OWASP’s 2025 Top 10 page instead of its former index page."
+      },
+      {
+        "category": "Doc update",
+        "headline": "AD FS",
+        "detail": "The article received updated DevRel metadata links and a minor revision to its description of ESL requests through Web Application Proxy or an MS-ADFSPIP-compatible third-party proxy."
+      },
+      {
+        "category": "Doc update",
+        "headline": "Management and Azure Arc",
+        "detail": "The VM conversion guidance now links to Broadcom Support for VMware VDDK 8.0.3 downloads. The required version and extraction path are unchanged. The VM conversion troubleshooting article now links to a new Broadcom VDDK Programming Guide URL for troubleshooting Changed Block Tracking (CBT)."
+      }
+    ],
+    "generatedBy": "fallback"
+  }
+}

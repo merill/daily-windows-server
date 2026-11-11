@@ -21,6 +21,52 @@
         "outputTokens": 534,
         "costUsd": 0.000811
       }
+    },
+    "2026-11-11": {
+      "headline": "SID-bearing certificate requests: NDES guidance explains SAN, extension, and custom policy-module exception",
+      "overview": "The 11 November batch was largely documentation maintenance, with the most substantive update in AD CS. NDES guidance now covers certificate requests carrying SID information in the SAN or a separate SID extension, including the custom policy module exception. Other meaningful edits refresh VM conversion links for VDDK 8.0.3 and Changed Block Tracking troubleshooting, while Active Directory and AD FS received narrower reference and wording updates.",
+      "adminImpact": "Review the NDES guidance when designing or troubleshooting certificate enrollment involving SID data. For VM conversion, use the updated Broadcom Support link to obtain VDDK 8.0.3; the required version and extraction path are unchanged. The OWASP and CBT changes direct administrators to updated external resources, and no action is indicated for the AD FS revision.",
+      "keyChanges": [
+        {
+          "title": "NDES guidance details SID data in SANs and separate certificate extensions",
+          "detail": "The AD CS article now describes NDES behavior for requests containing SID information in the SAN or in a separate SID extension, including the exception for custom policy modules. Administrators working on affected enrollment scenarios should consult this guidance during design or troubleshooting.",
+          "product": "AD CS",
+          "sourceId": "doc-2026-11-11-configure-ndes-sid-certificate-requests-01"
+        },
+        {
+          "title": "VM conversion guidance links directly to Broadcom for VDDK 8.0.3",
+          "detail": "The migration procedure now points to Broadcom Support for downloading VMware VDDK 8.0.3. The required version and extraction path remain unchanged, so the practical action is to use the updated download link.",
+          "product": "Management",
+          "sourceId": "doc-2026-11-11-migrate-virtual-machines-vm-conversion-extension-04"
+        },
+        {
+          "title": "Changed Block Tracking troubleshooting now uses a new Broadcom guide URL",
+          "detail": "The VM conversion troubleshooting article now links to a new Broadcom VDDK Programming Guide URL for Changed Block Tracking troubleshooting. Administrators following the article will be directed to that updated resource.",
+          "product": "Management",
+          "sourceId": "doc-2026-11-11-troubleshoot-vm-conversion-extension-05"
+        },
+        {
+          "title": "Active Directory security guidance now links to OWASP’s 2025 Top 10",
+          "detail": "The Avenues To Compromise article replaces its former OWASP index link with the OWASP 2025 Top 10 page, directing readers to current vulnerability and countermeasure information. No configuration change is required.",
+          "product": "Active Directory",
+          "sourceId": "doc-2026-11-11-avenues-to-compromise-02"
+        },
+        {
+          "title": "AD FS smart-lockout guidance revises proxy request wording and metadata",
+          "detail": "The AD FS extranet smart lockout article received updated DevRel metadata links and a minor revision describing ESL requests through Web Application Proxy or an MS-ADFSPIP-compatible third-party proxy. No administrator action is indicated.",
+          "product": "AD FS",
+          "sourceId": "doc-2026-11-11-configure-ad-fs-extranet-smart-lockout-protection-03"
+        }
+      ],
+      "generatedBy": "openai",
+      "model": "gpt-5.6-luna",
+      "reasoningEffort": "xhigh",
+      "generatedAt": "2026-11-11T09:40:21.167Z",
+      "usage": {
+        "inputTokens": 1353,
+        "outputTokens": 2718,
+        "costUsd": 0.003532
+      }
     }
   },
   "weeks": {
@@ -45,34 +91,104 @@
         "outputTokens": 596,
         "costUsd": 0.000886
       }
-    }
-  },
-  "months": {
-    "2026-11": {
-      "headline": "New NDES guidance covers SID certificate requests through two registry formats",
-      "overview": "The period’s sole change is a new AD CS procedure for configuring Network Device Enrollment Service (NDES) to accept SID information in certificate requests. It documents registry settings for SAN URI and NTDS CA security extension formats.",
-      "adminImpact": "Enable the settings only when a trusted component validates the SID; incorrect validation could enable impersonation or elevation of privilege. Apply the configuration by resetting IIS or restarting NDES.",
+    },
+    "2026-11-09": {
+      "headline": "NDES SID request guidance and VMware VDDK links lead this week’s updates",
+      "overview": "The week was dominated by documentation maintenance rather than product rollouts. The most useful change is expanded NDES guidance covering SID data in certificate requests; two Management articles also refresh VMware VDDK resources used during VM conversion and CBT troubleshooting.",
+      "adminImpact": "Review the revised NDES guidance when designing or troubleshooting SID-bearing certificate enrollment. For VM conversion, use the Broadcom link for VMware VDDK 8.0.3 and the updated CBT programming guide. The Active Directory and AD FS changes primarily improve reference material and require no configuration changes.",
       "keyChanges": [
         {
-          "title": "Configure NDES to accept SID information in certificate requests",
-          "detail": "The new procedure documents registry settings for the SAN URI and NTDS CA security extension formats. Administrators should enable them only when a trusted component validates the SID, then reset IIS or restart NDES to apply the configuration.",
+          "title": "NDES guidance now covers SID-bearing certificate requests",
+          "detail": "The AD CS article now describes NDES behavior when SID information appears in a certificate request’s SAN or in a separate SID extension, and documents an exception for custom policy modules. This is the most consequential guidance change for administrators troubleshooting or designing NDES enrollment involving SID data.",
           "product": "AD CS",
-          "sourceId": "doc-2026-11-07-configure-ndes-for-sid-certificate-requests-in-windows-server-01"
+          "sourceId": "doc-2026-11-11-configure-ndes-sid-certificate-requests-01"
+        },
+        {
+          "title": "VM conversion guidance points to VMware VDDK 8.0.3 downloads",
+          "detail": "The Management migration procedure now links to Broadcom Support for VMware VDDK 8.0.3. The required version and extraction path remain unchanged, so administrators should use the revised link when obtaining the dependency.",
+          "product": "Management",
+          "sourceId": "doc-2026-11-11-migrate-virtual-machines-vm-conversion-extension-04"
+        },
+        {
+          "title": "VM conversion troubleshooting gets a new CBT reference",
+          "detail": "The troubleshooting article now links to Broadcom’s updated VDDK Programming Guide for Changed Block Tracking troubleshooting, giving administrators a current external reference when investigating CBT issues.",
+          "product": "Management",
+          "sourceId": "doc-2026-11-11-troubleshoot-vm-conversion-extension-05"
+        },
+        {
+          "title": "Active Directory security guidance now links to OWASP’s 2025 Top 10",
+          "detail": "The Avenues To Compromise article replaces its former OWASP index link with the 2025 Top 10 page, directing administrators to the current vulnerability and countermeasure information without requiring configuration changes.",
+          "product": "Active Directory",
+          "sourceId": "doc-2026-11-11-avenues-to-compromise-02"
+        },
+        {
+          "title": "AD FS ESL wording now reflects proxy request handling",
+          "detail": "The Extranet Smart Lockout article revises its description of ESL requests through Web Application Proxy or an MS-ADFSPIP-compatible third-party proxy. The update also refreshes DevRel metadata links; no administrator action is identified.",
+          "product": "AD FS",
+          "sourceId": "doc-2026-11-11-configure-ad-fs-extranet-smart-lockout-protection-03"
         }
       ],
       "generatedBy": "openai",
       "model": "gpt-5.6-luna",
       "reasoningEffort": "xhigh",
-      "generatedAt": "2026-11-07T14:59:06.113Z",
+      "generatedAt": "2026-11-11T09:40:21.167Z",
       "usage": {
-        "inputTokens": 957,
-        "outputTokens": 639,
-        "costUsd": 0.000958
+        "inputTokens": 1327,
+        "outputTokens": 1102,
+        "costUsd": 0.001588
+      }
+    }
+  },
+  "months": {
+    "2026-11": {
+      "headline": "NDES SID certificate requests add SAN URI and NTDS CA setup guidance",
+      "overview": "November was dominated by documentation maintenance, with one substantive AD CS addition: a new NDES procedure for accepting SID information in certificate requests through registry settings for SAN URI and NTDS CA security extension formats. A related update clarifies NDES handling of SID data in the SAN or a separate SID extension, including an exception for custom policy modules. Management guidance now points administrators to VMware VDDK 8.0.3 and an updated Changed Block Tracking resource, while Active Directory guidance links to OWASP’s 2025 Top 10.",
+      "adminImpact": "Administrators implementing NDES enrollment for SID-bearing certificates should enable the settings only when a trusted component validates the SID; incorrect validation could enable impersonation or elevation of privilege. Apply the change by resetting IIS or restarting NDES. VM conversion administrators should use the updated Broadcom link for VDDK 8.0.3 and the revised CBT troubleshooting guide. The Active Directory reference update requires no configuration change.",
+      "keyChanges": [
+        {
+          "title": "New NDES procedure accepts SID information in certificate requests",
+          "detail": "The new AD CS guidance explains registry-based configuration for SID data in SAN URI and NTDS CA security extension formats. It warns that the settings should be enabled only when a trusted component validates the SID, and says to apply the change by resetting IIS or restarting NDES.",
+          "product": "AD CS",
+          "sourceId": "doc-2026-11-07-configure-ndes-for-sid-certificate-requests-in-windows-server-01"
+        },
+        {
+          "title": "NDES guidance clarifies SAN, SID-extension, and policy-module handling",
+          "detail": "The updated article now describes NDES behavior for requests carrying SID information in the SAN or a separate SID extension, including the custom policy module exception. This is relevant when designing or troubleshooting SID-bearing certificate enrollment.",
+          "product": "AD CS",
+          "sourceId": "doc-2026-11-11-configure-ndes-sid-certificate-requests-01"
+        },
+        {
+          "title": "VM conversion guidance links directly to Broadcom’s VDDK 8.0.3 download",
+          "detail": "The migration procedure now directs administrators to Broadcom Support for VMware VDDK 8.0.3. The required version and extraction path remain unchanged.",
+          "product": "Management",
+          "sourceId": "doc-2026-11-11-migrate-virtual-machines-vm-conversion-extension-04"
+        },
+        {
+          "title": "VM conversion troubleshooting adopts a new CBT programming-guide link",
+          "detail": "The troubleshooting article now links to Broadcom’s updated VDDK Programming Guide for Changed Block Tracking issues, giving administrators a current external reference for CBT troubleshooting.",
+          "product": "Management",
+          "sourceId": "doc-2026-11-11-troubleshoot-vm-conversion-extension-05"
+        },
+        {
+          "title": "Active Directory security guidance links to OWASP’s 2025 Top 10",
+          "detail": "The Avenues To Compromise guidance replaced its former OWASP index link with the 2025 Top 10 page, directing readers to the current vulnerability and countermeasure reference without requiring configuration changes.",
+          "product": "Active Directory",
+          "sourceId": "doc-2026-11-11-avenues-to-compromise-02"
+        }
+      ],
+      "generatedBy": "openai",
+      "model": "gpt-5.6-luna",
+      "reasoningEffort": "xhigh",
+      "generatedAt": "2026-11-11T09:40:21.167Z",
+      "usage": {
+        "inputTokens": 1708,
+        "outputTokens": 1698,
+        "costUsd": 0.002379
       }
     }
   },
   "version": 3,
-  "generatedAt": "2026-11-07T14:59:06.113Z",
+  "generatedAt": "2026-11-11T09:40:21.167Z",
   "generator": {
     "model": "gpt-5.6-luna",
     "reasoningEffort": "xhigh"
@@ -83,18 +199,24 @@
       "outputTokens": 1769,
       "requests": 3,
       "costUsd": 0.002656
+    },
+    "2026-11-11": {
+      "inputTokens": 4388,
+      "outputTokens": 5518,
+      "requests": 3,
+      "costUsd": 0.007499
     }
   },
   "lastRun": {
-    "inputTokens": 2666,
-    "outputTokens": 1769,
+    "inputTokens": 4388,
+    "outputTokens": 5518,
     "requests": 3,
-    "costUsd": 0.002656
+    "costUsd": 0.007499
   },
   "totalUsage": {
-    "inputTokens": 2666,
-    "outputTokens": 1769,
-    "requests": 3,
-    "costUsd": 0.002656
+    "inputTokens": 7054,
+    "outputTokens": 7287,
+    "requests": 6,
+    "costUsd": 0.010155
   }
 }
