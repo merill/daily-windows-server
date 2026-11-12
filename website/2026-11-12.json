@@ -1,0 +1,61 @@
+{
+  "newFiles": [],
+  "modifiedFiles": [
+    {
+      "filename": "WindowsServerDocs/identity/ad-fs/overview/AD-FS-FAQ.md",
+      "status": "modified",
+      "additions": 11,
+      "deletions": 0,
+      "changes": 11,
+      "patch": "diff --git a/WindowsServerDocs/identity/ad-fs/overview/AD-FS-FAQ.md b/WindowsServerDocs/identity/ad-fs/overview/AD-FS-FAQ.md\nindex 75e92a2..60dc1d9 100644\n--- a/WindowsServerDocs/identity/ad-fs/overview/AD-FS-FAQ.md\n+++ b/WindowsServerDocs/identity/ad-fs/overview/AD-FS-FAQ.md\n@@ -377,6 +377,17 @@ When ESL is enabled, AD FS tracks the account activity and known locations for u\n \r\n If the AD FS farm is using the Windows Internal Database, the default location for the database files is C:\\Windows\\WID\\Data. To prevent filling this drive, be sure to have at least 5 GB of free storage before you enable ESL. In addition to disk storage, plan for total process memory to grow after you enable ESL by up to another 1 GB of RAM for user populations of 500,000 or less.\r\n \r\n+### How can I prevent unexpected outbound DNS and CLDAP traffic from AD FS username and password requests?\r\n+\r\n+When AD FS processes a username and password authentication request, it might perform domain controller discovery. If the request contains an unrecognized domain identifier, this discovery can send DNS SRV queries and Connectionless Lightweight Directory Access Protocol (CLDAP) pings to destinations outside your organization.\r\n+\r\n+To mitigate this behavior, we recommend that you:\r\n+\r\n+1. **Enable Extranet Smart Lockout (ESL).** In AD FS on Windows Server 2019 and later, ESL provides additional validation of untrusted domain identifiers. This validation helps prevent these requests from triggering outbound domain controller discovery. For prerequisites and guidance on moving from Log-Only mode to Enforce mode, see [Configure AD FS Extranet Smart Lockout protection](../operations/configure-ad-fs-extranet-smart-lockout-protection).\r\n+2. **Restrict outbound CLDAP traffic.** Configure egress firewall rules on your AD FS servers and domain controllers to block traffic to UDP destination port 389 on untrusted networks, including internet destinations. Make sure you allow connectivity to domain controllers in your organization and in trusted forests.\r\n+\r\n+After you apply these restrictions, verify that user authentication works as expected, including cross-forest authentication.\r\n+\r\n ### I'm getting Event ID 570 on AD FS 2019. How do I mitigate this event?\r\n \r\n Here's the text of the event:\r\n",
+      "baseCommitSha": "891f4a057064ce26896e020117d1c01c704b3be2",
+      "commitSha": "d90daf9ff8afb57571239cd522ae440ff49e8072",
+      "commitMessage": "Mirror Learn: 1 changed",
+      "commitAuthor": "github-actions[bot]",
+      "commitDate": "2026-11-12 13:37:19 +0000",
+      "githubUrl": "https://github.com/merill/windows-server-docs-mirror/blob/main/WindowsServerDocs/identity/ad-fs/overview/AD-FS-FAQ.md",
+      "publicDocsUrl": "https://learn.microsoft.com/en-us/windows-server/identity/ad-fs/overview/AD-FS-FAQ",
+      "eventId": "windows-server-docs:d90daf9ff8afb57571239cd522ae440ff49e8072:modified:WindowsServerDocs/identity/ad-fs/overview/AD-FS-FAQ.md",
+      "firstSeenAt": "2026-11-12T21:31:17.712Z",
+      "englishSummary": {
+        "category": "Doc update",
+        "headline": "AD FS FAQ adds guidance for unexpected outbound DNS and CLDAP traffic",
+        "summary": "The FAQ explains that unrecognized domain identifiers in username and password requests can trigger domain controller discovery, including DNS SRV queries and CLDAP pings. It recommends Extranet Smart Lockout on Windows Server 2019 and later and restricting outbound CLDAP traffic.",
+        "adminImpact": "Review these recommendations when securing AD FS servers and verify authentication, including cross-forest authentication, after applying firewall restrictions.",
+        "actionRequired": false,
+        "generatedBy": "openai",
+        "model": "gpt-5.6-luna"
+      }
+    }
+  ],
+  "deletedFiles": [],
+  "messageCenterItems": [],
+  "summary": {
+    "totalCommits": 1,
+    "totalFiles": 1,
+    "authors": [
+      "github-actions[bot]"
+    ]
+  },
+  "englishSummary": {
+    "overview": "Today's report includes 0 new, 1 updated, and 0 removed Windows Server documentation files across 1 documentation area.",
+    "groups": [
+      {
+        "category": "Doc update",
+        "title": "AD FS",
+        "summary": "The FAQ explains that unrecognized domain identifiers in username and password requests can trigger domain controller discovery, including DNS SRV queries and CLDAP pings. It recommends Extranet Smart Lockout on Windows Server 2019 and later and restricting outbound CLDAP traffic.",
+        "sourceFiles": [
+          "WindowsServerDocs/identity/ad-fs/overview/AD-FS-FAQ.md"
+        ]
+      }
+    ],
+    "highlights": [
+      {
+        "category": "Doc update",
+        "headline": "AD FS",
+        "detail": "The FAQ explains that unrecognized domain identifiers in username and password requests can trigger domain controller discovery, including DNS SRV queries and CLDAP pings. It recommends Extranet Smart Lockout on Windows Server 2019 and later and restricting outbound CLDAP traffic."
+      }
+    ],
+    "generatedBy": "fallback"
+  }
+}

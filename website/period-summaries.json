@@ -67,6 +67,28 @@
         "outputTokens": 2718,
         "costUsd": 0.003532
       }
+    },
+    "2026-11-12": {
+      "headline": "AD FS FAQ ties unknown domain identifiers to controller discovery and CLDAP safeguards",
+      "overview": "An updated AD FS troubleshooting FAQ explains that unrecognized domain identifiers in username and password requests can trigger domain controller discovery, including DNS SRV queries and CLDAP pings. It recommends Extranet Smart Lockout on Windows Server 2019 and later, along with restricting outbound CLDAP traffic.",
+      "adminImpact": "AD FS administrators should review these security recommendations and verify authentication, including cross-forest authentication, after applying firewall restrictions.",
+      "keyChanges": [
+        {
+          "title": "AD FS guidance details domain-controller discovery triggered by unknown identifiers",
+          "detail": "The FAQ says unrecognized domain identifiers in username and password requests can initiate domain controller discovery through DNS SRV queries and CLDAP pings. It recommends Extranet Smart Lockout for Windows Server 2019 and later and restricting outbound CLDAP traffic.",
+          "product": "AD FS",
+          "sourceId": "doc-2026-11-12-ad-fs-faq-01"
+        }
+      ],
+      "generatedBy": "openai",
+      "model": "gpt-5.6-luna",
+      "reasoningEffort": "xhigh",
+      "generatedAt": "2026-11-12T21:31:26.142Z",
+      "usage": {
+        "inputTokens": 908,
+        "outputTokens": 534,
+        "costUsd": 0.000822
+      }
     }
   },
   "weeks": {
@@ -93,85 +115,79 @@
       }
     },
     "2026-11-09": {
-      "headline": "NDES SID request guidance and VMware VDDK links lead this week’s updates",
-      "overview": "The week was dominated by documentation maintenance rather than product rollouts. The most useful change is expanded NDES guidance covering SID data in certificate requests; two Management articles also refresh VMware VDDK resources used during VM conversion and CBT troubleshooting.",
-      "adminImpact": "Review the revised NDES guidance when designing or troubleshooting SID-bearing certificate enrollment. For VM conversion, use the Broadcom link for VMware VDDK 8.0.3 and the updated CBT programming guide. The Active Directory and AD FS changes primarily improve reference material and require no configuration changes.",
+      "headline": "AD FS guidance details CLDAP discovery and recommends Smart Lockout and egress restrictions",
+      "overview": "The week's most consequential update is an AD FS FAQ explanation that unrecognized domain identifiers in username and password requests can trigger domain-controller discovery through DNS SRV queries and CLDAP pings. It recommends Extranet Smart Lockout for Windows Server 2019 and later and restricting outbound CLDAP, with authentication—including cross-forest flows—tested after firewall changes. Other useful updates clarify NDES handling of SID-bearing certificate requests and refresh links used by VM migration and Active Directory security guidance.",
+      "adminImpact": "AD FS administrators should review the Smart Lockout and outbound-CLDAP recommendations against their deployments and validate authentication after any firewall changes. AD CS and migration administrators should use the updated enrollment guidance and VDDK download link; the Active Directory OWASP link update requires no configuration change.",
       "keyChanges": [
         {
-          "title": "NDES guidance now covers SID-bearing certificate requests",
-          "detail": "The AD CS article now describes NDES behavior when SID information appears in a certificate request’s SAN or in a separate SID extension, and documents an exception for custom policy modules. This is the most consequential guidance change for administrators troubleshooting or designing NDES enrollment involving SID data.",
+          "title": "AD FS FAQ explains domain discovery caused by unrecognized identifiers",
+          "detail": "The FAQ now describes how unknown domain identifiers in username and password requests can initiate domain-controller discovery, including DNS SRV queries and CLDAP pings. It recommends Extranet Smart Lockout on Windows Server 2019 and later and restricting outbound CLDAP; authentication, including cross-forest authentication, should be checked after applying firewall restrictions.",
+          "product": "AD FS",
+          "sourceId": "doc-2026-11-12-ad-fs-faq-01"
+        },
+        {
+          "title": "NDES guidance covers SID data in certificate requests",
+          "detail": "The updated guidance explains NDES behavior when certificate requests carry SID information in the subject alternative name or in a separate SID extension, including the exception for custom policy modules. Review it when troubleshooting or designing SID-aware NDES enrollment.",
           "product": "AD CS",
           "sourceId": "doc-2026-11-11-configure-ndes-sid-certificate-requests-01"
         },
         {
-          "title": "VM conversion guidance points to VMware VDDK 8.0.3 downloads",
-          "detail": "The Management migration procedure now links to Broadcom Support for VMware VDDK 8.0.3. The required version and extraction path remain unchanged, so administrators should use the revised link when obtaining the dependency.",
+          "title": "VM conversion guidance points administrators to VDDK 8.0.3 downloads",
+          "detail": "The migration procedure now links to Broadcom Support for VMware VDDK 8.0.3. The required version and extraction path remain unchanged, so administrators following the procedure should use the new download destination.",
           "product": "Management",
           "sourceId": "doc-2026-11-11-migrate-virtual-machines-vm-conversion-extension-04"
         },
         {
-          "title": "VM conversion troubleshooting gets a new CBT reference",
-          "detail": "The troubleshooting article now links to Broadcom’s updated VDDK Programming Guide for Changed Block Tracking troubleshooting, giving administrators a current external reference when investigating CBT issues.",
-          "product": "Management",
-          "sourceId": "doc-2026-11-11-troubleshoot-vm-conversion-extension-05"
-        },
-        {
           "title": "Active Directory security guidance now links to OWASP’s 2025 Top 10",
-          "detail": "The Avenues To Compromise article replaces its former OWASP index link with the 2025 Top 10 page, directing administrators to the current vulnerability and countermeasure information without requiring configuration changes.",
+          "detail": "The Avenues To Compromise article replaces its former OWASP index link with the OWASP 2025 Top 10 page, directing readers to the current vulnerability and countermeasure information without requiring configuration changes.",
           "product": "Active Directory",
           "sourceId": "doc-2026-11-11-avenues-to-compromise-02"
-        },
-        {
-          "title": "AD FS ESL wording now reflects proxy request handling",
-          "detail": "The Extranet Smart Lockout article revises its description of ESL requests through Web Application Proxy or an MS-ADFSPIP-compatible third-party proxy. The update also refreshes DevRel metadata links; no administrator action is identified.",
-          "product": "AD FS",
-          "sourceId": "doc-2026-11-11-configure-ad-fs-extranet-smart-lockout-protection-03"
         }
       ],
       "generatedBy": "openai",
       "model": "gpt-5.6-luna",
       "reasoningEffort": "xhigh",
-      "generatedAt": "2026-11-11T09:40:21.167Z",
+      "generatedAt": "2026-11-12T21:31:26.142Z",
       "usage": {
-        "inputTokens": 1327,
-        "outputTokens": 1102,
-        "costUsd": 0.001588
+        "inputTokens": 1463,
+        "outputTokens": 2003,
+        "costUsd": 0.002696
       }
     }
   },
   "months": {
     "2026-11": {
-      "headline": "NDES SID certificate requests add SAN URI and NTDS CA setup guidance",
-      "overview": "November was dominated by documentation maintenance, with one substantive AD CS addition: a new NDES procedure for accepting SID information in certificate requests through registry settings for SAN URI and NTDS CA security extension formats. A related update clarifies NDES handling of SID data in the SAN or a separate SID extension, including an exception for custom policy modules. Management guidance now points administrators to VMware VDDK 8.0.3 and an updated Changed Block Tracking resource, while Active Directory guidance links to OWASP’s 2025 Top 10.",
-      "adminImpact": "Administrators implementing NDES enrollment for SID-bearing certificates should enable the settings only when a trusted component validates the SID; incorrect validation could enable impersonation or elevation of privilege. Apply the change by resetting IIS or restarting NDES. VM conversion administrators should use the updated Broadcom link for VDDK 8.0.3 and the revised CBT troubleshooting guide. The Active Directory reference update requires no configuration change.",
+      "headline": "New NDES SID certificate procedure pairs with AD FS CLDAP defense guidance",
+      "overview": "November’s substantive Windows Server guidance centered on AD CS and AD FS: a new NDES procedure covers SID-bearing certificate requests, while an AD FS FAQ documents DNS and CLDAP domain-controller discovery and recommends Smart Lockout and outbound-CLDAP restrictions. Other updates were narrower maintenance, including an NDES behavior clarification and refreshed Broadcom and OWASP links.",
+      "adminImpact": "For NDES deployments, enable the SID-request settings only when a trusted component validates the SID, then reset IIS or restart NDES. AD FS administrators applying outbound-CLDAP restrictions should validate authentication, including cross-forest flows, and review Extranet Smart Lockout on Windows Server 2019 and later. Migration administrators should use the updated VDDK 8.0.3 link; the OWASP and troubleshooting-link updates require no configuration changes.",
       "keyChanges": [
         {
-          "title": "New NDES procedure accepts SID information in certificate requests",
-          "detail": "The new AD CS guidance explains registry-based configuration for SID data in SAN URI and NTDS CA security extension formats. It warns that the settings should be enabled only when a trusted component validates the SID, and says to apply the change by resetting IIS or restarting NDES.",
+          "title": "New NDES procedure covers SID-bearing certificate requests",
+          "detail": "The new AD CS procedure explains how to configure NDES to accept SID information through registry settings for SAN URI and NTTS CA security extension formats. It warns that the settings should be enabled only when a trusted component validates the SID, because incorrect validation could enable impersonation or elevation of privilege. Apply the configuration by resetting IIS or restarting NDES.",
           "product": "AD CS",
           "sourceId": "doc-2026-11-07-configure-ndes-for-sid-certificate-requests-in-windows-server-01"
         },
         {
-          "title": "NDES guidance clarifies SAN, SID-extension, and policy-module handling",
-          "detail": "The updated article now describes NDES behavior for requests carrying SID information in the SAN or a separate SID extension, including the custom policy module exception. This is relevant when designing or troubleshooting SID-bearing certificate enrollment.",
+          "title": "AD FS guidance maps unknown domains to DNS and CLDAP discovery",
+          "detail": "For username and password requests containing unrecognized domain identifiers, the FAQ explains that domain-controller discovery can issue DNS SRV queries and CLDAP pings. It recommends Extranet Smart Lockout on Windows Server 2019 and later and restricting outbound CLDAP; administrators should test authentication, including cross-forest flows, after firewall changes.",
+          "product": "AD FS",
+          "sourceId": "doc-2026-11-12-ad-fs-faq-01"
+        },
+        {
+          "title": "NDES guidance clarifies SID placement and policy-module exceptions",
+          "detail": "Updated AD CS guidance describes NDES handling of certificate requests carrying SID information in the SAN or in a separate SID extension, including the custom policy module exception. The clarification is relevant when troubleshooting or designing SID-related certificate enrollment.",
           "product": "AD CS",
           "sourceId": "doc-2026-11-11-configure-ndes-sid-certificate-requests-01"
         },
         {
-          "title": "VM conversion guidance links directly to Broadcom’s VDDK 8.0.3 download",
-          "detail": "The migration procedure now directs administrators to Broadcom Support for VMware VDDK 8.0.3. The required version and extraction path remain unchanged.",
+          "title": "VM conversion guidance points to Broadcom’s VDDK 8.0.3 download",
+          "detail": "The migration procedure now links to Broadcom Support for VMware VDDK 8.0.3 downloads. The required version and extraction path are unchanged, so administrators following the procedure should use the updated link.",
           "product": "Management",
           "sourceId": "doc-2026-11-11-migrate-virtual-machines-vm-conversion-extension-04"
         },
         {
-          "title": "VM conversion troubleshooting adopts a new CBT programming-guide link",
-          "detail": "The troubleshooting article now links to Broadcom’s updated VDDK Programming Guide for Changed Block Tracking issues, giving administrators a current external reference for CBT troubleshooting.",
-          "product": "Management",
-          "sourceId": "doc-2026-11-11-troubleshoot-vm-conversion-extension-05"
-        },
-        {
-          "title": "Active Directory security guidance links to OWASP’s 2025 Top 10",
-          "detail": "The Avenues To Compromise guidance replaced its former OWASP index link with the 2025 Top 10 page, directing readers to the current vulnerability and countermeasure reference without requiring configuration changes.",
+          "title": "Active Directory security guidance links directly to OWASP’s 2025 Top 10",
+          "detail": "Avenues To Compromise now points to OWASP’s 2025 Top 10 page instead of the former index page, directing administrators to the current vulnerability and countermeasure material without requiring a configuration change.",
           "product": "Active Directory",
           "sourceId": "doc-2026-11-11-avenues-to-compromise-02"
         }
@@ -179,16 +195,16 @@
       "generatedBy": "openai",
       "model": "gpt-5.6-luna",
       "reasoningEffort": "xhigh",
-      "generatedAt": "2026-11-11T09:40:21.167Z",
+      "generatedAt": "2026-11-12T21:31:26.142Z",
       "usage": {
-        "inputTokens": 1708,
-        "outputTokens": 1698,
-        "costUsd": 0.002379
+        "inputTokens": 1890,
+        "outputTokens": 3804,
+        "costUsd": 0.004943
       }
     }
   },
   "version": 3,
-  "generatedAt": "2026-11-11T09:40:21.167Z",
+  "generatedAt": "2026-11-12T21:31:26.142Z",
   "generator": {
     "model": "gpt-5.6-luna",
     "reasoningEffort": "xhigh"
@@ -205,18 +221,24 @@
       "outputTokens": 5518,
       "requests": 3,
       "costUsd": 0.007499
+    },
+    "2026-11-12": {
+      "inputTokens": 4261,
+      "outputTokens": 6341,
+      "requests": 3,
+      "costUsd": 0.008461
     }
   },
   "lastRun": {
-    "inputTokens": 4388,
-    "outputTokens": 5518,
+    "inputTokens": 4261,
+    "outputTokens": 6341,
     "requests": 3,
-    "costUsd": 0.007499
+    "costUsd": 0.008461
   },
   "totalUsage": {
-    "inputTokens": 7054,
-    "outputTokens": 7287,
-    "requests": 6,
-    "costUsd": 0.010155
+    "inputTokens": 11315,
+    "outputTokens": 13628,
+    "requests": 9,
+    "costUsd": 0.018616
   }
 }
