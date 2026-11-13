@@ -89,6 +89,28 @@
         "outputTokens": 534,
         "costUsd": 0.000822
       }
+    },
+    "2026-11-13": {
+      "headline": "RD Web Access XSLT customizations face Chromium M158 cutoff November 17, 2026",
+      "overview": "New Remote Desktop guidance covers assessing, migrating, validating, and troubleshooting RD Web Access customizations that rely on browser-native XSLT. Chromium M158 disables browser-native XSLT beginning November 17, 2026.",
+      "adminImpact": "Administrators with affected customizations should migrate before the cutoff. They should leave the updated .aspx pages unchanged, configure a separate stylesheet through RDWebSiteXsltPath, and test sign-in, resource access, and password changes.",
+      "keyChanges": [
+        {
+          "title": "Migration path added for RD Web Access XSLT customizations",
+          "detail": "The guidance explains how to assess, migrate, validate, and troubleshoot customizations using browser-native XSLT. It directs administrators to keep the updated .aspx pages unchanged and configure a separate stylesheet through RDWebSiteXsltPath before Chromium M158 disables browser-native XSLT on November 17, 2026.",
+          "product": "Remote Desktop",
+          "sourceId": "doc-2026-11-13-migrate-rd-web-access-xslt-customizations-01"
+        }
+      ],
+      "generatedBy": "openai",
+      "model": "gpt-5.6-luna",
+      "reasoningEffort": "xhigh",
+      "generatedAt": "2026-11-13T09:48:13.120Z",
+      "usage": {
+        "inputTokens": 962,
+        "outputTokens": 697,
+        "costUsd": 0.001029
+      }
     }
   },
   "weeks": {
@@ -115,96 +137,90 @@
       }
     },
     "2026-11-09": {
-      "headline": "AD FS guidance details CLDAP discovery and recommends Smart Lockout and egress restrictions",
-      "overview": "The week's most consequential update is an AD FS FAQ explanation that unrecognized domain identifiers in username and password requests can trigger domain-controller discovery through DNS SRV queries and CLDAP pings. It recommends Extranet Smart Lockout for Windows Server 2019 and later and restricting outbound CLDAP, with authentication—including cross-forest flows—tested after firewall changes. Other useful updates clarify NDES handling of SID-bearing certificate requests and refresh links used by VM migration and Active Directory security guidance.",
-      "adminImpact": "AD FS administrators should review the Smart Lockout and outbound-CLDAP recommendations against their deployments and validate authentication after any firewall changes. AD CS and migration administrators should use the updated enrollment guidance and VDDK download link; the Active Directory OWASP link update requires no configuration change.",
+      "headline": "LDAP SPN matching tightens as RD Web XSLT migration deadline nears",
+      "overview": "The week’s most consequential change is a Windows Server security requirement introduced with the October 13, 2026, updates: Kerberos tickets used for LDAP authentication must match the LDAP service principal name registered on the target Active Directory domain controller, with potential implications for NetApp SMB shares. New Remote Desktop guidance addresses Chromium M158 disabling browser-native XSLT on November 17, 2026. AD FS and AD CS updates add security and certificate-enrollment troubleshooting guidance, while several other edits mainly refresh external links or metadata.",
+      "adminImpact": "Review LDAP authentication and SPN alignment on domain controllers supporting affected NetApp SMB deployments. Administrators with RD Web Access XSLT customizations should migrate and test them before November 17, using RDWebSiteXsltPath for a separate stylesheet. AD FS administrators should assess Extranet Smart Lockout and outbound CLDAP restrictions, then verify normal and cross-forest authentication. Use the updated NDES guidance when handling certificate requests that contain SID data.",
       "keyChanges": [
         {
-          "title": "AD FS FAQ explains domain discovery caused by unrecognized identifiers",
-          "detail": "The FAQ now describes how unknown domain identifiers in username and password requests can initiate domain-controller discovery, including DNS SRV queries and CLDAP pings. It recommends Extranet Smart Lockout on Windows Server 2019 and later and restricting outbound CLDAP; authentication, including cross-forest authentication, should be checked after applying firewall restrictions.",
+          "title": "LDAP authentication now requires matching domain-controller SPNs",
+          "detail": "A Microsoft 365 Message Center major update says the additional requirements introduced with the October 13, 2026, Windows security updates require Kerberos service tickets used for LDAP authentication to match the LDAP service principal name (SPN) registered on the target domain controller. The alert specifically connects the requirement to preventing issues with NetApp SMB shares.",
+          "product": "Windows Server",
+          "sourceId": "MC1551001"
+        },
+        {
+          "title": "RD Web Access customizations face Chromium M158 XSLT cutoff",
+          "detail": "New guidance covers assessing, migrating, validating, and troubleshooting RD Web Access customizations that use browser-native XSLT. Chromium M158 disables browser-native XSLT beginning November 17, 2026; the procedure says to leave the updated .aspx pages unchanged, configure a separate stylesheet through RDWebSiteXsltPath, and test sign-in, resources, and password changes.",
+          "product": "Remote Desktop",
+          "sourceId": "doc-2026-11-13-migrate-rd-web-access-xslt-customizations-01"
+        },
+        {
+          "title": "AD FS guidance details domain discovery and CLDAP hardening",
+          "detail": "The updated FAQ explains that unrecognized domain identifiers in username and password requests can trigger domain-controller discovery through DNS SRV queries and CLDAP pings. It recommends Extranet Smart Lockout on Windows Server 2019 and later and restricting outbound CLDAP traffic; authentication, including cross-forest authentication, should be verified after firewall changes.",
           "product": "AD FS",
           "sourceId": "doc-2026-11-12-ad-fs-faq-01"
         },
         {
-          "title": "NDES guidance covers SID data in certificate requests",
-          "detail": "The updated guidance explains NDES behavior when certificate requests carry SID information in the subject alternative name or in a separate SID extension, including the exception for custom policy modules. Review it when troubleshooting or designing SID-aware NDES enrollment.",
+          "title": "NDES documentation clarifies SID-bearing certificate request handling",
+          "detail": "The updated guidance describes NDES behavior for certificate requests that carry SID information in the SAN or in a separate SID extension, including the exception involving a custom policy module. This is relevant when troubleshooting or designing certificate enrollment involving SID data.",
           "product": "AD CS",
           "sourceId": "doc-2026-11-11-configure-ndes-sid-certificate-requests-01"
-        },
-        {
-          "title": "VM conversion guidance points administrators to VDDK 8.0.3 downloads",
-          "detail": "The migration procedure now links to Broadcom Support for VMware VDDK 8.0.3. The required version and extraction path remain unchanged, so administrators following the procedure should use the new download destination.",
-          "product": "Management",
-          "sourceId": "doc-2026-11-11-migrate-virtual-machines-vm-conversion-extension-04"
-        },
-        {
-          "title": "Active Directory security guidance now links to OWASP’s 2025 Top 10",
-          "detail": "The Avenues To Compromise article replaces its former OWASP index link with the OWASP 2025 Top 10 page, directing readers to the current vulnerability and countermeasure information without requiring configuration changes.",
-          "product": "Active Directory",
-          "sourceId": "doc-2026-11-11-avenues-to-compromise-02"
         }
       ],
       "generatedBy": "openai",
       "model": "gpt-5.6-luna",
       "reasoningEffort": "xhigh",
-      "generatedAt": "2026-11-12T21:31:26.142Z",
+      "generatedAt": "2026-11-13T09:48:13.120Z",
       "usage": {
-        "inputTokens": 1463,
-        "outputTokens": 2003,
-        "costUsd": 0.002696
+        "inputTokens": 1772,
+        "outputTokens": 2385,
+        "costUsd": 0.003216
       }
     }
   },
   "months": {
     "2026-11": {
-      "headline": "New NDES SID certificate procedure pairs with AD FS CLDAP defense guidance",
-      "overview": "November’s substantive Windows Server guidance centered on AD CS and AD FS: a new NDES procedure covers SID-bearing certificate requests, while an AD FS FAQ documents DNS and CLDAP domain-controller discovery and recommends Smart Lockout and outbound-CLDAP restrictions. Other updates were narrower maintenance, including an NDES behavior clarification and refreshed Broadcom and OWASP links.",
-      "adminImpact": "For NDES deployments, enable the SID-request settings only when a trusted component validates the SID, then reset IIS or restart NDES. AD FS administrators applying outbound-CLDAP restrictions should validate authentication, including cross-forest flows, and review Extranet Smart Lockout on Windows Server 2019 and later. Migration administrators should use the updated VDDK 8.0.3 link; the OWASP and troubleshooting-link updates require no configuration changes.",
+      "headline": "LDAP SPN matching and RD Web XSLT deadline drive November administrator action",
+      "overview": "November brought a new LDAP authentication requirement alongside a significant RD Web Access compatibility deadline. Starting with the October 13, 2026, Windows security updates, Kerberos service tickets used for LDAP authentication must match the LDAP service principal name registered on the target domain controller, with NetApp SMB shares specifically flagged. Chromium M158 disables browser-native XSLT on November 17, prompting migration guidance for affected RD Web Access customizations. AD CS also added NDES guidance for SID-bearing certificate requests, while AD FS documentation expanded its coverage of domain-controller discovery and defensive controls. Other edits mainly refreshed external links, metadata, or troubleshooting references.",
+      "adminImpact": "Review LDAP SPN alignment where affected NetApp SMB shares depend on domain-controller LDAP authentication. Migrate and test affected RD Web Access customizations before November 17, using RDWebSiteXsltPath for a separate stylesheet. Treat NDES SID settings as security-sensitive: enable them only when a trusted component validates the SID, then reset IIS or restart NDES. AD FS administrators applying outbound CLDAP restrictions should verify normal and cross-forest authentication. The link and metadata refreshes require no broader configuration change.",
       "keyChanges": [
         {
-          "title": "New NDES procedure covers SID-bearing certificate requests",
-          "detail": "The new AD CS procedure explains how to configure NDES to accept SID information through registry settings for SAN URI and NTTS CA security extension formats. It warns that the settings should be enabled only when a trusted component validates the SID, because incorrect validation could enable impersonation or elevation of privilege. Apply the configuration by resetting IIS or restarting NDES.",
+          "title": "Kerberos LDAP tickets must match the target domain controller’s LDAP SPN",
+          "detail": "A Microsoft 365 Message Center update says additional LDAP authentication requirements began with the October 13, 2026, Windows security updates. Kerberos service tickets used for LDAP authentication must match the LDAP service principal name (SPN) registered on the target domain controller; the notice specifically highlights potential issues with NetApp SMB shares.",
+          "product": "Windows Server",
+          "sourceId": "MC1551001"
+        },
+        {
+          "title": "RD Web Access customizations face Chromium M158’s XSLT cutoff",
+          "detail": "Chromium M158 disables browser-native XSLT beginning November 17, 2026. New Remote Desktop guidance covers assessment, migration, validation, and troubleshooting; affected administrators should leave the updated .aspx pages unchanged, configure a separate stylesheet through RDWebSiteXsltPath, and test sign-in, resource access, and password changes.",
+          "product": "Remote Desktop",
+          "sourceId": "doc-2026-11-13-migrate-rd-web-access-xslt-customizations-01"
+        },
+        {
+          "title": "NDES guidance adds registry configuration for SID certificate requests",
+          "detail": "New AD CS guidance explains how to configure NDES to accept SID information in certificate requests through SAN URI and NTDS CA security extension formats. The settings should be enabled only when a trusted component validates the SID, because incorrect validation could enable impersonation or elevation of privilege; applying them requires resetting IIS or restarting NDES.",
           "product": "AD CS",
           "sourceId": "doc-2026-11-07-configure-ndes-for-sid-certificate-requests-in-windows-server-01"
         },
         {
-          "title": "AD FS guidance maps unknown domains to DNS and CLDAP discovery",
-          "detail": "For username and password requests containing unrecognized domain identifiers, the FAQ explains that domain-controller discovery can issue DNS SRV queries and CLDAP pings. It recommends Extranet Smart Lockout on Windows Server 2019 and later and restricting outbound CLDAP; administrators should test authentication, including cross-forest flows, after firewall changes.",
+          "title": "AD FS guidance documents DNS and CLDAP discovery from unknown domains",
+          "detail": "The updated AD FS FAQ explains that unrecognized domain identifiers in username and password requests can trigger domain-controller discovery through DNS SRV queries and CLDAP pings. It recommends Extranet Smart Lockout on Windows Server 2019 and later and restricting outbound CLDAP traffic, followed by verification of normal and cross-forest authentication.",
           "product": "AD FS",
           "sourceId": "doc-2026-11-12-ad-fs-faq-01"
-        },
-        {
-          "title": "NDES guidance clarifies SID placement and policy-module exceptions",
-          "detail": "Updated AD CS guidance describes NDES handling of certificate requests carrying SID information in the SAN or in a separate SID extension, including the custom policy module exception. The clarification is relevant when troubleshooting or designing SID-related certificate enrollment.",
-          "product": "AD CS",
-          "sourceId": "doc-2026-11-11-configure-ndes-sid-certificate-requests-01"
-        },
-        {
-          "title": "VM conversion guidance points to Broadcom’s VDDK 8.0.3 download",
-          "detail": "The migration procedure now links to Broadcom Support for VMware VDDK 8.0.3 downloads. The required version and extraction path are unchanged, so administrators following the procedure should use the updated link.",
-          "product": "Management",
-          "sourceId": "doc-2026-11-11-migrate-virtual-machines-vm-conversion-extension-04"
-        },
-        {
-          "title": "Active Directory security guidance links directly to OWASP’s 2025 Top 10",
-          "detail": "Avenues To Compromise now points to OWASP’s 2025 Top 10 page instead of the former index page, directing administrators to the current vulnerability and countermeasure material without requiring a configuration change.",
-          "product": "Active Directory",
-          "sourceId": "doc-2026-11-11-avenues-to-compromise-02"
         }
       ],
       "generatedBy": "openai",
       "model": "gpt-5.6-luna",
       "reasoningEffort": "xhigh",
-      "generatedAt": "2026-11-12T21:31:26.142Z",
+      "generatedAt": "2026-11-13T09:48:13.120Z",
       "usage": {
-        "inputTokens": 1890,
-        "outputTokens": 3804,
-        "costUsd": 0.004943
+        "inputTokens": 2243,
+        "outputTokens": 2774,
+        "costUsd": 0.003777
       }
     }
   },
   "version": 3,
-  "generatedAt": "2026-11-12T21:31:26.142Z",
+  "generatedAt": "2026-11-13T09:48:13.120Z",
   "generator": {
     "model": "gpt-5.6-luna",
     "reasoningEffort": "xhigh"
@@ -227,18 +243,24 @@
       "outputTokens": 6341,
       "requests": 3,
       "costUsd": 0.008461
+    },
+    "2026-11-13": {
+      "inputTokens": 4977,
+      "outputTokens": 5856,
+      "requests": 3,
+      "costUsd": 0.008023
     }
   },
   "lastRun": {
-    "inputTokens": 4261,
-    "outputTokens": 6341,
+    "inputTokens": 4977,
+    "outputTokens": 5856,
     "requests": 3,
-    "costUsd": 0.008461
+    "costUsd": 0.008023
   },
   "totalUsage": {
-    "inputTokens": 11315,
-    "outputTokens": 13628,
-    "requests": 9,
-    "costUsd": 0.018616
+    "inputTokens": 16292,
+    "outputTokens": 19484,
+    "requests": 12,
+    "costUsd": 0.026639
   }
 }
