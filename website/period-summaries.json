@@ -111,6 +111,46 @@
         "outputTokens": 697,
         "costUsd": 0.001029
       }
+    },
+    "2026-11-14": {
+      "headline": "DNS Server adds Event 506 and relocates debug logs outside its default directory",
+      "overview": "The period’s most consequential guidance concerns DNS logging and Windows Admin Center compatibility. Applicable 2026 cumulative updates are documented as logging DNS Event ID 506 and relocating existing debug logs configured outside `C:\\Windows\\System32\\dns\\log`; changing `LogFilePath` now requires local Administrators membership. Windows Admin Center 1.3.0.0 is documented as moving to .NET 10, with Azure Connected Machine Agent 1.65 or earlier unable to upgrade to that version or later. Failover Cluster Manager guidance also tightens the campus-cluster procedure around KB5072033, the fault-domain property, and storage-pool version.",
+      "adminImpact": "Audit DNS debug-log locations and operator permissions before applying applicable 2026 cumulative updates. Update Azure Connected Machine Agent versions 1.65 or earlier before upgrading Windows Admin Center 1.3.0.0 or later. For campus clusters, apply KB5072033 to every participating server, use `FaultDomainAwarenessDefault`, and verify storage pool version 29 or later.",
+      "keyChanges": [
+        {
+          "title": "DNS guidance documents new logging and permission behavior",
+          "detail": "Starting with applicable 2026 cumulative updates, DNS Server logs Event ID 506 and relocates existing debug logs configured outside `C:\\Windows\\System32\\dns\\log`. Changing `LogFilePath` requires membership in local Administrators; DnsAdmins membership alone is denied.",
+          "product": "DNS and DHCP",
+          "sourceId": "doc-2026-11-14-powershell-04"
+        },
+        {
+          "title": "Windows Admin Center 1.3.0.0 moves to .NET 10",
+          "detail": "The 1.3.0.0 release upgrades Windows Admin Center to .NET 10. Azure Connected Machine Agent version 1.65 or earlier cannot upgrade to this Windows Admin Center version or later versions.",
+          "product": "Management",
+          "sourceId": "doc-2026-11-14-extension-release-notes-01"
+        },
+        {
+          "title": "Arc agent guidance preserves connection and upgrade boundaries",
+          "detail": "The Arc hybrid-machine guidance states that agent versions 1.65 or earlier cannot upgrade to Windows Admin Center 1.0.0.0 or later. It also records that Arc agent versions 1.35 and 1.36 break Windows Admin Center connections, while version 1.37 and later fix that issue.",
+          "product": "Management",
+          "sourceId": "doc-2026-11-14-manage-arc-hybrid-machines-02"
+        },
+        {
+          "title": "Campus-cluster instructions revise the fault-domain and storage prerequisites",
+          "detail": "The Failover Cluster Manager procedure now scopes KB5072033 to every server joining the cluster, replaces `FaultDomainAwareness` checks with `FaultDomainAwarenessDefault`, and clarifies the requirement for storage pool version 29 or later.",
+          "product": "Failover Clustering",
+          "sourceId": "doc-2026-11-14-failover-cluster-manager-03"
+        }
+      ],
+      "generatedBy": "openai",
+      "model": "gpt-5.6-luna",
+      "reasoningEffort": "xhigh",
+      "generatedAt": "2026-11-14T09:12:20.844Z",
+      "usage": {
+        "inputTokens": 1412,
+        "outputTokens": 3216,
+        "costUsd": 0.004142
+      }
     }
   },
   "weeks": {
@@ -137,90 +177,102 @@
       }
     },
     "2026-11-09": {
-      "headline": "LDAP SPN matching tightens as RD Web XSLT migration deadline nears",
-      "overview": "The week’s most consequential change is a Windows Server security requirement introduced with the October 13, 2026, updates: Kerberos tickets used for LDAP authentication must match the LDAP service principal name registered on the target Active Directory domain controller, with potential implications for NetApp SMB shares. New Remote Desktop guidance addresses Chromium M158 disabling browser-native XSLT on November 17, 2026. AD FS and AD CS updates add security and certificate-enrollment troubleshooting guidance, while several other edits mainly refresh external links or metadata.",
-      "adminImpact": "Review LDAP authentication and SPN alignment on domain controllers supporting affected NetApp SMB deployments. Administrators with RD Web Access XSLT customizations should migrate and test them before November 17, using RDWebSiteXsltPath for a separate stylesheet. AD FS administrators should assess Extranet Smart Lockout and outbound CLDAP restrictions, then verify normal and cross-forest authentication. Use the updated NDES guidance when handling certificate requests that contain SID data.",
+      "headline": "Chromium’s XSLT cutoff sets a November 17 RD Web Access migration deadline",
+      "overview": "The week’s most immediate administrator deadline is Chromium M158 disabling browser-native XSLT on November 17, 2026, affecting customized RD Web Access pages. Windows Server also introduced an LDAP authentication requirement for Kerberos service-ticket and LDAP SPN matching, while applicable 2026-11 cumulative updates alter DNS debug-log handling. Windows Server 2016 extended support ends January 13, 2027, and Windows Admin Center 1.3.0.0 adds an Azure Connected Machine Agent compatibility gate. Additional AD FS guidance covers Extranet Smart Lockout and outbound CLDAP restrictions; most remaining edits were documentation and procedure maintenance.",
+      "adminImpact": "Administrators with affected RD Web Access customizations should migrate before November 17 and test sign-in, resource access, and password changes. For NetApp SMB environments using LDAP authentication, verify that Kerberos service tickets match the LDAP SPN registered on the target domain controller. After applicable 2026-11 updates, review DNS debug-log locations and use a local Administrators account for LogFilePath changes; DnsAdmins membership alone is insufficient. Include the January 13, 2027, Windows Server 2016 support deadline in upgrade planning, and update Azure Connected Machine Agent version 1.65 or earlier before upgrading Windows Admin Center 1.3.0.0 or later.",
       "keyChanges": [
         {
-          "title": "LDAP authentication now requires matching domain-controller SPNs",
-          "detail": "A Microsoft 365 Message Center major update says the additional requirements introduced with the October 13, 2026, Windows security updates require Kerberos service tickets used for LDAP authentication to match the LDAP service principal name (SPN) registered on the target domain controller. The alert specifically connects the requirement to preventing issues with NetApp SMB shares.",
-          "product": "Windows Server",
-          "sourceId": "MC1551001"
-        },
-        {
-          "title": "RD Web Access customizations face Chromium M158 XSLT cutoff",
-          "detail": "New guidance covers assessing, migrating, validating, and troubleshooting RD Web Access customizations that use browser-native XSLT. Chromium M158 disables browser-native XSLT beginning November 17, 2026; the procedure says to leave the updated .aspx pages unchanged, configure a separate stylesheet through RDWebSiteXsltPath, and test sign-in, resources, and password changes.",
+          "title": "RD Web Access customizations need migration before Chromium M158 disables browser-native XSLT",
+          "detail": "New guidance states that Chromium M158 disables browser-native XSLT beginning November 17, 2026. Affected deployments should leave the updated .aspx pages unchanged, configure a separate stylesheet through RDWebSiteXsltPath, and validate sign-in, resource display, and password-change workflows.",
           "product": "Remote Desktop",
           "sourceId": "doc-2026-11-13-migrate-rd-web-access-xslt-customizations-01"
         },
         {
-          "title": "AD FS guidance details domain discovery and CLDAP hardening",
-          "detail": "The updated FAQ explains that unrecognized domain identifiers in username and password requests can trigger domain-controller discovery through DNS SRV queries and CLDAP pings. It recommends Extranet Smart Lockout on Windows Server 2019 and later and restricting outbound CLDAP traffic; authentication, including cross-forest authentication, should be verified after firewall changes.",
-          "product": "AD FS",
-          "sourceId": "doc-2026-11-12-ad-fs-faq-01"
+          "title": "Windows Server LDAP authentication now requires Kerberos tickets to match the target LDAP SPN",
+          "detail": "Microsoft’s security notice says the October 13, 2026, Windows security updates introduced additional LDAP authentication requirements for domain controllers. Kerberos service tickets used for LDAP authentication must match the LDAP service principal name registered on the target domain controller, a requirement called out for preventing NetApp SMB share issues.",
+          "product": "Windows Server",
+          "sourceId": "MC1551001"
         },
         {
-          "title": "NDES documentation clarifies SID-bearing certificate request handling",
-          "detail": "The updated guidance describes NDES behavior for certificate requests that carry SID information in the SAN or in a separate SID extension, including the exception involving a custom policy module. This is relevant when troubleshooting or designing certificate enrollment involving SID data.",
-          "product": "AD CS",
-          "sourceId": "doc-2026-11-11-configure-ndes-sid-certificate-requests-01"
+          "title": "DNS Server changes debug-log placement and restricts LogFilePath changes",
+          "detail": "With applicable 2026-11 cumulative updates, DNS Server logs Event ID 506 and relocates existing debug logs configured outside C:\\Windows\\System32\\dns\\log. Changing LogFilePath requires local Administrators membership; DnsAdmins membership alone is denied.",
+          "product": "DNS and DHCP",
+          "sourceId": "doc-2026-11-14-powershell-04"
+        },
+        {
+          "title": "Windows Server 2016 extended support ends January 13, 2027",
+          "detail": "All Windows Server 2016 editions reach the end of extended support on January 13, 2027. The January 2027 Windows security update will be the last update provided during extended support.",
+          "product": "Windows Server",
+          "sourceId": "MC1551896"
+        },
+        {
+          "title": "Windows Admin Center 1.3.0.0 blocks upgrades from older Arc agents",
+          "detail": "Windows Admin Center 1.3.0.0 upgrades to .NET 10, and Azure Connected Machine Agent version 1.65 or earlier cannot upgrade to this or later Windows Admin Center versions. The documented upgrade path therefore requires updating the agent first.",
+          "product": "Management",
+          "sourceId": "doc-2026-11-14-extension-release-notes-01"
         }
       ],
       "generatedBy": "openai",
       "model": "gpt-5.6-luna",
       "reasoningEffort": "xhigh",
-      "generatedAt": "2026-11-13T09:48:13.120Z",
+      "generatedAt": "2026-11-14T09:12:20.844Z",
       "usage": {
-        "inputTokens": 1772,
-        "outputTokens": 2385,
-        "costUsd": 0.003216
+        "inputTokens": 2470,
+        "outputTokens": 6245,
+        "costUsd": 0.007988
       }
     }
   },
   "months": {
     "2026-11": {
-      "headline": "LDAP SPN matching and RD Web XSLT deadline drive November administrator action",
-      "overview": "November brought a new LDAP authentication requirement alongside a significant RD Web Access compatibility deadline. Starting with the October 13, 2026, Windows security updates, Kerberos service tickets used for LDAP authentication must match the LDAP service principal name registered on the target domain controller, with NetApp SMB shares specifically flagged. Chromium M158 disables browser-native XSLT on November 17, prompting migration guidance for affected RD Web Access customizations. AD CS also added NDES guidance for SID-bearing certificate requests, while AD FS documentation expanded its coverage of domain-controller discovery and defensive controls. Other edits mainly refreshed external links, metadata, or troubleshooting references.",
-      "adminImpact": "Review LDAP SPN alignment where affected NetApp SMB shares depend on domain-controller LDAP authentication. Migrate and test affected RD Web Access customizations before November 17, using RDWebSiteXsltPath for a separate stylesheet. Treat NDES SID settings as security-sensitive: enable them only when a trusted component validates the SID, then reset IIS or restart NDES. AD FS administrators applying outbound CLDAP restrictions should verify normal and cross-forest authentication. The link and metadata refreshes require no broader configuration change.",
+      "headline": "RD Web Access customizations face a November 17 Chromium XSLT cutoff",
+      "overview": "An imminent Chromium compatibility break dominates November: M158 disables browser-native XSLT on November 17, 2026, putting affected RD Web Access customizations on a migration deadline. Windows Server also tightened LDAP authentication after the October 13 security updates, changed DNS debug-log handling with applicable November cumulative updates, and set a January 13, 2027 support endpoint for every Windows Server 2016 edition. AD CS added focused NDES guidance for SID-bearing certificate requests.",
+      "adminImpact": "Administrators with customized RD Web Access pages should migrate and test sign-in, resource access, and password changes before November 17. For LDAP-authenticated integrations, especially NetApp SMB scenarios, verify that Kerberos service tickets match the LDAP SPN on the target domain controller. Review DNS debug-log paths and account permissions after applicable November cumulative updates. Treat January 13, 2027, as the final Windows Server 2016 extended-support date, and enable NDES SID settings only when a trusted component validates the SID; reset IIS or restart NDES after applying them.",
       "keyChanges": [
         {
-          "title": "Kerberos LDAP tickets must match the target domain controller’s LDAP SPN",
-          "detail": "A Microsoft 365 Message Center update says additional LDAP authentication requirements began with the October 13, 2026, Windows security updates. Kerberos service tickets used for LDAP authentication must match the LDAP service principal name (SPN) registered on the target domain controller; the notice specifically highlights potential issues with NetApp SMB shares.",
-          "product": "Windows Server",
-          "sourceId": "MC1551001"
-        },
-        {
-          "title": "RD Web Access customizations face Chromium M158’s XSLT cutoff",
-          "detail": "Chromium M158 disables browser-native XSLT beginning November 17, 2026. New Remote Desktop guidance covers assessment, migration, validation, and troubleshooting; affected administrators should leave the updated .aspx pages unchanged, configure a separate stylesheet through RDWebSiteXsltPath, and test sign-in, resource access, and password changes.",
+          "title": "Chromium M158 sets a November 17 cutoff for browser-native XSLT in RD Web Access",
+          "detail": "Chromium M158 disables browser-native XSLT beginning November 17, 2026. Affected customizations should use a separate stylesheet through RDWebSiteXsltPath, while the updated .aspx pages remain unchanged; administrators should then test sign-in, resource access, and password changes.",
           "product": "Remote Desktop",
           "sourceId": "doc-2026-11-13-migrate-rd-web-access-xslt-customizations-01"
         },
         {
-          "title": "NDES guidance adds registry configuration for SID certificate requests",
-          "detail": "New AD CS guidance explains how to configure NDES to accept SID information in certificate requests through SAN URI and NTDS CA security extension formats. The settings should be enabled only when a trusted component validates the SID, because incorrect validation could enable impersonation or elevation of privilege; applying them requires resetting IIS or restarting NDES.",
-          "product": "AD CS",
-          "sourceId": "doc-2026-11-07-configure-ndes-for-sid-certificate-requests-in-windows-server-01"
+          "title": "Windows Server LDAP authentication now requires the target domain controller’s LDAP SPN to match",
+          "detail": "The October 13, 2026, Windows security updates introduced additional LDAP authentication requirements: Kerberos service tickets used for LDAP authentication must match the LDAP service principal name (SPN) registered on the target domain controller. The Message Center notice specifically calls out NetApp SMB shares.",
+          "product": "Windows Server",
+          "sourceId": "MC1551001"
         },
         {
-          "title": "AD FS guidance documents DNS and CLDAP discovery from unknown domains",
-          "detail": "The updated AD FS FAQ explains that unrecognized domain identifiers in username and password requests can trigger domain-controller discovery through DNS SRV queries and CLDAP pings. It recommends Extranet Smart Lockout on Windows Server 2019 and later and restricting outbound CLDAP traffic, followed by verification of normal and cross-forest authentication.",
-          "product": "AD FS",
-          "sourceId": "doc-2026-11-12-ad-fs-faq-01"
+          "title": "November DNS updates change debug-log handling and restrict LogFilePath changes",
+          "detail": "Starting with applicable 2026-11 cumulative updates, DNS Server logs Event ID 506 and relocates existing debug logs configured outside `C:\\Windows\\System32\\dns\\log`. Changing `LogFilePath` requires membership in the local Administrators group; DnsAdmins membership alone is denied.",
+          "product": "DNS and DHCP",
+          "sourceId": "doc-2026-11-14-powershell-04"
+        },
+        {
+          "title": "Windows Server 2016 extended support ends January 13, 2027",
+          "detail": "All Windows Server 2016 editions reach the end of extended support on January 13, 2027. The January 2027 Windows security update will be the last update provided during extended support.",
+          "product": "Windows Server",
+          "sourceId": "MC1551896"
+        },
+        {
+          "title": "New AD CS guidance documents NDES configuration for SID certificate requests",
+          "detail": "The new procedure explains how to configure NDES to accept SID information in certificate requests through registry settings for SAN URI and NTDS CA security extension formats. The settings should be enabled only when a trusted component validates the SID, because incorrect validation could enable impersonation or elevation of privilege; applying them requires resetting IIS or restarting NDES.",
+          "product": "AD CS",
+          "sourceId": "doc-2026-11-07-configure-ndes-for-sid-certificate-requests-in-windows-server-01"
         }
       ],
       "generatedBy": "openai",
       "model": "gpt-5.6-luna",
       "reasoningEffort": "xhigh",
-      "generatedAt": "2026-11-13T09:48:13.120Z",
+      "generatedAt": "2026-11-14T09:12:20.844Z",
       "usage": {
-        "inputTokens": 2243,
-        "outputTokens": 2774,
-        "costUsd": 0.003777
+        "inputTokens": 3014,
+        "outputTokens": 4373,
+        "costUsd": 0.00585
       }
     }
   },
   "version": 3,
-  "generatedAt": "2026-11-13T09:48:13.120Z",
+  "generatedAt": "2026-11-14T09:12:20.844Z",
   "generator": {
     "model": "gpt-5.6-luna",
     "reasoningEffort": "xhigh"
@@ -249,18 +301,24 @@
       "outputTokens": 5856,
       "requests": 3,
       "costUsd": 0.008023
+    },
+    "2026-11-14": {
+      "inputTokens": 6896,
+      "outputTokens": 13834,
+      "requests": 3,
+      "costUsd": 0.01798
     }
   },
   "lastRun": {
-    "inputTokens": 4977,
-    "outputTokens": 5856,
+    "inputTokens": 6896,
+    "outputTokens": 13834,
     "requests": 3,
-    "costUsd": 0.008023
+    "costUsd": 0.01798
   },
   "totalUsage": {
-    "inputTokens": 16292,
-    "outputTokens": 19484,
-    "requests": 12,
-    "costUsd": 0.026639
+    "inputTokens": 23188,
+    "outputTokens": 33318,
+    "requests": 15,
+    "costUsd": 0.044619
   }
 }

@@ -1,0 +1,204 @@
+{
+  "newFiles": [],
+  "modifiedFiles": [
+    {
+      "filename": "WindowsServerDocs/manage/windows-admin-center/azure/extension-release-notes.md",
+      "status": "modified",
+      "additions": 10,
+      "deletions": 0,
+      "changes": 10,
+      "patch": "diff --git a/WindowsServerDocs/manage/windows-admin-center/azure/extension-release-notes.md b/WindowsServerDocs/manage/windows-admin-center/azure/extension-release-notes.md\nindex 0dbdcc1..1a96f3e 100644\n--- a/WindowsServerDocs/manage/windows-admin-center/azure/extension-release-notes.md\n+++ b/WindowsServerDocs/manage/windows-admin-center/azure/extension-release-notes.md\n@@ -56,6 +56,12 @@ Note\n \r\n This article is only for Windows Admin Center in Azure. For release notes on Windows Admin Center on-premises, go to [release history](/en-us/windows-server/manage/windows-admin-center/support/release-history).\r\n \r\n+## Version 1.3.0.0 - November 2026\r\n+\r\n+### Fixed\r\n+\r\n+- Upgraded Windows Admin Center's .NET version to .NET 10.\r\n+\r\n ## Version 1.0.0.0 - October 2026\r\n \r\n This release marks the general availability of Windows Admin Center for Arc-enabled Servers.\r\n@@ -64,6 +70,10 @@ This release marks the general availability of Windows Admin Center for Arc-enab\n \r\n - Fixed an issue where users with Windows Server 2019 or older received the error \"RegCreateKeyEx failed; code 5 - Access is denied\" during install.\r\n \r\n+Warning\r\n+\r\n+Versions of the Azure Connected Machine Agent (Arc agent) 1.65 or lower can't upgrade to this version (or later) of Windows Admin Center. You can [download the current Azure Connected Machine Agent version here](https://aka.ms/AzureConnectedMachineAgent).\r\n+\r\n ## Version 0.85.0.0 - June 2026\r\n \r\n ### New features\r\n",
+      "baseCommitSha": "aced387e3b5b30cebfd870723269bb269d035962",
+      "commitSha": "3bd882396154641b2ff4331f1b1e031437c5aaa9",
+      "commitMessage": "Mirror Learn: 2 changed",
+      "commitAuthor": "github-actions[bot]",
+      "commitDate": "2026-11-14 02:59:23 +0000",
+      "githubUrl": "https://github.com/merill/windows-server-docs-mirror/blob/main/WindowsServerDocs/manage/windows-admin-center/azure/extension-release-notes.md",
+      "publicDocsUrl": "https://learn.microsoft.com/en-us/windows-server/manage/windows-admin-center/azure/extension-release-notes",
+      "eventId": "windows-server-docs:3bd882396154641b2ff4331f1b1e031437c5aaa9:modified:WindowsServerDocs/manage/windows-admin-center/azure/extension-release-notes.md",
+      "firstSeenAt": "2026-11-14T09:11:58.788Z",
+      "englishSummary": {
+        "category": "Feature update",
+        "headline": "Windows Admin Center 1.3.0.0 requires a newer Arc agent",
+        "summary": "Windows Admin Center version 1.3.0.0 upgrades to .NET 10. Azure Connected Machine Agent version 1.65 or earlier cannot upgrade to this or later Windows Admin Center versions.",
+        "adminImpact": "Update the Azure Connected Machine Agent before upgrading Windows Admin Center if it is version 1.65 or earlier.",
+        "actionRequired": true,
+        "generatedBy": "openai",
+        "model": "gpt-5.6-luna"
+      }
+    },
+    {
+      "filename": "WindowsServerDocs/manage/windows-admin-center/azure/manage-arc-hybrid-machines.md",
+      "status": "modified",
+      "additions": 1,
+      "deletions": 1,
+      "changes": 2,
+      "patch": "diff --git a/WindowsServerDocs/manage/windows-admin-center/azure/manage-arc-hybrid-machines.md b/WindowsServerDocs/manage/windows-admin-center/azure/manage-arc-hybrid-machines.md\nindex 7c1eb7b..c815f48 100644\n--- a/WindowsServerDocs/manage/windows-admin-center/azure/manage-arc-hybrid-machines.md\n+++ b/WindowsServerDocs/manage/windows-admin-center/azure/manage-arc-hybrid-machines.md\n@@ -49,7 +49,7 @@ platformId: 31bb5cec-7ea2-3ae2-c510-e3be1e91ced9\n \n Important\r\n \r\n-Versions 1.35 and 1.36 of the Azure Connected Machine Agent (Arc agent) break connection to Windows Admin Center. Later versions of the Arc agent (1.37+) fix this problem. You can [download the current version here](https://aka.ms/AzureConnectedMachineAgent).\r\n+Versions 1.35 and 1.36 of the Azure Connected Machine Agent (Arc agent) break connection to Windows Admin Center. Later versions of the Arc agent (1.37+) fix this problem. Additionally, versions 1.65 or lower can't upgrade to version 1.0.0.0 (or later) of Windows Admin Center. You can [download the current Azure Connected Machine Agent version here](https://aka.ms/AzureConnectedMachineAgent).\r\n \r\n By using Windows Admin Center in the Azure portal, you can manage the Windows Server operating system of your Arc-enabled servers, known as hybrid machines. You can securely manage hybrid machines from anywhere without needing a VPN, public IP address, or other inbound connectivity to your machine. To learn more about Arc-enabled servers, see [What is Azure Arc-enabled servers?](/en-us/azure/azure-arc/servers/overview).\r\n \r\n",
+      "baseCommitSha": "aced387e3b5b30cebfd870723269bb269d035962",
+      "commitSha": "3bd882396154641b2ff4331f1b1e031437c5aaa9",
+      "commitMessage": "Mirror Learn: 2 changed",
+      "commitAuthor": "github-actions[bot]",
+      "commitDate": "2026-11-14 02:59:23 +0000",
+      "githubUrl": "https://github.com/merill/windows-server-docs-mirror/blob/main/WindowsServerDocs/manage/windows-admin-center/azure/manage-arc-hybrid-machines.md",
+      "publicDocsUrl": "https://learn.microsoft.com/en-us/windows-server/manage/windows-admin-center/azure/manage-arc-hybrid-machines",
+      "eventId": "windows-server-docs:3bd882396154641b2ff4331f1b1e031437c5aaa9:modified:WindowsServerDocs/manage/windows-admin-center/azure/manage-arc-hybrid-machines.md",
+      "firstSeenAt": "2026-11-14T09:11:58.807Z",
+      "englishSummary": {
+        "category": "Feature update",
+        "headline": "Compatibility limits added for Arc agent and Windows Admin Center upgrades",
+        "summary": "The documentation now states that Azure Connected Machine Agent versions 1.65 or earlier cannot upgrade to Windows Admin Center 1.0.0.0 or later. It also retains the guidance that Arc agent versions 1.35 and 1.36 break Windows Admin Center connections, while 1.37 and later fix the issue.",
+        "adminImpact": "Check Arc agent versions when planning Windows Admin Center upgrades; versions 1.65 or earlier cannot upgrade to Windows Admin Center 1.0.0.0 or later.",
+        "actionRequired": false,
+        "generatedBy": "openai",
+        "model": "gpt-5.6-luna"
+      }
+    },
+    {
+      "filename": "WindowsServerDocs/failover-clustering/create-storage-spaces-direct-campus-cluster.md",
+      "status": "modified",
+      "additions": 9,
+      "deletions": 7,
+      "changes": 16,
+      "patch": "diff --git a/WindowsServerDocs/failover-clustering/create-storage-spaces-direct-campus-cluster.md b/WindowsServerDocs/failover-clustering/create-storage-spaces-direct-campus-cluster.md\nindex cdc19b2..6bc6b3b 100644\n--- a/WindowsServerDocs/failover-clustering/create-storage-spaces-direct-campus-cluster.md\n+++ b/WindowsServerDocs/failover-clustering/create-storage-spaces-direct-campus-cluster.md\n@@ -34,8 +34,10 @@ monikers: []\n item_type: Content\n source_path: WindowsServerDocs/failover-clustering/create-storage-spaces-direct-campus-cluster.md\n cmProducts:\n+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/5cf46315-b33f-4e99-8224-a1592697eff9\n - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a23d1459-ff4f-4288-9c98-4f3aadd3dfc9\n spProducts:\n+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/715d24c3-3683-4219-82c5-1e3c813fb7fc\n - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/d5608e6c-9521-4a4c-8ca0-7a000d2f4bfd\n platformId: 68e2ed25-363a-8650-ff41-a222ee338653\n ---\n@@ -50,7 +52,7 @@ For more information about campus cluster architecture, supported configurations\n \r\n ## Prerequisites\r\n \r\n-- Windows Server 2025 or later with the 2025-12 security update ([KB5072033](https://support.microsoft.com/help/5072033)) installed on every node in the failover cluster.\r\n+- Windows Server 2025 or later with the 2025-12 security update ([KB5072033](https://support.microsoft.com/help/5072033)) installed on every server that will be part of the cluster.\r\n - All-flash capacity drives of the same type on every node (SSD or NVMe). Don't use HDDs and don't configure a caching tier.\r\n - An equal number of nodes in each of the two rack-level fault domains. For supported node configurations, see [Failover Clustering topologies](topologies). This article shows the 2+2 configuration.\r\n - Exactly two rack-level fault domains, with cluster nodes spanning both racks.\r\n@@ -192,17 +194,17 @@ Here's how to enable Storage Spaces Direct by using the [Enable-ClusterStorageSp\n     ```powershell\r\n     Get-StoragePool S2D* | Update-StoragePool\r\n     ```\r\n-4. Verify that the storage pool version is 29 or later. A campus cluster requires storage pool version 29 for rack-level fault domain awareness:\r\n+4. Campus clusters need storage pool version 29 or later for rack-level fault domain awareness. Verify the pool version:\r\n \r\n     ```powershell\r\n     (Get-CimInstance -Namespace root/microsoft/windows/storage `\r\n         -ClassName MSFT_StoragePool `\r\n         -Filter 'IsPrimordial = false').CimInstanceProperties['Version'].Value\r\n     ```\r\n-5. Verify that the storage pool's `FaultDomainAwareness` property has the value `StorageRack`. This value confirms that Storage Spaces Direct places data copies across the two rack fault domains:\r\n+5. Verify that the storage pool's `FaultDomainAwarenessDefault` property has the value `StorageRack`. This value confirms that Storage Spaces Direct places data copies across the two rack fault domains:\r\n \r\n     ```powershell\r\n-    Get-StoragePool -FriendlyName S2D* | Format-List FaultDomainAwareness\r\n+    Get-StoragePool -FriendlyName S2D* | Format-List FaultDomainAwarenessDefault\r\n     ```\r\n \r\n # [Failover Cluster Manager](#tab/fcm)\r\n@@ -216,17 +218,17 @@ Here's how to enable Storage Spaces Direct by using Failover Cluster Manager.\n     ```powershell\r\n     Get-StoragePool S2D* | Update-StoragePool\r\n     ```\r\n-5. Verify that the storage pool version is 29 or later. A campus cluster requires storage pool version 29 for rack-level fault domain awareness:\r\n+5. Campus clusters need storage pool version 29 or later for rack-level fault domain awareness. Verify the pool version:\r\n \r\n     ```powershell\r\n     (Get-CimInstance -Namespace root/microsoft/windows/storage `\r\n         -ClassName MSFT_StoragePool `\r\n         -Filter 'IsPrimordial = false').CimInstanceProperties['Version'].Value\r\n     ```\r\n-6. Verify that the storage pool's `FaultDomainAwareness` property has the value `StorageRack`. This value confirms that Storage Spaces Direct places data copies across the two rack fault domains:\r\n+6. Verify that the storage pool's `FaultDomainAwarenessDefault` property has the value `StorageRack`. This value confirms that Storage Spaces Direct places data copies across the two rack fault domains:\r\n \r\n     ```powershell\r\n-    Get-StoragePool -FriendlyName S2D* | Format-List FaultDomainAwareness\r\n+    Get-StoragePool -FriendlyName S2D* | Format-List FaultDomainAwarenessDefault\r\n     ```\r\n \r\n ---\r\n",
+      "baseCommitSha": "8ee5b4114a7def63c7b7f8d5028e9d7616c57a6e",
+      "commitSha": "aced387e3b5b30cebfd870723269bb269d035962",
+      "commitMessage": "Mirror Learn: 2 changed",
+      "commitAuthor": "github-actions[bot]",
+      "commitDate": "2026-11-13 22:28:29 +0000",
+      "githubUrl": "https://github.com/merill/windows-server-docs-mirror/blob/main/WindowsServerDocs/failover-clustering/create-storage-spaces-direct-campus-cluster.md",
+      "publicDocsUrl": "https://learn.microsoft.com/en-us/windows-server/failover-clustering/create-storage-spaces-direct-campus-cluster",
+      "eventId": "windows-server-docs:aced387e3b5b30cebfd870723269bb269d035962:modified:WindowsServerDocs/failover-clustering/create-storage-spaces-direct-campus-cluster.md",
+      "firstSeenAt": "2026-11-14T09:11:58.818Z",
+      "englishSummary": {
+        "category": "Doc update",
+        "headline": "Campus cluster guidance now checks FaultDomainAwarenessDefault",
+        "summary": "The procedure now scopes KB5072033 to every server joining the cluster and replaces checks of FaultDomainAwareness with FaultDomainAwarenessDefault. It also clarifies the storage pool version 29 or later requirement.",
+        "adminImpact": "When following the campus-cluster setup procedure, use the revised property and PowerShell command and validate the update on all participating servers.",
+        "actionRequired": false,
+        "generatedBy": "openai",
+        "model": "gpt-5.6-luna"
+      }
+    },
+    {
+      "filename": "WindowsServerDocs/networking/dns/dns-logging-and-diagnostics.md",
+      "status": "modified",
+      "additions": 8,
+      "deletions": 6,
+      "changes": 14,
+      "patch": "diff --git a/WindowsServerDocs/networking/dns/dns-logging-and-diagnostics.md b/WindowsServerDocs/networking/dns/dns-logging-and-diagnostics.md\nindex 785dfff..6f15d9c 100644\n--- a/WindowsServerDocs/networking/dns/dns-logging-and-diagnostics.md\n+++ b/WindowsServerDocs/networking/dns/dns-logging-and-diagnostics.md\n@@ -14,6 +14,7 @@ ms.topic: how-to\n author: robinharwood\n ms.author: roharwoo\n ms.date: 2025-02-27T00:00:00.0000000Z\n+ai-usage: ai-assisted\n locale: en-us\n document_id: 231ffd11-4765-3f30-fd12-53b5bc7b2469\n document_version_independent_id: 231ffd11-4765-3f30-fd12-53b5bc7b2469\n@@ -34,11 +35,9 @@ source_path: WindowsServerDocs/networking/dns/dns-logging-and-diagnostics.md\n cmProducts:\n - https://authoring-docs-microsoft.poolparty.biz/devrel/68cb9039-df60-49b0-8ef8-89ad96497f63\n - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/fc3f72c2-fb6f-4cea-95ee-b444e52254ee\n-- https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8\n spProducts:\n - https://authoring-docs-microsoft.poolparty.biz/devrel/725b6df3-93e8-472d-834e-e7e0d2953d35\n - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/f12cf087-582d-48ac-a085-0c19adf1e391\n-- https://authoring-docs-microsoft.poolparty.biz/devrel/43b2e5aa-8a6d-4de2-a252-692232e5edc8\n platformId: 2532790c-c617-477d-1dc1-a33c26fd7a90\n ---\n \n@@ -241,6 +240,12 @@ DNS server performance can be affected when logging is enabled, however the enha\n \r\n Before the introduction of DNS analytic logs, DNS debug logging was an available method to monitor DNS transactions. DNS debug logging isn't the same as the enhanced DNS logging and diagnostics feature discussed in this article. Debug logging is a tool that also can be used for DNS logging and diagnostics. The DNS debug log provides detailed data about all DNS information sent and received by the DNS server. The information gathered is similar to the data that can be gathered using packet capture tools such as network monitor.\r\n \r\n+Starting with the applicable 2026-11 cumulative update ([KB5131080](https://support.microsoft.com/help/5131080) for Windows Server 2025, [KB5131090](https://support.microsoft.com/help/5131090) for Windows Server 2022, [KB5131085](https://support.microsoft.com/help/5131085) for Windows Server 2019, or [KB5131291](https://support.microsoft.com/help/5131291) for Windows Server 2016), DNS Server only honors configured debug log paths under `C:\\Windows\\System32\\dns\\`.\r\n+\r\n+If an existing configured path is outside this directory, DNS Server logs Event ID 506 and normally relocates the debug log to `C:\\Windows\\System32\\dns\\log\\dns.log`. If that filename already exists, the relocated log name ends in `-<timestamp>.log`. If `C:\\Windows\\System32\\dns\\log` is a directory, DNS Server writes the relocated log in that directory. If `C:\\Windows\\System32\\dns\\log` is a file, DNS Server writes the relocated log in `C:\\Windows\\System32\\dns\\`.\r\n+\r\n+Changing `LogFilePath` by using PowerShell, DNS Manager, or MS-DNSP RPC requires membership in the local **Administrators** group on the target DNS server. Members of **DnsAdmins** who aren't local administrators receive `PermissionDenied` (Win32 error 5) or `Access denied` when changing `LogFilePath`, but can change other debug logging settings when `LogFilePath` is unchanged.\r\n+\r\n By default, all debug logging options are disabled. When selectively enabled, the DNS Server service can perform trace-level logging of selected types of events or messages for general troubleshooting and debugging of the server.\r\n \r\n Debug logging can be resource intensive, affecting overall server performance, and consuming disk space. Therefore, it should only be used temporarily when more detailed information about server performance is needed.\r\n@@ -287,10 +292,7 @@ The following DNS debug logging options are available:\n \r\n     - **File name** - Lets you specify the name and location of the DNS server log file.\r\n \r\n-        For example:\r\n-\r\n-        - **dns.log** specifies that the DNS server log file should be saved as **dns.log** in the `<systemroot>zSystem32Dns directory`. Remember to replace `<systemroot>` with the actual path to the Windows directory on your computer.\r\n-        - **temp\\dns.log** specifies that the DNS server log file should be saved as **dns.log** in the `<systemroot>\\Temp directory`. Remember to replace `<systemroot>` with the actual path to the Windows directory on your computer.\r\n+        For example, `C:\\Windows\\System32\\dns\\log\\custom.log` saves the debug log as `custom.log` in the permitted DNS log directory.\r\n - **Log file maximum size limit** Lets you set the maximum file size for the DNS server log file. When the specified maximum size of the DNS server log file is reached, the DNS server overwrites the oldest packet information with new information. Note: If left unspecified, the DNS server log file's size can take up a large amount of hard disk space.\r\n \r\n # [PowerShell](#tab/powershell)\r\n",
+      "baseCommitSha": "8ee5b4114a7def63c7b7f8d5028e9d7616c57a6e",
+      "commitSha": "aced387e3b5b30cebfd870723269bb269d035962",
+      "commitMessage": "Mirror Learn: 2 changed",
+      "commitAuthor": "github-actions[bot]",
+      "commitDate": "2026-11-13 22:28:29 +0000",
+      "githubUrl": "https://github.com/merill/windows-server-docs-mirror/blob/main/WindowsServerDocs/networking/dns/dns-logging-and-diagnostics.md",
+      "publicDocsUrl": "https://learn.microsoft.com/en-us/windows-server/networking/dns/dns-logging-and-diagnostics",
+      "eventId": "windows-server-docs:aced387e3b5b30cebfd870723269bb269d035962:modified:WindowsServerDocs/networking/dns/dns-logging-and-diagnostics.md",
+      "firstSeenAt": "2026-11-14T09:11:58.825Z",
+      "englishSummary": {
+        "category": "Feature update",
+        "headline": "DNS debug-log paths are restricted and require local Administrator rights",
+        "summary": "Starting with applicable 2026-11 cumulative updates, DNS Server logs Event ID 506 and relocates existing debug logs configured outside `C:\\Windows\\System32\\dns\\log`. Changing `LogFilePath` requires local Administrators membership; DnsAdmins alone is denied.",
+        "adminImpact": "Out-of-directory debug logs may be relocated, and DnsAdmins members without local Administrator rights cannot change the setting.",
+        "actionRequired": false,
+        "generatedBy": "openai",
+        "model": "gpt-5.6-luna"
+      }
+    }
+  ],
+  "deletedFiles": [],
+  "messageCenterItems": [
+    {
+      "id": "MC1551896",
+      "source": "mc",
+      "sourceLabel": "Message Center",
+      "date": "2026-11-13",
+      "title": "60-Day Reminder: Windows Server 2016 reaches the end of extended support on January 13, 2027",
+      "summary": "On January 13, 2027, all editions of Windows Server 2016 will reach the end of extended support.  The January 2027 Windows security update will be the last update provided during extended support.",
+      "product": {
+        "slug": "windows-server",
+        "name": "Windows Server",
+        "short": "Windows Server",
+        "learn": "https://learn.microsoft.com/en-us/windows-server/",
+        "icon": "windows-server.svg"
+      },
+      "topic": {
+        "slug": "general",
+        "name": "General",
+        "icon": "/assets/topics/general.svg"
+      },
+      "changeType": "Message",
+      "url": "/message-center/MC1551896/",
+      "originalUrl": "https://mc.merill.net/message/MC1551896",
+      "body": "<div>On January 13, 2027, all editions of <a href=\"https://learn.microsoft.com/lifecycle/products/windows-server-2016\" rel=\"noopener noreferrer\">Windows Server 2016</a> will reach the end of extended support. The January 2027 Windows security update will be the last update provided during extended support. After that date, monthly security updates will continue only for Windows Server 2016 devices enrolled in <a href=\"https://aka.ms/esupage\" rel=\"noopener noreferrer\">Extended Security Updates (ESU)</a>.</div><div><br></div><div>Support for <a href=\"https://support.microsoft.com/servicing/os/windows/docs/2026/09/windows-server-2016-essentials-end-support\" rel=\"noopener noreferrer\">Windows Server 2016 Essentials features</a>, including Remote Web Access and related Essentials-specific functionality, also ends on January 13, 2027. Any Windows Server 2016 Essentials capability that continues to function after support ends should be treated as unsupported.</div><div><br></div><div>To help keep your environment protected and supported, <a href=\"https://learn.microsoft.com/windows-server/get-started/install-upgrade-migrate\" rel=\"noopener noreferrer\">plan to upgrade</a> to <a href=\"https://learn.microsoft.com/windows-server/get-started/whats-new-windows-server-2025\" rel=\"noopener noreferrer\">Windows Server 2025</a>. To download a free 180-day evaluation, visit the <a href=\"https://www.microsoft.com/evalcenter/evaluate-windows-server-2025\" rel=\"noopener noreferrer\">Microsoft Evaluation Center</a>.</div><div>&nbsp;</div><div>For detailed lifecycle dates, see the <a href=\"https://learn.microsoft.com/lifecycle/products/windows-server-2016\" rel=\"noopener noreferrer\">Windows Server 2016</a> lifecycle page. For servicing timelines and related resources, see <a href=\"https://learn.microsoft.com/windows/release-health/windows-server-release-info\" rel=\"noopener noreferrer\">Windows Server release information</a>, <a href=\"https://learn.microsoft.com/lifecycle/faq/windows#windows-server\" rel=\"noopener noreferrer\">Lifecycle FAQ - Windows Server</a>, and the <a href=\"https://learn.microsoft.com/lifecycle/products/?terms=windows\" rel=\"noopener noreferrer\">Microsoft Lifecycle Policy search tool</a>.</div>",
+      "category": "stayInformed",
+      "services": [
+        "Windows"
+      ],
+      "tags": [
+        "Admin impact"
+      ],
+      "startDate": "2026-11-13T18:07:53.93Z",
+      "endDate": "2027-11-13T18:07:53.93Z",
+      "lastModifiedDateTime": "2026-11-13T18:07:54.813Z",
+      "version": "2026-11-13T18:07:54.813Z",
+      "eventId": "message-center:MC1551896:2026-11-13T18:07:54.813Z",
+      "firstSeenAt": "2026-11-14T09:12:20.506Z"
+    }
+  ],
+  "summary": {
+    "totalCommits": 2,
+    "totalFiles": 4,
+    "authors": [
+      "github-actions[bot]"
+    ]
+  },
+  "englishSummary": {
+    "overview": "Today's report includes 0 new, 4 updated, and 0 removed Windows Server documentation files across 3 documentation areas.",
+    "groups": [
+      {
+        "category": "Feature update",
+        "title": "Management and Azure Arc",
+        "summary": "Windows Admin Center version 1.3.0.0 upgrades to .NET 10. Azure Connected Machine Agent version 1.65 or earlier cannot upgrade to this or later Windows Admin Center versions. The documentation now states that Azure Connected Machine Agent versions 1.65 or earlier cannot upgrade to Windows Admin Center 1.0.0.0 or later. It also retains the guidance that Arc agent versions 1.35 and 1.36 break Windows Admin Center connections, while 1.37 and later fix the issue.",
+        "sourceFiles": [
+          "WindowsServerDocs/manage/windows-admin-center/azure/extension-release-notes.md",
+          "WindowsServerDocs/manage/windows-admin-center/azure/manage-arc-hybrid-machines.md"
+        ]
+      },
+      {
+        "category": "Doc update",
+        "title": "Failover Clustering",
+        "summary": "The procedure now scopes KB5072033 to every server joining the cluster and replaces checks of FaultDomainAwareness with FaultDomainAwarenessDefault. It also clarifies the storage pool version 29 or later requirement.",
+        "sourceFiles": [
+          "WindowsServerDocs/failover-clustering/create-storage-spaces-direct-campus-cluster.md"
+        ]
+      },
+      {
+        "category": "Feature update",
+        "title": "DNS, DHCP and IPAM",
+        "summary": "Starting with applicable 2026-11 cumulative updates, DNS Server logs Event ID 506 and relocates existing debug logs configured outside `C:\\Windows\\System32\\dns\\log`. Changing `LogFilePath` requires local Administrators membership; DnsAdmins alone is denied.",
+        "sourceFiles": [
+          "WindowsServerDocs/networking/dns/dns-logging-and-diagnostics.md"
+        ]
+      }
+    ],
+    "highlights": [
+      {
+        "category": "Feature update",
+        "headline": "Management and Azure Arc",
+        "detail": "Windows Admin Center version 1.3.0.0 upgrades to .NET 10. Azure Connected Machine Agent version 1.65 or earlier cannot upgrade to this or later Windows Admin Center versions. The documentation now states that Azure Connected Machine Agent versions 1.65 or earlier cannot upgrade to Windows Admin Center 1.0.0.0 or later. It also retains the guidance that Arc agent versions 1.35 and 1.36 break Windows Admin Center connections, while 1.37 and later fix the issue."
+      },
+      {
+        "category": "Doc update",
+        "headline": "Failover Clustering",
+        "detail": "The procedure now scopes KB5072033 to every server joining the cluster and replaces checks of FaultDomainAwareness with FaultDomainAwarenessDefault. It also clarifies the storage pool version 29 or later requirement."
+      },
+      {
+        "category": "Feature update",
+        "headline": "DNS, DHCP and IPAM",
+        "detail": "Starting with applicable 2026-11 cumulative updates, DNS Server logs Event ID 506 and relocates existing debug logs configured outside `C:\\Windows\\System32\\dns\\log`. Changing `LogFilePath` requires local Administrators membership; DnsAdmins alone is denied."
+      }
+    ],
+    "generatedBy": "fallback"
+  }
+}
