@@ -151,6 +151,52 @@
         "outputTokens": 3216,
         "costUsd": 0.004142
       }
+    },
+    "2026-11-17": {
+      "headline": "Windows Admin Center guidance splits modes and warns pre-2611 upgrades require re-registration",
+      "overview": "Microsoft Learn’s Windows Admin Center guidance now clearly separates Administration Mode from Virtualization Mode across installation, access, Hyper-V onboarding, clustering, networking, and virtual-machine procedures. The revised material also documents a significant version 2611 registration caveat, while Hyper-V Replica pages remove preview wording and the standalone Virtualization Mode preview installation article is removed.",
+      "adminImpact": "Choose the Windows Admin Center mode before installation and follow its specific prerequisites and procedures. For Virtualization Mode, verify the dedicated-server, account, domain, DNS, connectivity, firewall, and Hyper-V host requirements. Gateways upgraded from before version 2611 must be re-registered, and users are signed out during that process according to the revised guidance.",
+      "keyChanges": [
+        {
+          "title": "Virtualization Mode installation now has explicit hardware and lifecycle requirements",
+          "detail": "The main installation article now documents both Administration Mode and Virtualization Mode, including interactive and command-line setup. Virtualization Mode requires a dedicated server with at least 4 cores, 8 GB of RAM, and 10 GB of disk space; changing modes later requires reinstallation.",
+          "product": "Management",
+          "sourceId": "doc-2026-11-17-install-windows-admin-center-09"
+        },
+        {
+          "title": "Hyper-V resource onboarding gains a detailed prerequisites checklist",
+          "detail": "The updated article covers creating resource groups and onboarding standalone Hyper-V hosts or clusters. Administrators are directed to check roles, host capacity, supported Windows Server versions, domain and DNS configuration, connectivity, firewall rules, and exclusive management before onboarding resources.",
+          "product": "Management",
+          "sourceId": "doc-2026-11-17-add-hyper-v-resources-in-windows-admin-center-02"
+        },
+        {
+          "title": "Version 2611 guidance adds a gateway re-registration requirement after upgrades",
+          "detail": "The Administration Mode article now says version 2611 can register a gateway with Azure RBAC without creating a custom Microsoft Entra application. Upgrades from before version 2611 do not preserve the existing registration: the gateway is unregistered and users are signed out, so administrators must re-register it and select a registration model with its prerequisites.",
+          "product": "Management",
+          "sourceId": "doc-2026-11-17-administration-mode-03"
+        },
+        {
+          "title": "Virtualization Mode networking guidance limits template changes to future deployments",
+          "detail": "The Virtualization Mode overview now states that hyperconverged storage configuration is unavailable and that editing a network intent template affects only future deployments. Existing Network ATC intents must instead be managed with Network ATC PowerShell cmdlets.",
+          "product": "Management",
+          "sourceId": "doc-2026-11-17-virtualization-mode-overview-20"
+        },
+        {
+          "title": "Hyper-V Replica guidance removes its Virtualization Mode preview notice",
+          "detail": "The Hyper-V Replica failover-cluster guidance no longer labels configuration through Windows Admin Center’s Virtualization mode as preview software subject to change. The update changes the page’s qualification and wording without stating a new availability milestone.",
+          "product": "Hyper-V",
+          "sourceId": "doc-2026-11-17-windows-admin-center-virtualization-mode-22"
+        }
+      ],
+      "generatedBy": "openai",
+      "model": "gpt-5.6-luna",
+      "reasoningEffort": "xhigh",
+      "generatedAt": "2026-11-17T10:55:42.965Z",
+      "usage": {
+        "inputTokens": 3854,
+        "outputTokens": 3755,
+        "costUsd": 0.005277
+      }
     }
   },
   "weeks": {
@@ -221,58 +267,104 @@
         "outputTokens": 6245,
         "costUsd": 0.007988
       }
-    }
-  },
-  "months": {
-    "2026-11": {
-      "headline": "RD Web Access customizations face a November 17 Chromium XSLT cutoff",
-      "overview": "An imminent Chromium compatibility break dominates November: M158 disables browser-native XSLT on November 17, 2026, putting affected RD Web Access customizations on a migration deadline. Windows Server also tightened LDAP authentication after the October 13 security updates, changed DNS debug-log handling with applicable November cumulative updates, and set a January 13, 2027 support endpoint for every Windows Server 2016 edition. AD CS added focused NDES guidance for SID-bearing certificate requests.",
-      "adminImpact": "Administrators with customized RD Web Access pages should migrate and test sign-in, resource access, and password changes before November 17. For LDAP-authenticated integrations, especially NetApp SMB scenarios, verify that Kerberos service tickets match the LDAP SPN on the target domain controller. Review DNS debug-log paths and account permissions after applicable November cumulative updates. Treat January 13, 2027, as the final Windows Server 2016 extended-support date, and enable NDES SID settings only when a trusted component validates the SID; reset IIS or restart NDES after applying them.",
+    },
+    "2026-11-16": {
+      "headline": "Windows Admin Center 2611 supports Azure RBAC registration without custom app",
+      "overview": "The period’s main development is a restructuring of Windows Admin Center guidance around separate Administration and Virtualization modes. Version 2611 adds a simpler Azure RBAC registration path, while the updated Hyper-V material defines stricter onboarding prerequisites and important Virtualization Mode limits. The standalone Virtualization Mode preview installation article was also removed.",
+      "adminImpact": "Plan 2611 upgrades for gateway re-registration and user sign-in disruption. Choose the Windows Admin Center mode before deployment, verify Virtualization Mode host and access requirements, and do not expect network intent template edits to change existing deployments. Administrators relying on the deleted preview installation page should use the current mode-specific installation guidance.",
       "keyChanges": [
         {
-          "title": "Chromium M158 sets a November 17 cutoff for browser-native XSLT in RD Web Access",
-          "detail": "Chromium M158 disables browser-native XSLT beginning November 17, 2026. Affected customizations should use a separate stylesheet through RDWebSiteXsltPath, while the updated .aspx pages remain unchanged; administrators should then test sign-in, resource access, and password changes.",
-          "product": "Remote Desktop",
-          "sourceId": "doc-2026-11-13-migrate-rd-web-access-xslt-customizations-01"
+          "title": "Version 2611 changes Azure RBAC gateway registration on upgrade",
+          "detail": "Administration Mode guidance says version 2611 supports registering a Windows Admin Center gateway with Azure RBAC without creating a custom Microsoft Entra application. Upgrading from before version 2611 unregisters the gateway and signs users out; administrators must re-register it, select a registration model, and complete its prerequisites.",
+          "product": "Management",
+          "sourceId": "doc-2026-11-17-administration-mode-03"
         },
         {
-          "title": "Windows Server LDAP authentication now requires the target domain controller’s LDAP SPN to match",
-          "detail": "The October 13, 2026, Windows security updates introduced additional LDAP authentication requirements: Kerberos service tickets used for LDAP authentication must match the LDAP service principal name (SPN) registered on the target domain controller. The Message Center notice specifically calls out NetApp SMB shares.",
-          "product": "Windows Server",
-          "sourceId": "MC1551001"
+          "title": "Mode selection now controls Windows Admin Center installation requirements",
+          "detail": "The installation article distinguishes Administration Mode from Virtualization Mode and says the mode must be chosen before installation. Changing modes later requires reinstallation, and Virtualization Mode requires a dedicated server with at least 4 cores, 8 GB of RAM, and 10 GB of disk space.",
+          "product": "Management",
+          "sourceId": "doc-2026-11-17-install-windows-admin-center-09"
         },
         {
-          "title": "November DNS updates change debug-log handling and restrict LogFilePath changes",
-          "detail": "Starting with applicable 2026-11 cumulative updates, DNS Server logs Event ID 506 and relocates existing debug logs configured outside `C:\\Windows\\System32\\dns\\log`. Changing `LogFilePath` requires membership in the local Administrators group; DnsAdmins membership alone is denied.",
-          "product": "DNS and DHCP",
-          "sourceId": "doc-2026-11-14-powershell-04"
+          "title": "Hyper-V onboarding guidance adds host, network, and exclusivity prerequisites",
+          "detail": "Add Hyper-V Resources now covers resource groups and onboarding standalone Hyper-V hosts or clusters. Its prerequisites include the required roles, host capacity, supported Windows Server versions, domain and DNS configuration, connectivity, firewall rules, and exclusive management; verify these conditions before onboarding resources.",
+          "product": "Management",
+          "sourceId": "doc-2026-11-17-add-hyper-v-resources-in-windows-admin-center-02"
         },
         {
-          "title": "Windows Server 2016 extended support ends January 13, 2027",
-          "detail": "All Windows Server 2016 editions reach the end of extended support on January 13, 2027. The January 2027 Windows security update will be the last update provided during extended support.",
-          "product": "Windows Server",
-          "sourceId": "MC1551896"
+          "title": "Virtualization Mode documents storage and Network ATC limits",
+          "detail": "The overview states that hyperconverged storage configuration is unavailable. Editing a network intent template affects only future deployments, while existing Network ATC intents must be managed with PowerShell cmdlets.",
+          "product": "Management",
+          "sourceId": "doc-2026-11-17-virtualization-mode-overview-20"
         },
         {
-          "title": "New AD CS guidance documents NDES configuration for SID certificate requests",
-          "detail": "The new procedure explains how to configure NDES to accept SID information in certificate requests through registry settings for SAN URI and NTDS CA security extension formats. The settings should be enabled only when a trusted component validates the SID, because incorrect validation could enable impersonation or elevation of privilege; applying them requires resetting IIS or restarting NDES.",
-          "product": "AD CS",
-          "sourceId": "doc-2026-11-07-configure-ndes-for-sid-certificate-requests-in-windows-server-01"
+          "title": "Standalone Virtualization Mode preview installation article was removed",
+          "detail": "The article for installing Windows Admin Center Virtualization Mode (preview) was deleted, including its prerequisites and setup instructions. Administrators using the former documented URL will no longer find that installation guidance there.",
+          "product": "Management",
+          "sourceId": "doc-2026-11-17-install-virtualization-mode-25"
         }
       ],
       "generatedBy": "openai",
       "model": "gpt-5.6-luna",
       "reasoningEffort": "xhigh",
-      "generatedAt": "2026-11-14T09:12:20.844Z",
+      "generatedAt": "2026-11-17T10:55:42.965Z",
       "usage": {
-        "inputTokens": 3014,
-        "outputTokens": 4373,
-        "costUsd": 0.00585
+        "inputTokens": 3713,
+        "outputTokens": 4237,
+        "costUsd": 0.005827
+      }
+    }
+  },
+  "months": {
+    "2026-11": {
+      "headline": "Chromium XSLT cutoff and Windows Admin Center 2611 drive November actions",
+      "overview": "November’s clearest operational changes were a hard browser-compatibility deadline and several Windows Server behavior and support changes. Chromium M158 disables browser-native XSLT on November 17, affecting customized RD Web Access pages. Windows Server updates also tighten LDAP authentication requirements and change DNS debug-log handling. Windows Admin Center 2611 adds an Azure RBAC registration path without a custom Microsoft Entra application, but upgrades from earlier versions unregister the gateway and sign users out.",
+      "adminImpact": "Prioritize RD Web Access migration and testing before the November 17 XSLT cutoff where applicable. Verify Kerberos service-ticket and LDAP SPN alignment, review DNS debug-log locations and permissions after applicable 2026-11 cumulative updates, and plan Windows Admin Center 2611 upgrades around gateway re-registration. Include January 13, 2027, in Windows Server 2016 upgrade planning.",
+      "keyChanges": [
+        {
+          "title": "RD Web Access customizations face Chromium M158 XSLT cutoff",
+          "detail": "Chromium M158 disables browser-native XSLT beginning November 17, 2026. Administrators with affected customizations should leave the updated .aspx pages unchanged, configure a separate stylesheet through RDWebSiteXsltPath, and test sign-in, resource access, and password changes.",
+          "product": "Remote Desktop",
+          "sourceId": "doc-2026-11-13-migrate-rd-web-access-xslt-customizations-01"
+        },
+        {
+          "title": "Windows Server LDAP authentication now requires LDAP SPN alignment",
+          "detail": "Starting with the October 13, 2026, Windows security updates, Kerberos service tickets used for LDAP authentication must match the LDAP service principal name registered on the target domain controller. The guidance specifically highlights preventing issues with NetApp SMB shares.",
+          "product": "Windows Server",
+          "sourceId": "MC1551001"
+        },
+        {
+          "title": "Windows Admin Center 2611 changes Azure RBAC registration and upgrades",
+          "detail": "Version 2611 supports registering a Windows Admin Center gateway with Azure RBAC without creating a custom Microsoft Entra application. Upgrades from before version 2611 unregister the gateway and sign users out, so administrators must re-register the gateway and select a registration model after upgrading.",
+          "product": "Management",
+          "sourceId": "doc-2026-11-17-administration-mode-03"
+        },
+        {
+          "title": "DNS Server debug logging adds Event ID 506 and stricter permissions",
+          "detail": "With applicable 2026-11 cumulative updates, DNS Server logs Event ID 506 and relocates existing debug logs configured outside C:\\Windows\\System32\\dns\\log. Changing LogFilePath requires membership in the local Administrators group; DnsAdmins membership alone is denied.",
+          "product": "DNS and DHCP",
+          "sourceId": "doc-2026-11-14-powershell-04"
+        },
+        {
+          "title": "Windows Server 2016 extended support ends January 13, 2027",
+          "detail": "All Windows Server 2016 editions reach the end of extended support on January 13, 2027. The January 2027 Windows security update will be the final update provided during extended support.",
+          "product": "Windows Server",
+          "sourceId": "MC1551896"
+        }
+      ],
+      "generatedBy": "openai",
+      "model": "gpt-5.6-luna",
+      "reasoningEffort": "xhigh",
+      "generatedAt": "2026-11-17T10:55:42.965Z",
+      "usage": {
+        "inputTokens": 6172,
+        "outputTokens": 2877,
+        "costUsd": 0.004687
       }
     }
   },
   "version": 3,
-  "generatedAt": "2026-11-14T09:12:20.844Z",
+  "generatedAt": "2026-11-17T10:55:42.965Z",
   "generator": {
     "model": "gpt-5.6-luna",
     "reasoningEffort": "xhigh"
@@ -307,18 +399,24 @@
       "outputTokens": 13834,
       "requests": 3,
       "costUsd": 0.01798
+    },
+    "2026-11-17": {
+      "inputTokens": 13739,
+      "outputTokens": 10869,
+      "requests": 3,
+      "costUsd": 0.015791
     }
   },
   "lastRun": {
-    "inputTokens": 6896,
-    "outputTokens": 13834,
+    "inputTokens": 13739,
+    "outputTokens": 10869,
     "requests": 3,
-    "costUsd": 0.01798
+    "costUsd": 0.015791
   },
   "totalUsage": {
-    "inputTokens": 23188,
-    "outputTokens": 33318,
-    "requests": 15,
-    "costUsd": 0.044619
+    "inputTokens": 36927,
+    "outputTokens": 44187,
+    "requests": 18,
+    "costUsd": 0.06041
   }
 }
