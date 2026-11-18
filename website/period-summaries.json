@@ -197,6 +197,46 @@
         "outputTokens": 3755,
         "costUsd": 0.005277
       }
+    },
+    "2026-11-18": {
+      "headline": "Windows Server 2028 Preview flags WINS, SMBv1 and WSUS for deprecation or removal",
+      "overview": "The period's most consequential update is the Windows Server 2028 Preview inventory of features deprecated or removed, including WINS, DirectAccess, SMBv1, VBScript, WMIC, WSUS, legacy BIOS, BranchCache, WDS, and PowerShell 5.1. The preview documentation cautions that plans may change. Microsoft also added preview guidance for SMB Policy Controller, narrowed Network HUD deployment guidance, and standardized Windows Server Token factory endpoint terminology in Local AI procedures.",
+      "adminImpact": "Treat the Windows Server 2028 list as migration-planning input and inventory dependencies on the affected features. Administrators evaluating SMB Policy Controller need Windows Server Insider Preview build 29707 or later plus the PolicyController Feature on Demand. Before installing Network HUD, verify the physical Azure Arc-enabled Windows Server 2025 Datacenter cluster and its networking, storage, permissions, and management prerequisites. Local AI administrators should use the Token factory endpoint terminology and follow the documented DNS, HTTPS, TLS, and network-reachability requirements.",
+      "keyChanges": [
+        {
+          "title": "Windows Server 2028 Preview enumerates a broad legacy-feature retirement list",
+          "detail": "The preview page now lists WINS, DirectAccess, SMBv1, VBScript, WMIC, WSUS, legacy BIOS, BranchCache, WDS, and PowerShell 5.1 among deprecated or removed features, while noting that plans may change before release. Administrators should inventory dependencies and plan alternatives such as DNS, Always On VPN, SMBv2/v3, PowerShell, or UEFI where applicable.",
+          "product": "Windows Server",
+          "sourceId": "doc-2026-11-18-windows-server-2028-preview-08"
+        },
+        {
+          "title": "SMB Policy Controller preview adds intent-based server and share reconciliation",
+          "detail": "New guidance describes SMB Policy Controller managing and correcting server-wide and share-level SMB intents through configuration, verification, troubleshooting, and removal workflows. The preview requires Windows Server Insider Preview build 29707 or later and installation of the PolicyController Feature on Demand.",
+          "product": "Storage",
+          "sourceId": "doc-2026-11-18-configure-smb-policy-controller-preview-02"
+        },
+        {
+          "title": "Network HUD guidance narrows installation scope to physical Azure Arc clusters",
+          "detail": "The installation article now targets Azure Arc-enabled Windows Server 2025 Datacenter physical clusters with at least two nodes. It adds prerequisites for Hyper-V, Network ATC, Storage Spaces Direct, DCB/LLDP, validated switches, Azure permissions, and Windows Admin Center, while stating that virtual machines and offline installation are unsupported.",
+          "product": "Networking",
+          "sourceId": "doc-2026-11-18-install-network-hud-on-windows-server-clusters-09"
+        },
+        {
+          "title": "Token factory endpoint guidance adds concrete client connectivity prerequisites",
+          "detail": "The Local AI procedure now covers connecting a Windows client to an existing Windows Server Token factory endpoint, removes same-device scenarios, and requires network reachability, DNS, trusted TLS, and HTTPS. Administrators following the procedure should use the updated endpoint model and prerequisites.",
+          "product": "Local AI",
+          "sourceId": "doc-2026-11-18-connect-visual-studio-code-to-a-windows-server-token-factory-endpoint-05"
+        }
+      ],
+      "generatedBy": "openai",
+      "model": "gpt-5.6-luna",
+      "reasoningEffort": "xhigh",
+      "generatedAt": "2026-11-18T10:26:45.689Z",
+      "usage": {
+        "inputTokens": 2580,
+        "outputTokens": 3271,
+        "costUsd": 0.004441
+      }
     }
   },
   "weeks": {
@@ -269,85 +309,85 @@
       }
     },
     "2026-11-16": {
-      "headline": "Windows Admin Center 2611 supports Azure RBAC registration without custom app",
-      "overview": "The period’s main development is a restructuring of Windows Admin Center guidance around separate Administration and Virtualization modes. Version 2611 adds a simpler Azure RBAC registration path, while the updated Hyper-V material defines stricter onboarding prerequisites and important Virtualization Mode limits. The standalone Virtualization Mode preview installation article was also removed.",
-      "adminImpact": "Plan 2611 upgrades for gateway re-registration and user sign-in disruption. Choose the Windows Admin Center mode before deployment, verify Virtualization Mode host and access requirements, and do not expect network intent template edits to change existing deployments. Administrators relying on the deleted preview installation page should use the current mode-specific installation guidance.",
+      "headline": "Windows Server 2028 preview flags WINS, SMBv1 and WSUS for migration planning",
+      "overview": "Windows Server 2028 Preview is the week's clearest planning signal: its updated feature page lists a wide set of deprecated or removed components, including WINS, SMBv1 and WSUS. New SMB Policy Controller preview guidance describes intent-based reconciliation, while Windows Admin Center updates sharpen the split between Administration and Virtualization Mode and add a material version 2611 re-registration warning. Network HUD guidance also tightens the documented cluster scope and prerequisites; most other entries are navigation, terminology, or procedure refinements.",
+      "adminImpact": "Use the Windows Server 2028 list to inventory dependencies and sequence migrations, recognizing that preview plans may change. Evaluate SMB Policy Controller only on Insider Preview build 29707 or later with the PolicyController Feature on Demand. Before changing Windows Admin Center deployments, select the correct mode and plan for gateway re-registration when upgrading from before version 2611. For Network HUD, validate the physical-cluster, Azure Arc, networking, permissions, and Windows Admin Center prerequisites.",
       "keyChanges": [
         {
-          "title": "Version 2611 changes Azure RBAC gateway registration on upgrade",
-          "detail": "Administration Mode guidance says version 2611 supports registering a Windows Admin Center gateway with Azure RBAC without creating a custom Microsoft Entra application. Upgrading from before version 2611 unregisters the gateway and signs users out; administrators must re-register it, select a registration model, and complete its prerequisites.",
+          "title": "Windows Server 2028 Preview publishes a broad deprecation and removal list",
+          "detail": "The preview page now lists WINS, DirectAccess, SMBv1, VBScript, WMIC, WSUS, legacy BIOS, BranchCache, WDS, and PowerShell 5.1 among features deprecated or removed in Windows Server 2028 Preview. The page cautions that plans may change before release, so administrators should inventory dependencies and plan migrations where required.",
+          "product": "Windows Server",
+          "sourceId": "doc-2026-11-18-windows-server-2028-preview-08"
+        },
+        {
+          "title": "SMB Policy Controller preview documents server-wide and share-level intents",
+          "detail": "New guidance describes SMB Policy Controller managing and correcting server-wide and share-level SMB intents, with configuration, verification, troubleshooting, and removal procedures. Evaluation requires Windows Server Insider Preview build 29707 or later and installation of the PolicyController Feature on Demand.",
+          "product": "Storage",
+          "sourceId": "doc-2026-11-18-configure-smb-policy-controller-preview-02"
+        },
+        {
+          "title": "Windows Admin Center now documents separate Administration and Virtualization Mode installations",
+          "detail": "Updated installation guidance says Administration Mode and Virtualization Mode are separate installations on separate systems and cannot be installed together on one system. Administrators deploying both experiences must use the mode-specific setup path for each system.",
+          "product": "Management",
+          "sourceId": "doc-2026-11-17-windows-admin-center-choose-an-installation-12"
+        },
+        {
+          "title": "Version 2611 changes Windows Admin Center Azure RBAC registration upgrade handling",
+          "detail": "Version 2611 supports registering a Windows Admin Center gateway with Azure RBAC without creating a custom Microsoft Entra application. Upgrading from a version before 2611 does not preserve the existing registration: the gateway is unregistered and users are signed out, so administrators must re-register it and complete the selected registration model's prerequisites.",
           "product": "Management",
           "sourceId": "doc-2026-11-17-administration-mode-03"
         },
         {
-          "title": "Mode selection now controls Windows Admin Center installation requirements",
-          "detail": "The installation article distinguishes Administration Mode from Virtualization Mode and says the mode must be chosen before installation. Changing modes later requires reinstallation, and Virtualization Mode requires a dedicated server with at least 4 cores, 8 GB of RAM, and 10 GB of disk space.",
-          "product": "Management",
-          "sourceId": "doc-2026-11-17-install-windows-admin-center-09"
-        },
-        {
-          "title": "Hyper-V onboarding guidance adds host, network, and exclusivity prerequisites",
-          "detail": "Add Hyper-V Resources now covers resource groups and onboarding standalone Hyper-V hosts or clusters. Its prerequisites include the required roles, host capacity, supported Windows Server versions, domain and DNS configuration, connectivity, firewall rules, and exclusive management; verify these conditions before onboarding resources.",
-          "product": "Management",
-          "sourceId": "doc-2026-11-17-add-hyper-v-resources-in-windows-admin-center-02"
-        },
-        {
-          "title": "Virtualization Mode documents storage and Network ATC limits",
-          "detail": "The overview states that hyperconverged storage configuration is unavailable. Editing a network intent template affects only future deployments, while existing Network ATC intents must be managed with PowerShell cmdlets.",
-          "product": "Management",
-          "sourceId": "doc-2026-11-17-virtualization-mode-overview-20"
-        },
-        {
-          "title": "Standalone Virtualization Mode preview installation article was removed",
-          "detail": "The article for installing Windows Admin Center Virtualization Mode (preview) was deleted, including its prerequisites and setup instructions. Administrators using the former documented URL will no longer find that installation guidance there.",
-          "product": "Management",
-          "sourceId": "doc-2026-11-17-install-virtualization-mode-25"
+          "title": "Network HUD guidance now sets a physical-cluster installation boundary",
+          "detail": "The updated installation article targets Azure Arc-enabled Windows Server 2025 Datacenter physical clusters with at least two nodes. It adds requirements for Hyper-V, Network ATC, Storage Spaces Direct, DCB/LLDP, validated switches, Azure permissions, and Windows Admin Center access; virtual machines and offline installation are unsupported, and the Azure Arc extension does not configure these prerequisites.",
+          "product": "Networking",
+          "sourceId": "doc-2026-11-18-install-network-hud-on-windows-server-clusters-09"
         }
       ],
       "generatedBy": "openai",
       "model": "gpt-5.6-luna",
       "reasoningEffort": "xhigh",
-      "generatedAt": "2026-11-17T10:55:42.965Z",
+      "generatedAt": "2026-11-18T10:26:45.689Z",
       "usage": {
-        "inputTokens": 3713,
-        "outputTokens": 4237,
-        "costUsd": 0.005827
+        "inputTokens": 5408,
+        "outputTokens": 4936,
+        "costUsd": 0.007005
       }
     }
   },
   "months": {
     "2026-11": {
-      "headline": "Chromium XSLT cutoff and Windows Admin Center 2611 drive November actions",
-      "overview": "November’s clearest operational changes were a hard browser-compatibility deadline and several Windows Server behavior and support changes. Chromium M158 disables browser-native XSLT on November 17, affecting customized RD Web Access pages. Windows Server updates also tighten LDAP authentication requirements and change DNS debug-log handling. Windows Admin Center 2611 adds an Azure RBAC registration path without a custom Microsoft Entra application, but upgrades from earlier versions unregister the gateway and sign users out.",
-      "adminImpact": "Prioritize RD Web Access migration and testing before the November 17 XSLT cutoff where applicable. Verify Kerberos service-ticket and LDAP SPN alignment, review DNS debug-log locations and permissions after applicable 2026-11 cumulative updates, and plan Windows Admin Center 2611 upgrades around gateway re-registration. Include January 13, 2027, in Windows Server 2016 upgrade planning.",
+      "headline": "Chromium M158 cutoff sets RD Web Access XSLT migration deadline",
+      "overview": "November’s strongest administrator signals were an immediate RD Web Access compatibility deadline, a new LDAP/Kerberos SPN requirement affecting NetApp SMB authentication, and Windows Server 2028 Preview migration planning. Microsoft also documented SMB Policy Controller as an Insider-only preview and reminded administrators that Windows Server 2016 extended support ends on January 13, 2027.",
+      "adminImpact": "Prioritize affected RD Web Access migrations before November 17, verify LDAP service-principal-name mappings where NetApp SMB uses LDAP authentication, inventory dependencies on Windows Server 2028 Preview’s deprecated or removed components, and evaluate SMB Policy Controller only with the required Insider build and Feature on Demand. Include the Windows Server 2016 deadline in upgrade planning.",
       "keyChanges": [
         {
-          "title": "RD Web Access customizations face Chromium M158 XSLT cutoff",
-          "detail": "Chromium M158 disables browser-native XSLT beginning November 17, 2026. Administrators with affected customizations should leave the updated .aspx pages unchanged, configure a separate stylesheet through RDWebSiteXsltPath, and test sign-in, resource access, and password changes.",
+          "title": "Chromium M158 disables browser-native XSLT for RD Web Access",
+          "detail": "Chromium M158 disables browser-native XSLT beginning November 17, 2026, affecting customized RD Web Access pages. The migration procedure keeps the updated .aspx pages unchanged, uses a separate stylesheet through `RDWebSiteXsltPath`, and calls for testing sign-in, resource access, and password changes.",
           "product": "Remote Desktop",
           "sourceId": "doc-2026-11-13-migrate-rd-web-access-xslt-customizations-01"
         },
         {
-          "title": "Windows Server LDAP authentication now requires LDAP SPN alignment",
-          "detail": "Starting with the October 13, 2026, Windows security updates, Kerberos service tickets used for LDAP authentication must match the LDAP service principal name registered on the target domain controller. The guidance specifically highlights preventing issues with NetApp SMB shares.",
+          "title": "LDAP authentication gains an SPN match requirement for NetApp SMB",
+          "detail": "For Windows security updates beginning October 13, 2026, Kerberos service tickets used for LDAP authentication must match the LDAP service principal name registered on the target domain controller. NetApp SMB environments using LDAP authentication should verify that mapping.",
           "product": "Windows Server",
           "sourceId": "MC1551001"
         },
         {
-          "title": "Windows Admin Center 2611 changes Azure RBAC registration and upgrades",
-          "detail": "Version 2611 supports registering a Windows Admin Center gateway with Azure RBAC without creating a custom Microsoft Entra application. Upgrades from before version 2611 unregister the gateway and sign users out, so administrators must re-register the gateway and select a registration model after upgrading.",
-          "product": "Management",
-          "sourceId": "doc-2026-11-17-administration-mode-03"
+          "title": "Windows Server 2028 Preview flags legacy components for migration",
+          "detail": "The preview feature list identifies WINS, DirectAccess, SMBv1, VBScript, WMIC, WSUS, legacy BIOS, BranchCache, and WDS among features deprecated or removed in Windows Server 2028 Preview. The plans may change before release, so administrators should inventory dependencies and plan alternatives such as DNS, Always On VPN, SMBv2/v3, or UEFI where applicable.",
+          "product": "Windows Server",
+          "sourceId": "doc-2026-11-18-windows-server-2028-preview-08"
         },
         {
-          "title": "DNS Server debug logging adds Event ID 506 and stricter permissions",
-          "detail": "With applicable 2026-11 cumulative updates, DNS Server logs Event ID 506 and relocates existing debug logs configured outside C:\\Windows\\System32\\dns\\log. Changing LogFilePath requires membership in the local Administrators group; DnsAdmins membership alone is denied.",
-          "product": "DNS and DHCP",
-          "sourceId": "doc-2026-11-14-powershell-04"
+          "title": "SMB Policy Controller preview adds intent-based reconciliation",
+          "detail": "SMB Policy Controller manages and corrects server-wide and share-level SMB intents through PowerShell. The preview requires Windows Server Insider Preview build 29707 or later and installation of the PolicyController Feature on Demand.",
+          "product": "Storage",
+          "sourceId": "doc-2026-11-18-configure-smb-policy-controller-preview-02"
         },
         {
           "title": "Windows Server 2016 extended support ends January 13, 2027",
-          "detail": "All Windows Server 2016 editions reach the end of extended support on January 13, 2027. The January 2027 Windows security update will be the final update provided during extended support.",
+          "detail": "All Windows Server 2016 editions reach the end of extended support on January 13, 2027. The January 2027 Windows security update will be the last update provided during extended support, making upgrade planning time-sensitive.",
           "product": "Windows Server",
           "sourceId": "MC1551896"
         }
@@ -355,16 +395,16 @@
       "generatedBy": "openai",
       "model": "gpt-5.6-luna",
       "reasoningEffort": "xhigh",
-      "generatedAt": "2026-11-17T10:55:42.965Z",
+      "generatedAt": "2026-11-18T10:26:45.689Z",
       "usage": {
-        "inputTokens": 6172,
-        "outputTokens": 2877,
-        "costUsd": 0.004687
+        "inputTokens": 6622,
+        "outputTokens": 6868,
+        "costUsd": 0.009566
       }
     }
   },
   "version": 3,
-  "generatedAt": "2026-11-17T10:55:42.965Z",
+  "generatedAt": "2026-11-18T10:26:45.689Z",
   "generator": {
     "model": "gpt-5.6-luna",
     "reasoningEffort": "xhigh"
@@ -405,18 +445,24 @@
       "outputTokens": 10869,
       "requests": 3,
       "costUsd": 0.015791
+    },
+    "2026-11-18": {
+      "inputTokens": 14610,
+      "outputTokens": 15075,
+      "requests": 3,
+      "costUsd": 0.021012
     }
   },
   "lastRun": {
-    "inputTokens": 13739,
-    "outputTokens": 10869,
+    "inputTokens": 14610,
+    "outputTokens": 15075,
     "requests": 3,
-    "costUsd": 0.015791
+    "costUsd": 0.021012
   },
   "totalUsage": {
-    "inputTokens": 36927,
-    "outputTokens": 44187,
-    "requests": 18,
-    "costUsd": 0.06041
+    "inputTokens": 51537,
+    "outputTokens": 59262,
+    "requests": 21,
+    "costUsd": 0.081422
   }
 }
