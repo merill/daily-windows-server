@@ -1,0 +1,259 @@
+{
+  "newFiles": [],
+  "modifiedFiles": [
+    {
+      "filename": "WindowsServerDocs/administration/windows-commands/cscript.md",
+      "status": "modified",
+      "additions": 9,
+      "deletions": 4,
+      "changes": 13,
+      "patch": "diff --git a/WindowsServerDocs/administration/windows-commands/cscript.md b/WindowsServerDocs/administration/windows-commands/cscript.md\nindex ed66e76..0b52519 100644\n--- a/WindowsServerDocs/administration/windows-commands/cscript.md\n+++ b/WindowsServerDocs/administration/windows-commands/cscript.md\n@@ -13,7 +13,8 @@ description: Reference article for the cscript command, which starts a script so\n ms.topic: reference\n ms.author: roharwoo\n author: robinharwood\n-ms.date: 2017-10-16T00:00:00.0000000Z\n+ms.date: 2026-11-18T00:00:00.0000000Z\n+ai-usage: ai-assisted\n locale: en-us\n document_id: 1411dbfd-80a5-af91-704a-0b69f341a84e\n document_version_independent_id: 6d6547d9-f200-6736-2b89-f4719f176c73\n@@ -34,11 +35,11 @@ source_path: WindowsServerDocs/administration/windows-commands/cscript.md\n cmProducts:\n - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8\n - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/fc3f72c2-fb6f-4cea-95ee-b444e52254ee\n-- https://authoring-docs-microsoft.poolparty.biz/devrel/86a4b315-a9f1-4577-b985-6fb0e0e67420\n+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/5cf46315-b33f-4e99-8224-a1592697eff9\n spProducts:\n - https://authoring-docs-microsoft.poolparty.biz/devrel/43b2e5aa-8a6d-4de2-a252-692232e5edc8\n-- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/c783a8fb-cf36-41ad-90c6-0692a0540484\n-- https://authoring-docs-microsoft.poolparty.biz/devrel/96ac410d-d052-4707-8007-df31dd0fe041\n+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/f12cf087-582d-48ac-a085-0c19adf1e391\n+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/715d24c3-3683-4219-82c5-1e3c813fb7fc\n platformId: bd3ecc2f-7d4e-61b9-a5ea-1f5f811b0cb6\n ---\n \n@@ -46,6 +47,10 @@ platformId: bd3ecc2f-7d4e-61b9-a5ea-1f5f811b0cb6\n \n Starts a script to run in a command-line environment.\r\n \r\n+Windows Server 2025 includes VBScript as a preinstalled Feature on Demand. Windows Server 2028 Preview removes VBScript, so `cscript` can't run scripts that require the VBScript engine on that release. This change applies to VBScript only; it doesn't remove Windows Script Host or JScript.\r\n+\r\n+Migrate VBScript automation to PowerShell. For migration guidance, see the [VBScript-to-Windows PowerShell Conversion Guide](/en-us/previous-versions/windows/it-pro/windows-powershell-1.0/ee221101%28v=msdn.10%29). For release-specific availability, see [Features removed or no longer developed in Windows Server](../../get-started/removed-deprecated-features-windows-server).\r\n+\r\n Important\r\n \r\n Performing this task does not require you to have administrative credentials. Therefore, as a security best practice, consider performing this task as a user without administrative credentials.\r\n",
+      "baseCommitSha": "867c30c1045d8e75b53dd4cf6e2578fc125fea65",
+      "commitSha": "26bd270902a146a38add90c4df203ae3bd68ba39",
+      "commitMessage": "Mirror Learn: 7 changed",
+      "commitAuthor": "github-actions[bot]",
+      "commitDate": "2026-11-18 23:21:32 +0000",
+      "githubUrl": "https://github.com/merill/windows-server-docs-mirror/blob/main/WindowsServerDocs/administration/windows-commands/cscript.md",
+      "publicDocsUrl": "https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/cscript",
+      "eventId": "windows-server-docs:26bd270902a146a38add90c4df203ae3bd68ba39:modified:WindowsServerDocs/administration/windows-commands/cscript.md",
+      "firstSeenAt": "2026-11-19T10:33:50.541Z",
+      "englishSummary": {
+        "category": "Retirement",
+        "headline": "VBScript removed from Windows Server 2028 Preview",
+        "summary": "The documentation now states that Windows Server 2025 includes VBScript as a Feature on Demand, while Windows Server 2028 Preview removes VBScript. `cscript` cannot run scripts requiring the VBScript engine on that release; Windows Script Host and JScript remain available.",
+        "adminImpact": "Migrate VBScript automation to PowerShell before deploying Windows Server 2028 Preview to avoid script failures.",
+        "actionRequired": true,
+        "generatedBy": "openai",
+        "model": "gpt-5.6-luna"
+      }
+    },
+    {
+      "filename": "WindowsServerDocs/administration/windows-commands/wmic.md",
+      "status": "modified",
+      "additions": 4,
+      "deletions": 3,
+      "changes": 7,
+      "patch": "diff --git a/WindowsServerDocs/administration/windows-commands/wmic.md b/WindowsServerDocs/administration/windows-commands/wmic.md\nindex 1a5c308..ceb699a 100644\n--- a/WindowsServerDocs/administration/windows-commands/wmic.md\n+++ b/WindowsServerDocs/administration/windows-commands/wmic.md\n@@ -14,6 +14,7 @@ ms.topic: reference\n ms.author: roharwoo\n author: robinharwood\n ms.date: 2025-05-19T00:00:00.0000000Z\n+ai-usage: ai-assisted\n locale: en-us\n document_id: da66c962-ba67-2ed4-dd50-99142632a981\n document_version_independent_id: 8d394b19-cbe3-42be-0f25-aebf2323b538\n@@ -32,12 +33,12 @@ monikers: []\n item_type: Content\n source_path: WindowsServerDocs/administration/windows-commands/wmic.md\n cmProducts:\n-- https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8\n - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/fc3f72c2-fb6f-4cea-95ee-b444e52254ee\n+- https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8\n - https://authoring-docs-microsoft.poolparty.biz/devrel/e0ffb20c-01c6-407b-a9bd-29111652a1dc\n spProducts:\n-- https://authoring-docs-microsoft.poolparty.biz/devrel/43b2e5aa-8a6d-4de2-a252-692232e5edc8\n - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/f12cf087-582d-48ac-a085-0c19adf1e391\n+- https://authoring-docs-microsoft.poolparty.biz/devrel/43b2e5aa-8a6d-4de2-a252-692232e5edc8\n - https://authoring-docs-microsoft.poolparty.biz/devrel/3904bce4-d817-48cf-85fd-b6146fca83b7\n platformId: 8f562ab3-1a37-8326-6628-e5b03ca563c1\n ---\n@@ -48,7 +49,7 @@ Displays WMI information inside an interactive command shell.\n \r\n Important\r\n \r\n-The WMI command-line (WMIC) utility is deprecated as of Windows 10, version 21H1, and as of the 21H1 semi-annual channel release of Windows Server. This utility is superseded by Windows PowerShell for WMI (see [Chapter 7 - Working with WMI](/en-us/powershell/scripting/learn/ps101/07-working-with-wmi)). This deprecation applies only to the WMI command-line (WMIC) utility; Windows Management Instrumentation (WMI) itself is not affected. Also see [Windows 10 features we're no longer developing](/en-us/windows/deployment/planning/windows-10-deprecated-features).\r\n+The Windows Management Instrumentation (WMI) command-line (WMIC) utility is deprecated as of Windows 10, version 21H1, and as of the 21H1 semi-annual channel release of Windows Server. Beginning with Windows Server 2025, WMIC is available as a Feature on Demand (FOD). To add WMIC, use the `DISM /Add-Capability` command. The announced Windows Server 2028 (preview) release removes the WMIC utility. Windows Server 2028 is in preview, and this removal announcement doesn't mean that WMIC is absent from current preview builds. WMIC might still be available in current preview builds, and the removal plans can change before release. This deprecation and removal apply only to the WMIC utility; WMI itself is not removed. Windows PowerShell replaces this utility for WMI (see [Chapter 7 - Working with WMI](/en-us/powershell/scripting/learn/ps101/07-working-with-wmi)). Use PowerShell or programmatically query WMI as a replacement for WMIC. For more information, see [Features removed or no longer developed in Windows Server](../../get-started/removed-deprecated-features-windows-server) and [Windows 10 features we're no longer developing](/en-us/windows/deployment/planning/windows-10-deprecated-features).\r\n \r\n ## Syntax\r\n \r\n",
+      "baseCommitSha": "867c30c1045d8e75b53dd4cf6e2578fc125fea65",
+      "commitSha": "26bd270902a146a38add90c4df203ae3bd68ba39",
+      "commitMessage": "Mirror Learn: 7 changed",
+      "commitAuthor": "github-actions[bot]",
+      "commitDate": "2026-11-18 23:21:32 +0000",
+      "githubUrl": "https://github.com/merill/windows-server-docs-mirror/blob/main/WindowsServerDocs/administration/windows-commands/wmic.md",
+      "publicDocsUrl": "https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/wmic",
+      "eventId": "windows-server-docs:26bd270902a146a38add90c4df203ae3bd68ba39:modified:WindowsServerDocs/administration/windows-commands/wmic.md",
+      "firstSeenAt": "2026-11-19T10:33:50.553Z",
+      "englishSummary": {
+        "category": "Feature update",
+        "headline": "WMIC availability on Windows Server 2025 documented",
+        "summary": "The documentation now states that WMIC is available as a Feature on Demand beginning with Windows Server 2025 and adds a DISM installation instruction.",
+        "adminImpact": "Administrators who need WMIC on Windows Server 2025 must add the Feature on Demand using DISM.",
+        "actionRequired": false,
+        "generatedBy": "openai",
+        "model": "gpt-5.6-luna"
+      }
+    },
+    {
+      "filename": "WindowsServerDocs/administration/windows-commands/wscript.md",
+      "status": "modified",
+      "additions": 8,
+      "deletions": 3,
+      "changes": 11,
+      "patch": "diff --git a/WindowsServerDocs/administration/windows-commands/wscript.md b/WindowsServerDocs/administration/windows-commands/wscript.md\nindex 00d5ed8..07fd5de 100644\n--- a/WindowsServerDocs/administration/windows-commands/wscript.md\n+++ b/WindowsServerDocs/administration/windows-commands/wscript.md\n@@ -13,7 +13,8 @@ description: Reference article for the wscript command; wscript provides an envi\n ms.topic: reference\n ms.author: roharwoo\n author: robinharwood\n-ms.date: 2023-04-01T00:00:00.0000000Z\n+ms.date: 2026-11-18T00:00:00.0000000Z\n+ai-usage: ai-assisted\n locale: en-us\n document_id: b6d64a4e-816e-d545-6c37-c2b1f24174ef\n document_version_independent_id: c828776b-914b-31e7-158c-3bf672b496f8\n@@ -32,12 +33,12 @@ monikers: []\n item_type: Content\n source_path: WindowsServerDocs/administration/windows-commands/wscript.md\n cmProducts:\n-- https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8\n - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/fc3f72c2-fb6f-4cea-95ee-b444e52254ee\n+- https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8\n - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/c6f99e62-1cf6-4b71-af9b-649b05f80cce\n spProducts:\n-- https://authoring-docs-microsoft.poolparty.biz/devrel/43b2e5aa-8a6d-4de2-a252-692232e5edc8\n - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/f12cf087-582d-48ac-a085-0c19adf1e391\n+- https://authoring-docs-microsoft.poolparty.biz/devrel/43b2e5aa-8a6d-4de2-a252-692232e5edc8\n - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/3f56b378-07a9-4fa1-afe8-9889fdc77628\n platformId: d2353621-3690-31b1-7e2a-146f5a94c3dd\n ---\n@@ -48,6 +49,10 @@ Applies to: Windows Server (All supported versions)\n \r\n Windows Script Host provides an environment in which users can execute scripts in various languages that use various object models to perform tasks.\r\n \r\n+Windows Server 2025 includes VBScript as a preinstalled Feature on Demand. Windows Server 2028 Preview removes VBScript, so `wscript` can't run scripts that require the VBScript engine on that release. This change applies to VBScript only; it doesn't remove Windows Script Host or JScript.\r\n+\r\n+Before you move workloads that use VBScript to Windows Server 2028, migrate automation scripts to PowerShell and web content that uses VBScript to JavaScript. Test the migrated scripts and deployment processes in a nonproduction environment before rollout. For migration guidance, see the [VBScript-to-Windows PowerShell Conversion Guide](/en-us/previous-versions/windows/it-pro/windows-powershell-1.0/ee221101%28v=msdn.10%29). For release-specific availability, see [Features removed or no longer developed in Windows Server](../../get-started/removed-deprecated-features-windows-server).\r\n+\r\n ## Syntax\r\n \r\n ```\r\n",
+      "baseCommitSha": "867c30c1045d8e75b53dd4cf6e2578fc125fea65",
+      "commitSha": "26bd270902a146a38add90c4df203ae3bd68ba39",
+      "commitMessage": "Mirror Learn: 7 changed",
+      "commitAuthor": "github-actions[bot]",
+      "commitDate": "2026-11-18 23:21:32 +0000",
+      "githubUrl": "https://github.com/merill/windows-server-docs-mirror/blob/main/WindowsServerDocs/administration/windows-commands/wscript.md",
+      "publicDocsUrl": "https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/wscript",
+      "eventId": "windows-server-docs:26bd270902a146a38add90c4df203ae3bd68ba39:modified:WindowsServerDocs/administration/windows-commands/wscript.md",
+      "firstSeenAt": "2026-11-19T10:33:50.563Z",
+      "englishSummary": {
+        "category": "Retirement",
+        "headline": "VBScript is removed from Windows Server 2028 Preview",
+        "summary": "The documentation now states that Windows Server 2025 includes VBScript as a preinstalled Feature on Demand, while Windows Server 2028 Preview removes VBScript. Windows Script Host and JScript are unaffected.",
+        "adminImpact": "Before moving VBScript-dependent workloads to Windows Server 2028, migrate scripts to PowerShell or web content to JavaScript, then test in a nonproduction environment.",
+        "actionRequired": true,
+        "generatedBy": "openai",
+        "model": "gpt-5.6-luna"
+      }
+    },
+    {
+      "filename": "WindowsServerDocs/networking/technologies/wins/wins-top.md",
+      "status": "modified",
+      "additions": 17,
+      "deletions": 6,
+      "changes": 23,
+      "patch": "diff --git a/WindowsServerDocs/networking/technologies/wins/wins-top.md b/WindowsServerDocs/networking/technologies/wins/wins-top.md\nindex b8d6ad5..a8bb3e7 100644\n--- a/WindowsServerDocs/networking/technologies/wins/wins-top.md\n+++ b/WindowsServerDocs/networking/technologies/wins/wins-top.md\n@@ -9,10 +9,11 @@ recommendations: true\n ms.service: windows-server\n ms.subservice: networking\n ms.update-cycle: 1095-days\n-description: This topic provides information about decommissioning WINS and using DNS for name resolution services on your network.\n+description: Microsoft plans to remove Windows Internet Name Service (WINS) in Windows Server 2028, though plans can change. Learn how to replace WINS with Domain Name System (DNS).\n ms.topic: concept-article\n ms.author: roharwoo\n author: robinharwood\n+ai-usage: ai-assisted\n ms.date: 2020-08-07T00:00:00.0000000Z\n locale: en-us\n document_id: e4209745-b88d-8051-0b87-b460c424360c\n@@ -32,20 +33,30 @@ monikers: []\n item_type: Content\n source_path: WindowsServerDocs/networking/technologies/wins/wins-top.md\n cmProducts:\n-- https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8\n - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/fc3f72c2-fb6f-4cea-95ee-b444e52254ee\n+- https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8\n+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a23d1459-ff4f-4288-9c98-4f3aadd3dfc9\n spProducts:\n-- https://authoring-docs-microsoft.poolparty.biz/devrel/43b2e5aa-8a6d-4de2-a252-692232e5edc8\n - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/f12cf087-582d-48ac-a085-0c19adf1e391\n+- https://authoring-docs-microsoft.poolparty.biz/devrel/43b2e5aa-8a6d-4de2-a252-692232e5edc8\n+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/d5608e6c-9521-4a4c-8ca0-7a000d2f4bfd\n platformId: e6b9ccce-2fe6-f92c-b311-1435935410a5\n ---\n \n # Windows Internet Name Service (WINS) | Microsoft Learn\n \n-Windows Internet Name Service (WINS) is a legacy computer name registration and resolution service that maps computer NetBIOS names to IP addresses.\r\n+Windows Internet Name Service (WINS) is a legacy service that maps Network Basic Input/Output System (NetBIOS) computer names to Internet Protocol (IP) addresses. Microsoft plans to remove WINS. If your organization still uses it, plan a transition.\r\n+\r\n+This article explains WINS availability and removal plans and provides guidance for migrating name resolution to Domain Name System (DNS).\r\n+\r\n+## WINS availability in Windows Server 2025 and planned removal in Windows Server 2028\r\n+\r\n+WINS is available in Windows Server 2025, the final Long-Term Servicing Channel (LTSC) release to include and support it. Microsoft continues to support WINS as part of Windows Server 2025 throughout the [Windows Server 2025 lifecycle](/en-us/lifecycle/products/windows-server-2025).\r\n+\r\n+WINS has been removed in Windows Server 2028 Preview. To learn more, see the [Windows Server 2028 Preview removal notice](../../../get-started/removed-deprecated-features-windows-server?tabs=ws28-preview#features-removed). For removal details, see [WINS removal: Moving forward with modern name resolution](https://support.microsoft.com/servicing/os/windows/docs/2025/11/wins-removal-moving-forward-with-modern-name-resolution).\r\n \r\n-If you do not already have WINS deployed on your network, do not deploy WINS - instead, deploy Domain Name System (DNS). DNS also provides computer name registration and resolution services, and includes many additional benefits over WINS, such as integration with Active Directory Domain Services.\r\n+If your network doesn't already have a WINS deployment, don't deploy WINS. Instead, deploy Domain Name System (DNS). DNS also provides computer name registration and resolution services, and includes many additional benefits over WINS, such as integration with Active Directory Domain Services.\r\n \r\n For more information, see [Domain Name System (DNS)](../../dns/dns-top)\r\n \r\n-If you have already deployed WINS on your network, it is recommended that you deploy DNS and then decommission WINS.\n\\ No newline at end of file\n+If your network already has a WINS deployment, we recommend deploying DNS and then decommissioning WINS.\n\\ No newline at end of file\n",
+      "baseCommitSha": "867c30c1045d8e75b53dd4cf6e2578fc125fea65",
+      "commitSha": "26bd270902a146a38add90c4df203ae3bd68ba39",
+      "commitMessage": "Mirror Learn: 7 changed",
+      "commitAuthor": "github-actions[bot]",
+      "commitDate": "2026-11-18 23:21:32 +0000",
+      "githubUrl": "https://github.com/merill/windows-server-docs-mirror/blob/main/WindowsServerDocs/networking/technologies/wins/wins-top.md",
+      "publicDocsUrl": "https://learn.microsoft.com/en-us/windows-server/networking/technologies/wins/wins-top",
+      "eventId": "windows-server-docs:26bd270902a146a38add90c4df203ae3bd68ba39:modified:WindowsServerDocs/networking/technologies/wins/wins-top.md",
+      "firstSeenAt": "2026-11-19T10:33:50.570Z",
+      "englishSummary": {
+        "category": "Retirement",
+        "headline": "WINS removal is planned for Windows Server 2028",
+        "summary": "The documentation states that WINS remains supported throughout the Windows Server 2025 lifecycle but has been removed from Windows Server 2028 Preview. It adds guidance for replacing WINS with DNS.",
+        "adminImpact": "Organizations using WINS should plan a transition to DNS and decommission WINS.",
+        "actionRequired": true,
+        "generatedBy": "openai",
+        "model": "gpt-5.6-luna"
+      }
+    },
+    {
+      "filename": "WindowsServerDocs/storage/file-server/Troubleshoot/detect-enable-and-disable-smbv1-v2-v3.md",
+      "status": "modified",
+      "additions": 15,
+      "deletions": 8,
+      "changes": 23,
+      "patch": "diff --git a/WindowsServerDocs/storage/file-server/Troubleshoot/detect-enable-and-disable-smbv1-v2-v3.md b/WindowsServerDocs/storage/file-server/Troubleshoot/detect-enable-and-disable-smbv1-v2-v3.md\nindex 08a9e18..ffcbbf8 100644\n--- a/WindowsServerDocs/storage/file-server/Troubleshoot/detect-enable-and-disable-smbv1-v2-v3.md\n+++ b/WindowsServerDocs/storage/file-server/Troubleshoot/detect-enable-and-disable-smbv1-v2-v3.md\n@@ -9,11 +9,12 @@ recommendations: true\n ms.service: windows-server\n ms.subservice: storage\n ms.update-cycle: 1095-days\n-description: See various ways to detect, enable, and disable the Server Message Block (SMB) protocol (SMBv1, SMBv2, and SMBv3) in Windows client and server environments.\n+description: Manage SMBv1, SMBv2, and SMBv3 in Windows. Learn how to detect protocol status, enable or disable SMB, audit SMBv1 use, and apply Group Policy.\n author: robinharwood\n ms.topic: how-to\n+ai-usage: ai-assisted\n ms.author: roharwoo\n-ms.date: 2025-02-28T00:00:00.0000000Z\n+ms.date: 2026-11-18T00:00:00.0000000Z\n locale: en-us\n document_id: 8a91db45-ca3c-7a2e-3f32-2f5b57837b03\n document_version_independent_id: b83cbaab-c0df-d6e7-a67f-f4c99a46e30a\n@@ -42,9 +43,15 @@ platformId: 939b1b8c-abaa-6175-bf7f-2e5cc33d00db\n \n # Detect, enable, and disable SMBv1, SMBv2, and SMBv3 in Windows | Microsoft Learn\n \n-This article describes how to enable and disable Server Message Block (SMB) version 1 (SMBv1), SMB version 2 (SMBv2), and SMB version 3 (SMBv3) on SMB client and server components.\r\n+Server Message Block (SMB) is the network file-sharing protocol that Windows uses to access shared files and printers. Managing available SMB versions helps you maintain compatibility while reducing exposure to insecure protocols.\r\n \r\n-If you disable or remove SMBv1, you might encounter compatibility issues with old computers or software. SMBv1 has significant security vulnerabilities, and [we strongly encourage you not to use it](https://techcommunity.microsoft.com/t5/storage-at-microsoft/stop-using-smb1/ba-p/425858). [SMBv1 isn't installed by default](smbv1-not-installed-by-default-in-windows) in any edition of Windows 11 or Windows Server 2019 and later versions. SMBv1 also isn't installed by default in Windows 10, except Home and Pro editions. We recommend that instead of reinstalling SMBv1, you update the SMB server that still requires it. For a list of partners that require SMBv1 and their updates that remove the requirement, see [SMB1 Product Clearinghouse](https://aka.ms/stillneedssmb1).\r\n+This article explains how to detect, enable, and disable SMBv1, SMBv2, and SMBv3 on SMB client and server components.\r\n+\r\n+If you disable or remove SMBv1, you might encounter compatibility issues with old computers or software. SMBv1 has significant security vulnerabilities, and Microsoft strongly encourages you not to use it. For more information, see [Stop using SMB1](https://techcommunity.microsoft.com/t5/storage-at-microsoft/stop-using-smb1/ba-p/425858). [Windows doesn't install SMBv1](smbv1-not-installed-by-default-in-windows) in any edition of Windows 11 or Windows Server 2019 through Windows Server 2025. Windows 10 also doesn't install SMBv1 by default, except in Home and Pro editions. Microsoft recommends that instead of reinstalling SMBv1, you update the SMB server that still requires it. For a list of partners that require SMBv1 and their updates that remove the requirement, see [SMB1 Product Clearinghouse](https://aka.ms/stillneedssmb1).\r\n+\r\n+Important\r\n+\r\n+Starting with Windows Server 2028 Preview, Windows Server no longer includes SMBv1. For more information, see [SMBv1 removal in Windows Server 2028](../../../get-started/removed-deprecated-features-windows-server#features-removed). You can't use the procedures in this article to enable SMBv1 on Windows Server 2028 Preview. Before you upgrade, use the auditing steps in this article to identify SMBv1 dependencies, and then update or replace systems that require SMBv1. The SMBv1 procedures still apply to earlier Windows Server versions and Windows client versions where the SMBv1 optional feature is available.\r\n \r\n In Windows 11, version 24H2 and Windows Server 2025, SMB signing is required by default, which can prevent connections to workgroup computers, guest-authenticated shares, or third-party SMB servers that don't support signing. Changing which SMB protocol versions you enable doesn't change this signing requirement. Don't disable SMB protocol versions or SMB signing to work around these connection failures. Instead, enable SMB signing on the remote server, or update or replace devices that don't support SMB signing. For more information, see [Control SMB signing behavior](../smb-signing).\r\n \r\n@@ -82,7 +89,7 @@ The SMBv2 protocol was introduced in Windows Vista and Windows Server 2008. The\n \r\n ## Use PowerShell to remove SMBv1\r\n \r\n-You can use the [Get-WindowsOptionalFeature](/en-us/powershell/module/dism/get-windowsoptionalfeature), [Disable-WindowsOptionalFeature](/en-us/powershell/module/dism/disable-windowsoptionalfeature), and [Enable-WindowsOptionalFeature](/en-us/powershell/module/dism/enable-windowsoptionalfeature) PowerShell commands to detect, disable, and enable an SMBv1 client or server. Run the commands at an elevated command prompt.\r\n+Windows Server 2028 Preview doesn't include SMBv1, so these PowerShell procedures don't apply to that release. On Windows versions where the SMBv1 optional feature is available, use the [`Get-WindowsOptionalFeature`](/en-us/powershell/module/dism/get-windowsoptionalfeature), [`Disable-WindowsOptionalFeature`](/en-us/powershell/module/dism/disable-windowsoptionalfeature), and [`Enable-WindowsOptionalFeature`](/en-us/powershell/module/dism/enable-windowsoptionalfeature) PowerShell commands to detect, disable, and enable an SMBv1 client or server. Run the commands at an elevated command prompt.\r\n \r\n Note\r\n \r\n@@ -111,7 +118,7 @@ You can detect the SMBv1 status without elevation by running the [Get-SmbServerC\n ### Remove SMBv1\r\n \r\n # [Server](#tab/server)\r\n-SMBv1 isn't installed by default on Windows Server 2019 and later versions. On earlier versions of Windows Server, you can use Server Manager to remove SMBv1:\r\n+Windows Server 2019 through Windows Server 2025 don't install SMBv1 by default, and Windows Server 2028 (Preview) no longer includes it. On Windows Server versions with an existing SMBv1 installation, use Server Manager to remove it:\r\n \r\n 1. On the server that you want to remove SMBv1 from, open Server Manager.\r\n 2. On the Server Manager Dashboard, under **Configure this local server**, select **Add roles and features**.\r\n@@ -139,7 +146,7 @@ To disable SMBv1 on these operating systems, take the following steps:\n \r\n ## Use the command line or Registry Editor to manage SMB protocols\r\n \r\n-Starting with the Windows 10 Fall Creators Update and Windows Server 2019, SMBv1 is no longer installed by default. For more information, see [SMBv1 is not installed by default in Windows 10 version 1709, Windows Server version 1709, and later versions](smbv1-not-installed-by-default-in-windows).\r\n+Starting with the Windows 10 Fall Creators Update, Windows no longer installs SMBv1 by default. The same default applies to Windows Server 2019 through Windows Server 2025. Windows Server 2028 Preview no longer includes SMBv1, so the SMBv1 procedures in this section don't apply to that release. For more information, see [SMBv1 behavior in Windows and Windows Server](smbv1-not-installed-by-default-in-windows).\r\n \r\n When you enable or disable SMBv2 in Windows 8 or Windows Server 2012, SMBv3 is also enabled or disabled. This behavior occurs because these protocols share the same stack.\r\n \r\n@@ -254,7 +261,7 @@ Follow the steps in this section carefully. Serious problems might occur if you\n \r\n To enable or disable SMBv1 on an SMB server, open Registry Editor and go to the following registry key path:\r\n \r\n-**HKEY\\_LOCAL\\_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\LanmanServer\\Parameters**\r\n+`HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\LanmanServer\\Parameters`\r\n \r\n Configure an entry that has the following properties:\r\n \r\n",
+      "baseCommitSha": "867c30c1045d8e75b53dd4cf6e2578fc125fea65",
+      "commitSha": "26bd270902a146a38add90c4df203ae3bd68ba39",
+      "commitMessage": "Mirror Learn: 7 changed",
+      "commitAuthor": "github-actions[bot]",
+      "commitDate": "2026-11-18 23:21:32 +0000",
+      "githubUrl": "https://github.com/merill/windows-server-docs-mirror/blob/main/WindowsServerDocs/storage/file-server/Troubleshoot/detect-enable-and-disable-smbv1-v2-v3.md",
+      "publicDocsUrl": "https://learn.microsoft.com/en-us/windows-server/storage/file-server/Troubleshoot/detect-enable-and-disable-smbv1-v2-v3",
+      "eventId": "windows-server-docs:26bd270902a146a38add90c4df203ae3bd68ba39:modified:WindowsServerDocs/storage/file-server/Troubleshoot/detect-enable-and-disable-smbv1-v2-v3.md",
+      "firstSeenAt": "2026-11-19T10:33:50.577Z",
+      "englishSummary": {
+        "category": "Retirement",
+        "headline": "SMBv1 is no longer included in Windows Server 2028 Preview",
+        "summary": "The documentation now states that Windows Server 2028 Preview does not include SMBv1, so the documented enablement procedures do not apply. It also clarifies that SMBv1 is not installed by default on Windows Server 2019 through 2025.",
+        "adminImpact": "SMBv1-dependent workloads cannot restore SMBv1 on Windows Server 2028 Preview using these procedures; account for compatibility with older systems.",
+        "actionRequired": false,
+        "generatedBy": "openai",
+        "model": "gpt-5.6-luna"
+      }
+    },
+    {
+      "filename": "WindowsServerDocs/storage/file-server/Troubleshoot/smbv1-not-installed-by-default-in-windows.md",
+      "status": "modified",
+      "additions": 19,
+      "deletions": 11,
+      "changes": 30,
+      "patch": "diff --git a/WindowsServerDocs/storage/file-server/Troubleshoot/smbv1-not-installed-by-default-in-windows.md b/WindowsServerDocs/storage/file-server/Troubleshoot/smbv1-not-installed-by-default-in-windows.md\nindex c11dc42..ad83cff 100644\n--- a/WindowsServerDocs/storage/file-server/Troubleshoot/smbv1-not-installed-by-default-in-windows.md\n+++ b/WindowsServerDocs/storage/file-server/Troubleshoot/smbv1-not-installed-by-default-in-windows.md\n@@ -1,6 +1,6 @@\n ---\n layout: Conceptual\n-title: SMBv1 Not Installed by Default in Windows Server and Windows | Microsoft Learn\n+title: 'SMBv1 Availability: Windows Server and Windows | Microsoft Learn'\n canonicalUrl: https://learn.microsoft.com/en-us/windows-server/storage/file-server/troubleshoot/smbv1-not-installed-by-default-in-windows\n breadcrumb_path: /windows-server/breadcrumbs/toc.json\n uhfHeaderId: MSDocsHeader-WindowsServer\n@@ -10,11 +10,11 @@ ms.service: windows-server\n ms.subservice: storage\n ms.update-cycle: 1095-days\n description: Discover SMBv1 protocol changes in Windows Server and Windows, explore alternatives for legacy compatibility, and learn best practices.\n-ms.topic: troubleshooting\n+ms.topic: troubleshooting-problem-resolution\n ai-usage: ai-assisted\n ms.author: roharwoo\n author: robinharwood\n-ms.date: 2025-06-18T00:00:00.0000000Z\n+ms.date: 2026-11-18T00:00:00.0000000Z\n locale: en-us\n document_id: 6efee75e-7541-0166-76ac-81ecbe4cb022\n document_version_independent_id: 35b346a7-ea72-325e-81c9-a1056dca72f4\n@@ -33,29 +33,35 @@ monikers: []\n item_type: Content\n source_path: WindowsServerDocs/storage/file-server/Troubleshoot/smbv1-not-installed-by-default-in-windows.md\n cmProducts:\n+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/fc3f72c2-fb6f-4cea-95ee-b444e52254ee\n - https://authoring-docs-microsoft.poolparty.biz/devrel/e0ffb20c-01c6-407b-a9bd-29111652a1dc\n - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8\n-- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/fc3f72c2-fb6f-4cea-95ee-b444e52254ee\n spProducts:\n+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/f12cf087-582d-48ac-a085-0c19adf1e391\n - https://authoring-docs-microsoft.poolparty.biz/devrel/3904bce4-d817-48cf-85fd-b6146fca83b7\n - https://authoring-docs-microsoft.poolparty.biz/devrel/43b2e5aa-8a6d-4de2-a252-692232e5edc8\n-- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/f12cf087-582d-48ac-a085-0c19adf1e391\n platformId: c40e6c10-a226-3ef8-3a2d-e3ac46b1070a\n ---\n \n-# SMBv1 Not Installed by Default in Windows Server and Windows | Microsoft Learn\n+# SMBv1 Availability: Windows Server and Windows | Microsoft Learn\n \n-The Server Message Block version 1 (SMBv1) protocol is deprecated and no longer installed by default in modern versions of Windows and Windows Server. This article provides an overview of SMBv1's removal, its behavior in various Windows editions, and alternatives for legacy compatibility. Learn how to address issues related to SMBv1, explore best practices, and understand the implications of its absence in network environments.\r\n+Server Message Block version 1 (SMBv1) is a legacy network file-sharing protocol that Windows uses to access shared files and printers. Because SMBv1 has significant security vulnerabilities, Windows 11 and Windows Server 2019 through Windows Server 2025 don't install it by default. Starting with Windows Server 2028 Preview, Windows Server no longer includes SMBv1, and you can't install or enable it. For more information, see [SMBv1 removal in Windows Server 2028](../../../get-started/removed-deprecated-features-windows-server#features-removed).\r\n \r\n-## Default behavior for SMBv1\r\n+This article explains SMBv1 behavior for these Windows releases and provides alternatives for legacy compatibility.\r\n+\r\n+## Default behavior for SMBv1 in Windows Server 2028 Preview and earlier releases\r\n \r\n Since Windows 10, version 1709 and Windows Server, version 1709, the Server Message Block version 1 (SMBv1) network protocol is no longer installed by default. SMBv2 and later protocols superseded SMBv1 starting in 2007. Microsoft publicly deprecated the SMBv1 protocol in 2014.\r\n \r\n-SMBv1 has the following behavior in Windows 10 and Windows Server 2019 and later versions:\r\n+Important\r\n+\r\n+Starting with Windows Server 2028 Preview, Windows Server no longer includes SMBv1. For more information, see [SMBv1 removal in Windows Server 2028](../../../get-started/removed-deprecated-features-windows-server#features-removed). You can't install or enable SMBv1 on Windows Server 2028 Preview. Guidance in this article for reinstalling or re-enabling SMBv1 applies only to earlier Windows Server versions and Windows client versions where SMBv1 remains available as an optional component.\r\n+\r\n+SMBv1 has the following installation and removal behavior across affected Windows client and Windows Server releases:\r\n \r\n - SMBv1 now has both client and server sub-features that can be uninstalled separately.\r\n - Windows 10 Enterprise, Windows 10 Education, and Windows 10 Pro for Workstations no longer contain the SMBv1 client or server by default after a clean installation.\r\n-- Windows Server 2019 and later no longer contains the SMBv1 client or server by default after a clean installation.\r\n+- Windows Server 2019 through Windows Server 2025 don't contain the SMBv1 client or server by default after a clean installation.\r\n - Windows 10 Home and Windows 10 Pro no longer contain the SMBv1 server by default after a clean installation.\r\n - Windows 11 doesn't contain the SMBv1 server or client by default after a clean installation.\r\n - Windows 10 Home and Windows 10 Pro, version 1709 still contain the SMBv1 client by default after a clean installation. If the SMBv1 client isn't used for 15 days in total (excluding the computer being turned off), it automatically uninstalls itself. Starting in Windows 10, version 1809, Windows 10 Pro no longer contains the SMBv1 client by default after a clean installation.\r\n@@ -137,9 +143,11 @@ You should contact the manufacturer of the product that supports only SMBv1, and\n \r\n [SMBv1 Product Clearinghouse](https://techcommunity.microsoft.com/t5/Storage-at-Microsoft/SMB1-Product-Clearinghouse/ba-p/426008)\r\n \r\n+Before you upgrade Windows Server, [audit SMBv1 usage](detect-enable-and-disable-smbv1-v2-v3#audit-smbv1-usage) to identify SMBv1 dependencies. Then follow the guidance in [Stop using SMB1](https://techcommunity.microsoft.com/blog/filecab/stop-using-smb1/425858) to update or replace dependent systems and migrate them to SMBv2 or SMBv3.\r\n+\r\n If an update isn't available, you can use the following workarounds to allow legacy applications to work with SMBv2 or a later version. However, these workarounds should be used only as a last resort, and only if the vendor states that they're required.\r\n \r\n-If you can't use any of these workarounds, or if the application manufacturer can't provide supported versions of SMB, you can re-enable SMBv1 manually by following the steps in [How to detect, enable and disable SMBv1, SMBv2, and SMBv3 in Windows](detect-enable-and-disable-smbv1-v2-v3).\r\n+If you can't use any of these workarounds or the application manufacturer can't provide supported versions of SMB, you can manually re-enable SMBv1 on Windows releases where it's available as an optional component. Follow the steps in [How to detect, enable and disable SMBv1, SMBv2, and SMBv3 in Windows](detect-enable-and-disable-smbv1-v2-v3). You can't re-enable SMBv1 on Windows Server 2028 Preview.\r\n \r\n Warning\r\n \r\n",
+      "baseCommitSha": "867c30c1045d8e75b53dd4cf6e2578fc125fea65",
+      "commitSha": "26bd270902a146a38add90c4df203ae3bd68ba39",
+      "commitMessage": "Mirror Learn: 7 changed",
+      "commitAuthor": "github-actions[bot]",
+      "commitDate": "2026-11-18 23:21:32 +0000",
+      "githubUrl": "https://github.com/merill/windows-server-docs-mirror/blob/main/WindowsServerDocs/storage/file-server/Troubleshoot/smbv1-not-installed-by-default-in-windows.md",
+      "publicDocsUrl": "https://learn.microsoft.com/en-us/windows-server/storage/file-server/Troubleshoot/smbv1-not-installed-by-default-in-windows",
+      "eventId": "windows-server-docs:26bd270902a146a38add90c4df203ae3bd68ba39:modified:WindowsServerDocs/storage/file-server/Troubleshoot/smbv1-not-installed-by-default-in-windows.md",
+      "firstSeenAt": "2026-11-19T10:33:50.583Z",
+      "englishSummary": {
+        "category": "Feature update",
+        "headline": "SMBv1 is removed from Windows Server 2028 Preview",
+        "summary": "The documentation now states that Windows Server 2028 Preview no longer includes SMBv1 and cannot install or enable it. Windows Server 2019–2025 still omit SMBv1 by default.",
+        "adminImpact": "Audit SMBv1 usage and update or replace dependent systems before upgrading to Windows Server 2028 Preview.",
+        "actionRequired": true,
+        "generatedBy": "openai",
+        "model": "gpt-5.6-luna"
+      }
+    },
+    {
+      "filename": "WindowsServerDocs/virtualization/hyper-v/plan/Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md",
+      "status": "modified",
+      "additions": 5,
+      "deletions": 1,
+      "changes": 6,
+      "patch": "diff --git a/WindowsServerDocs/virtualization/hyper-v/plan/Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md b/WindowsServerDocs/virtualization/hyper-v/plan/Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md\nindex a47da65..529f02e 100644\n--- a/WindowsServerDocs/virtualization/hyper-v/plan/Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md\n+++ b/WindowsServerDocs/virtualization/hyper-v/plan/Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md\n@@ -14,6 +14,7 @@ ms.topic: concept-article\n ms.author: roharwoo\n author: robinharwood\n ms.date: 2025-06-18T00:00:00.0000000Z\n+ai-usage: ai-assisted\n locale: en-us\n document_id: 90b81010-acd8-231f-852b-7a9edfa4bd50\n document_version_independent_id: 871c5a14-9f83-71b6-67b8-8ca33eb91651\n@@ -81,6 +82,7 @@ The following table shows which 64-bit versions of Windows you can use as a gues\n \r\n | 64-bit versions of Windows | Generation 1 | Generation 2 |\r\n | --- | --- | --- |\r\n+| Windows Server 2028 (Preview) | ✖ | ✔ |\r\n | Windows Server 2025 | ✔ | ✔ |\r\n | Windows Server 2022 | ✔ | ✔ |\r\n | Windows Server 2019 | ✔ | ✔ |\r\n@@ -90,6 +92,8 @@ The following table shows which 64-bit versions of Windows you can use as a gues\n | Windows 11 | ✖ | ✔ |\r\n | Windows 10 | ✔ | ✔ |\r\n \r\n+For Windows Server 2028 (Preview), use a generation 2 virtual machine (VM). Current preview builds might not enforce the generation 2 requirement. Generation 1 support for earlier guest operating systems is unchanged.\r\n+\r\n The following table shows which 32-bit versions of Windows you can use as a guest operating system for generation 1 and generation 2 virtual machines.\r\n \r\n | 32-bit versions of Windows | Generation 1 | Generation 2 |\r\n@@ -231,7 +235,7 @@ Virtual hard drives created on generation 1 and generation 2 VMs can be uploaded\n \r\n ### Use UEFI firmware\r\n \r\n-- Secure Boot or UEFI firmware isn't required on the physical Hyper-V host. For generation 2 VMs, Hyper-V provides virtual firmware to virtual machines that is independent of what's on the Hyper-V host.\r\n+- Physical Hyper-V hosts that run Windows Server 2025 or earlier don't require Secure Boot or UEFI firmware. For physical Hyper-V hosts that run Windows Server 2028 (Preview), plan for UEFI firmware. For generation 2 VMs, Hyper-V provides virtual firmware that is independent of the physical Hyper-V host's firmware.\r\n - UEFI firmware in a generation 2 virtual machine doesn't support setup mode for Secure Boot.\r\n - We don't support running a UEFI shell or other UEFI applications in a generation 2 virtual machine. Using a non-Microsoft UEFI shell or UEFI applications is technically possible if they're compiled directly from the sources. If these applications aren't digitally signed correctly, you must disable Secure Boot for the virtual machine.\r\n \r\n",
+      "baseCommitSha": "867c30c1045d8e75b53dd4cf6e2578fc125fea65",
+      "commitSha": "26bd270902a146a38add90c4df203ae3bd68ba39",
+      "commitMessage": "Mirror Learn: 7 changed",
+      "commitAuthor": "github-actions[bot]",
+      "commitDate": "2026-11-18 23:21:32 +0000",
+      "githubUrl": "https://github.com/merill/windows-server-docs-mirror/blob/main/WindowsServerDocs/virtualization/hyper-v/plan/Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md",
+      "publicDocsUrl": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/plan/Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V",
+      "eventId": "windows-server-docs:26bd270902a146a38add90c4df203ae3bd68ba39:modified:WindowsServerDocs/virtualization/hyper-v/plan/Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md",
+      "firstSeenAt": "2026-11-19T10:33:50.590Z",
+      "englishSummary": {
+        "category": "Feature update",
+        "headline": "Windows Server 2028 preview requires Generation 2 VM planning",
+        "summary": "The guidance now says to use Generation 2 VMs for Windows Server 2028 Preview and plan for UEFI firmware on physical Hyper-V hosts running that version. Earlier guest operating system support is unchanged.",
+        "adminImpact": "For Windows Server 2028 Preview deployments, use Generation 2 VMs and plan for UEFI-equipped physical Hyper-V hosts.",
+        "actionRequired": true,
+        "generatedBy": "openai",
+        "model": "gpt-5.6-luna"
+      }
+    }
+  ],
+  "deletedFiles": [],
+  "messageCenterItems": [],
+  "summary": {
+    "totalCommits": 1,
+    "totalFiles": 7,
+    "authors": [
+      "github-actions[bot]"
+    ]
+  },
+  "englishSummary": {
+    "overview": "Today's report includes 0 new, 7 updated, and 0 removed Windows Server documentation files across 4 documentation areas.",
+    "groups": [
+      {
+        "category": "Retirement",
+        "title": "Windows commands",
+        "summary": "The documentation now states that Windows Server 2025 includes VBScript as a Feature on Demand, while Windows Server 2028 Preview removes VBScript. `cscript` cannot run scripts requiring the VBScript engine on that release; Windows Script Host and JScript remain available. The documentation now states that WMIC is available as a Feature on Demand beginning with Windows Server 2025 and adds a DISM installation instruction. The documentation now states that Windows Server 2025 includes VBScript as a preinstalled Feature on Demand, while Windows Server 2028 Preview removes VBScript. Windows Script Host and JScript are unaffected.",
+        "sourceFiles": [
+          "WindowsServerDocs/administration/windows-commands/cscript.md",
+          "WindowsServerDocs/administration/windows-commands/wmic.md",
+          "WindowsServerDocs/administration/windows-commands/wscript.md"
+        ]
+      },
+      {
+        "category": "Retirement",
+        "title": "DNS, DHCP and IPAM",
+        "summary": "The documentation states that WINS remains supported throughout the Windows Server 2025 lifecycle but has been removed from Windows Server 2028 Preview. It adds guidance for replacing WINS with DNS.",
+        "sourceFiles": [
+          "WindowsServerDocs/networking/technologies/wins/wins-top.md"
+        ]
+      },
+      {
+        "category": "Retirement",
+        "title": "Storage and file services",
+        "summary": "The documentation now states that Windows Server 2028 Preview does not include SMBv1, so the documented enablement procedures do not apply. It also clarifies that SMBv1 is not installed by default on Windows Server 2019 through 2025. The documentation now states that Windows Server 2028 Preview no longer includes SMBv1 and cannot install or enable it. Windows Server 2019–2025 still omit SMBv1 by default.",
+        "sourceFiles": [
+          "WindowsServerDocs/storage/file-server/Troubleshoot/detect-enable-and-disable-smbv1-v2-v3.md",
+          "WindowsServerDocs/storage/file-server/Troubleshoot/smbv1-not-installed-by-default-in-windows.md"
+        ]
+      },
+      {
+        "category": "Feature update",
+        "title": "Hyper-V",
+        "summary": "The guidance now says to use Generation 2 VMs for Windows Server 2028 Preview and plan for UEFI firmware on physical Hyper-V hosts running that version. Earlier guest operating system support is unchanged.",
+        "sourceFiles": [
+          "WindowsServerDocs/virtualization/hyper-v/plan/Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md"
+        ]
+      }
+    ],
+    "highlights": [
+      {
+        "category": "Retirement",
+        "headline": "Windows commands",
+        "detail": "The documentation now states that Windows Server 2025 includes VBScript as a Feature on Demand, while Windows Server 2028 Preview removes VBScript. `cscript` cannot run scripts requiring the VBScript engine on that release; Windows Script Host and JScript remain available. The documentation now states that WMIC is available as a Feature on Demand beginning with Windows Server 2025 and adds a DISM installation instruction. The documentation now states that Windows Server 2025 includes VBScript as a preinstalled Feature on Demand, while Windows Server 2028 Preview removes VBScript. Windows Script Host and JScript are unaffected."
+      },
+      {
+        "category": "Retirement",
+        "headline": "DNS, DHCP and IPAM",
+        "detail": "The documentation states that WINS remains supported throughout the Windows Server 2025 lifecycle but has been removed from Windows Server 2028 Preview. It adds guidance for replacing WINS with DNS."
+      },
+      {
+        "category": "Retirement",
+        "headline": "Storage and file services",
+        "detail": "The documentation now states that Windows Server 2028 Preview does not include SMBv1, so the documented enablement procedures do not apply. It also clarifies that SMBv1 is not installed by default on Windows Server 2019 through 2025. The documentation now states that Windows Server 2028 Preview no longer includes SMBv1 and cannot install or enable it. Windows Server 2019–2025 still omit SMBv1 by default."
+      },
+      {
+        "category": "Feature update",
+        "headline": "Hyper-V",
+        "detail": "The guidance now says to use Generation 2 VMs for Windows Server 2028 Preview and plan for UEFI firmware on physical Hyper-V hosts running that version. Earlier guest operating system support is unchanged."
+      }
+    ],
+    "generatedBy": "fallback"
+  }
+}
