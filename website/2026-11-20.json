@@ -338,19 +338,45 @@
         "generatedBy": "openai",
         "model": "gpt-5.6-luna"
       }
+    },
+    {
+      "filename": "WindowsServerDocs/get-started/whats-new-windows-server-2028.md",
+      "status": "modified",
+      "additions": 1,
+      "deletions": 1,
+      "changes": 2,
+      "patch": "diff --git a/WindowsServerDocs/get-started/whats-new-windows-server-2028.md b/WindowsServerDocs/get-started/whats-new-windows-server-2028.md\nindex 151b9c9..7c8e0ba 100644\n--- a/WindowsServerDocs/get-started/whats-new-windows-server-2028.md\n+++ b/WindowsServerDocs/get-started/whats-new-windows-server-2028.md\n@@ -96,7 +96,7 @@ To share feedback about the preview, submit the [Intune Server Management previe\n \r\n ## Secure by default for Server Core\r\n \r\n-**Insider Preview build:**[Windows Server Insider Preview build 29683](https://techcommunity.microsoft.com/discussions/windowsserverinsiders/announcing-windows-server-vnext-preview-build-29683/4563923) (October 12, 2026)\r\n+**Insider Preview build:**[Windows Server Insider Preview build 29706](https://aka.ms/serverinsiders) (November 17, 2026)\r\n \r\n Windows Server 2028 Preview includes secure-by-default configuration settings for Server Core. New installations start with stronger security protections. This change reduces the need to harden servers after deployment. These defaults help protect servers against common attacks, including credential theft, lateral movement, and protocol downgrade attacks, from the first boot.\r\n \r\n",
+      "baseCommitSha": "6887661c0a4eeb7f3e6821ac6a9f1135b16bd39f",
+      "commitSha": "24fcdb4afa08769074b11fddeeeb6de572ee9475",
+      "commitMessage": "Mirror Learn: 1 changed",
+      "commitAuthor": "github-actions[bot]",
+      "commitDate": "2026-11-20 13:54:28 +0000",
+      "githubUrl": "https://github.com/merill/windows-server-docs-mirror/blob/main/WindowsServerDocs/get-started/whats-new-windows-server-2028.md",
+      "publicDocsUrl": "https://learn.microsoft.com/en-us/windows-server/get-started/whats-new-windows-server-2028",
+      "eventId": "windows-server-docs:24fcdb4afa08769074b11fddeeeb6de572ee9475:modified:WindowsServerDocs/get-started/whats-new-windows-server-2028.md",
+      "firstSeenAt": "2026-11-20T21:54:03.292Z",
+      "englishSummary": {
+        "category": "Doc update",
+        "headline": "Windows Server 2028 preview build reference updated",
+        "summary": "The documentation now references Insider Preview build 29706 from November 17, 2026, replacing build 29683 from October 12, 2026, and updates the link.",
+        "adminImpact": "Administrators tracking Insider Preview releases should use the updated build reference and link.",
+        "actionRequired": false,
+        "generatedBy": "openai",
+        "model": "gpt-5.6-luna"
+      }
     }
   ],
   "deletedFiles": [],
   "messageCenterItems": [],
   "summary": {
-    "totalCommits": 1,
-    "totalFiles": 13,
+    "totalCommits": 2,
+    "totalFiles": 14,
     "authors": [
       "github-actions[bot]"
     ]
   },
   "englishSummary": {
-    "overview": "Today's report includes 0 new, 13 updated, and 0 removed Windows Server documentation files across 1 documentation area.",
+    "overview": "Today's report includes 0 new, 14 updated, and 0 removed Windows Server documentation files across 2 documentation areas.",
     "groups": [
       {
         "category": "Doc update",
@@ -371,6 +397,14 @@
           "WindowsServerDocs/manage/windows-admin-center/use/manage-servers.md",
           "WindowsServerDocs/manage/windows-admin-center/use/manage-virtual-machines.md"
         ]
+      },
+      {
+        "category": "Doc update",
+        "title": "Windows Server",
+        "summary": "The documentation now references Insider Preview build 29706 from November 17, 2026, replacing build 29683 from October 12, 2026, and updates the link.",
+        "sourceFiles": [
+          "WindowsServerDocs/get-started/whats-new-windows-server-2028.md"
+        ]
       }
     ],
     "highlights": [
@@ -378,6 +412,11 @@
         "category": "Doc update",
         "headline": "Management and Azure Arc",
         "detail": "The table now bolds Clustered Compute, Windows Storage-only, and Non-Windows Storage labels. The article now explains that gateway administrators can manage shared server, cluster, and PC connections and tags from gateway settings. These appear on the All Connections page for every gateway user. The article now clarifies certificate replacement triggers, identifies Administration Mode applicability, and updates PowerShell wording and installer screenshot descriptions. The article explains how gateway administrators can use Windows Admin Center PowerShell modules to manage connection lists and extensions across multiple servers in Administration Mode. It also documents importing and exporting"
+      },
+      {
+        "category": "Doc update",
+        "headline": "Windows Server",
+        "detail": "The documentation now references Insider Preview build 29706 from November 17, 2026, replacing build 29683 from October 12, 2026, and updates the link."
       }
     ],
     "generatedBy": "fallback"
