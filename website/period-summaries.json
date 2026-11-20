@@ -283,6 +283,52 @@
         "outputTokens": 2423,
         "costUsd": 0.003285
       }
+    },
+    "2026-11-20": {
+      "headline": "Windows Admin Center mode choice sets topology and makes later switching a reinstall",
+      "overview": "The period concentrated on Windows Admin Center guidance, with the clearest change being a sharper split between Administration Mode and Virtualization Mode. Updated installation material explains that mode selection affects architecture, scale, management style, and applicable operating-system requirements; changing modes later requires reinstalling the gateway. Supporting articles expand the mode-specific guidance for Hyper-V, servers, clusters, access control, certificates, and automation.",
+      "adminImpact": "Choose the gateway mode and deployment topology during planning. Administrators managing multiple gateways can also use the documented PowerShell modules to standardize connections, tags, extensions, and feeds, while gateway administrators can maintain shared connections visible to all users.",
+      "keyChanges": [
+        {
+          "title": "Gateway mode now has explicit deployment and switching consequences",
+          "detail": "The installation guidance distinguishes Administration Mode from Virtualization Mode, describes four Administration Mode topologies, limits the stated topology and operating-system requirements to Administration Mode, and says that changing modes requires reinstalling the gateway.",
+          "product": "Management",
+          "sourceId": "doc-2026-11-20-install-06"
+        },
+        {
+          "title": "PowerShell guidance covers centralized Windows Admin Center configuration",
+          "detail": "The revised article documents using Windows Admin Center PowerShell modules across multiple Administration Mode servers to manage connection lists and extensions, including importing and exporting connections and tags and managing extension feeds and packages.",
+          "product": "Management",
+          "sourceId": "doc-2026-11-20-use-powershell-to-manage-windows-admin-center-settings-04"
+        },
+        {
+          "title": "Shared connections and tags are tied to gateway-wide settings",
+          "detail": "Gateway administrators can manage shared server, cluster, and PC connections and tags from gateway settings; those items appear on the All Connections page for every gateway user.",
+          "product": "Management",
+          "sourceId": "doc-2026-11-20-configure-shared-connections-for-all-users-of-the-windows-admin-center-gateway-02"
+        },
+        {
+          "title": "Administration Mode VM guidance now spans end-to-end Hyper-V workflows",
+          "detail": "The updated VM article centers on Administration Mode and covers monitoring, configuration, migration, troubleshooting, and replication for Hyper-V hosts and virtual machines.",
+          "product": "Management",
+          "sourceId": "doc-2026-11-20-manage-vms-in-windows-admin-center-administration-mode-13"
+        },
+        {
+          "title": "Access and certificate procedures now identify their mode-specific scope",
+          "detail": "The access-control guidance separates gateway access, identity providers, and role-based permissions between Administration Mode and Virtualization Mode, while the certificate procedure clarifies when replacement applies and updates its PowerShell and installer descriptions.",
+          "product": "Management",
+          "sourceId": "doc-2026-11-20-user-access-options-with-windows-admin-center-09"
+        }
+      ],
+      "generatedBy": "openai",
+      "model": "gpt-5.6-luna",
+      "reasoningEffort": "xhigh",
+      "generatedAt": "2026-11-20T10:14:57.246Z",
+      "usage": {
+        "inputTokens": 2455,
+        "outputTokens": 1592,
+        "costUsd": 0.002401
+      }
     }
   },
   "weeks": {
@@ -355,85 +401,85 @@
       }
     },
     "2026-11-16": {
-      "headline": "Windows Server 2028 Preview flags WINS, SMBv1 and VBScript for removal",
-      "overview": "Windows Server 2028 Preview is the clear story: the updated overview now places WINS, DirectAccess, SMBv1, VBScript, WMIC, WSUS, legacy BIOS, BranchCache, WDS and PowerShell 5.1 among features deprecated or removed. Focused guidance says WINS and SMBv1 are unavailable, while VBScript-dependent scripts cannot run there. A new SMB Policy Controller preview requires Insider build 29707 or later and the PolicyController Feature on Demand. Windows Admin Center 2611 registration and Generation 2/UEFI guidance add concrete planning steps; much of the remaining activity is mode-specific documentation restructuring.",
-      "adminImpact": "Inventory dependencies before evaluating or deploying Windows Server 2028 Preview, including WINS, SMBv1, VBScript and the other listed components. Migrate VBScript automation to PowerShell and plan DNS, SMBv2/v3 or UEFI replacements where applicable. If testing SMB Policy Controller, use build 29707 or later with the PolicyController Feature on Demand. For Windows Admin Center upgrades from before version 2611, plan gateway re-registration and account for users being signed out; for Windows Server 2028 Preview guests, use Generation 2 VMs and plan UEFI-capable physical hosts.",
+      "headline": "Windows Server 2028 Preview flags VBScript, SMBv1, WINS and WMIC for removal",
+      "overview": "The week’s most consequential signal is Windows Server 2028 Preview compatibility planning. Microsoft’s preview guidance now identifies WINS, DirectAccess, SMBv1, VBScript, WMIC, WSUS, legacy BIOS, BranchCache, and WDS among deprecated or removed features, with plans subject to change; dedicated pages spell out that SMBv1 cannot be installed or enabled and VBScript-dependent cscript workloads cannot run. A new SMB Policy Controller preview article describes intent-based SMB management, while Windows Admin Center guidance separates its two operating modes and their deployment requirements.",
+      "adminImpact": "Inventory dependencies before testing or planning Windows Server 2028 Preview, especially SMBv1 and VBScript, and plan replacements where the feature list applies. Evaluate SMB Policy Controller only on Windows Server Insider Preview build 29707 or later with the PolicyController Feature on Demand. For Windows Admin Center, choose the operating mode and deployment host before installation because changing modes requires reinstallation.",
       "keyChanges": [
         {
-          "title": "Server 2028 Preview flags a broad set of legacy dependencies",
-          "detail": "The updated Windows Server 2028 Preview overview lists WINS, DirectAccess, SMBv1, VBScript, WMIC, WSUS, legacy BIOS, BranchCache, WDS and PowerShell 5.1 among features deprecated or removed. The plans may change before release, but administrators should inventory dependencies and plan migrations to options such as DNS, Always On VPN, SMBv2/v3, PowerShell and UEFI.",
+          "title": "Windows Server 2028 Preview publishes a broad deprecation and removal list",
+          "detail": "The Windows Server 2028 Preview page now lists WINS, DirectAccess, SMBv1, VBScript, WMIC, WSUS, legacy BIOS, BranchCache, and WDS among features deprecated or removed, and says plans may change before release. Administrators should inventory dependencies and plan replacements such as DNS, Always On VPN, SMBv2/v3, or UEFI where relevant.",
           "product": "Windows Server",
           "sourceId": "doc-2026-11-18-windows-server-2028-preview-08"
         },
         {
-          "title": "VBScript execution is removed from Windows Server 2028 Preview",
-          "detail": "The cscript guidance now distinguishes Windows Server 2025, where VBScript is a Feature on Demand, from Windows Server 2028 Preview, which removes VBScript. cscript cannot run scripts requiring the VBScript engine on that release, although Windows Script Host and JScript remain available. VBScript automation should move to PowerShell before testing the preview.",
+          "title": "Windows Server 2028 Preview cannot restore SMBv1",
+          "detail": "SMBv1 guidance now says Windows Server 2028 Preview does not include SMBv1 and cannot install or enable it; Windows Server 2019–2025 still omit it by default. Audit older-system dependencies before upgrading or testing the preview.",
+          "product": "Storage",
+          "sourceId": "doc-2026-11-19-smbv1-availability-windows-server-and-windows-06"
+        },
+        {
+          "title": "VBScript-dependent cscript automation will not run on the preview",
+          "detail": "The cscript guidance says Windows Server 2025 includes VBScript as a Feature on Demand, while Windows Server 2028 Preview removes VBScript. On that preview release, cscript cannot run scripts requiring the VBScript engine; Windows Script Host and JScript remain available. Migrate affected automation to PowerShell and test before deployment.",
           "product": "Administration",
           "sourceId": "doc-2026-11-19-cscript-01"
         },
         {
-          "title": "SMB Policy Controller preview adds intent-based configuration and reconciliation",
-          "detail": "The new capability manages and corrects server-wide and share-level SMB intents, with guidance for configuration, verification, troubleshooting and removal. Evaluation requires Windows Server Insider Preview build 29707 or later and installation of the PolicyController Feature on Demand.",
+          "title": "SMB Policy Controller preview requires Insider build 29707 or later",
+          "detail": "New guidance describes intent-based management and reconciliation for server-wide and share-level SMB settings, with configuration, verification, troubleshooting, and removal workflows. Evaluation requires Windows Server Insider Preview build 29707 or later and the PolicyController Feature on Demand.",
           "product": "Storage",
           "sourceId": "doc-2026-11-18-configure-smb-policy-controller-preview-02"
         },
         {
-          "title": "Hyper-V guidance shifts Windows Server 2028 Preview guests to Generation 2",
-          "detail": "The updated Hyper-V guidance recommends Generation 2 VMs for Windows Server 2028 Preview and planning for UEFI firmware on physical Hyper-V hosts running that version. Support for earlier guest operating systems is unchanged.",
-          "product": "Hyper-V",
-          "sourceId": "doc-2026-11-19-should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v-07"
-        },
-        {
-          "title": "Windows Admin Center 2611 changes gateway registration on upgrade",
-          "detail": "Administration Mode guidance says version 2611 supports Azure RBAC gateway registration without creating a custom Microsoft Entra application. Upgrades from versions before 2611 unregister the existing gateway and sign users out, so administrators must re-register the gateway and complete the selected registration model’s prerequisites.",
+          "title": "Windows Admin Center modes now impose distinct installation choices",
+          "detail": "Installation guidance separates Administration Mode and Virtualization Mode: they cannot be installed on the same system, Virtualization Mode requires a dedicated server with at least 4 cores, 8 GB of RAM, and 10 GB of disk space, and changing modes requires reinstallation. Select the mode before deployment.",
           "product": "Management",
-          "sourceId": "doc-2026-11-17-administration-mode-03"
+          "sourceId": "doc-2026-11-17-install-windows-admin-center-09"
         }
       ],
       "generatedBy": "openai",
       "model": "gpt-5.6-luna",
       "reasoningEffort": "xhigh",
-      "generatedAt": "2026-11-19T10:34:07.416Z",
+      "generatedAt": "2026-11-20T10:14:57.246Z",
       "usage": {
-        "inputTokens": 6370,
-        "outputTokens": 7467,
-        "costUsd": 0.010234
+        "inputTokens": 7903,
+        "outputTokens": 6963,
+        "costUsd": 0.009936
       }
     }
   },
   "months": {
     "2026-11": {
-      "headline": "Windows Server 2028 Preview removes SMBv1, WINS and VBScript",
-      "overview": "November’s most consequential planning change is the Windows Server 2028 Preview: its feature page now puts WINS, DirectAccess, SMBv1, VBScript, WMIC, WSUS, legacy BIOS, BranchCache and WDS in a deprecated-or-removed list; focused guidance says WINS is removed, SMBv1 cannot be installed or enabled, and VBScript-dependent scripts cannot run. The month also introduced SMB Policy Controller in preview, a Chromium M158 cutoff for browser-native RD Web Access XSLT on November 17, new LDAP/Kerberos SPN requirements affecting NetApp SMB shares, and a January 13, 2027, end date for Windows Server 2016 extended support. Much of the remaining activity refined Windows Admin Center’s separate Administration and Virtualization Mode procedures, prerequisites and permissions.",
-      "adminImpact": "Inventory dependencies before evaluating Windows Server 2028 Preview and plan replacements where needed—DNS for WINS, SMBv2/v3 for SMBv1, PowerShell for VBScript, and UEFI for legacy BIOS. If testing SMB Policy Controller, use Insider Preview build 29707 or later with the PolicyController Feature on Demand. Owners of browser-customized RD Web Access should complete the XSLT migration and test sign-in, resource access and password changes; LDAP-authenticated NetApp SMB environments should verify Kerberos ticket and target-controller SPN alignment. Put January 13, 2027, into Windows Server 2016 upgrade planning.",
+      "headline": "Windows Server 2028 Preview removes SMBv1 and VBScript, reshaping compatibility planning",
+      "overview": "November’s central planning signal is the Windows Server 2028 Preview compatibility line. Microsoft’s preview guidance lists WINS, DirectAccess, SMBv1, VBScript, WMIC, WSUS, legacy BIOS, BranchCache, WDS, and PowerShell 5.1 among deprecated or removed features, with plans subject to change. Dedicated guidance says SMBv1 cannot be installed or enabled, while VBScript-dependent cscript workloads cannot run. The period also outlined SMB Policy Controller as an Insider Preview capability, documented an RD Web Access migration ahead of Chromium M158’s November 17 XSLT cutoff, and surfaced an LDAP/Kerberos SPN requirement for affected NetApp SMB authentication. Windows Server 2016 extended support ends January 13, 2027.",
+      "adminImpact": "Treat Windows Server 2028 Preview testing as a dependency-inventory exercise. Check for WINS, SMBv1, VBScript, and other listed dependencies; plan WINS-to-DNS replacement and VBScript-to-PowerShell migration where applicable, and use Generation 2 VMs with UEFI planning for preview deployments. Evaluate SMB Policy Controller only on Windows Server Insider Preview build 29707 or later with the PolicyController Feature on Demand. For customized RD Web Access, use the separate stylesheet through RDWebSiteXsltPath, leave the updated .aspx pages unchanged, and test sign-in, resource access, and password changes. In LDAP-authenticated NetApp SMB environments, verify that Kerberos service tickets match the LDAP SPN on the target domain controller. Include January 13, 2027, in Windows Server 2016升级",
       "keyChanges": [
         {
-          "title": "Windows Server 2028 Preview turns legacy dependencies into migration work",
-          "detail": "The preview overview now identifies WINS, DirectAccess, SMBv1, VBScript, WMIC, WSUS, legacy BIOS, BranchCache and WDS among features deprecated or removed, and notes that plans may change before release. Administrators should inventory dependencies and map affected systems to DNS, Always On VPN, SMBv2/v3, PowerShell or UEFI as applicable.",
+          "title": "Windows Server 2028 Preview marks a broad legacy-feature compatibility boundary",
+          "detail": "The preview page lists WINS, DirectAccess, SMBv1, VBScript, WMIC, WSUS, legacy BIOS, BranchCache, WDS, and PowerShell 5.1 among deprecated or removed features. It also warns that the plans may change before release, making dependency inventory important during preview planning.",
           "product": "Windows Server",
           "sourceId": "doc-2026-11-18-windows-server-2028-preview-08"
         },
         {
-          "title": "SMB Policy Controller preview targets Insider build 29707 or later",
-          "detail": "The new preview capability manages and corrects server-wide and share-level SMB intents through configuration, verification, troubleshooting and removal workflows. It requires Windows Server Insider Preview build 29707 or later and the PolicyController Feature on Demand.",
+          "title": "SMB Policy Controller preview adds intent-based SMB reconciliation",
+          "detail": "The new capability manages and corrects server-wide and share-level SMB intents, with guidance for configuration, verification, troubleshooting, and removal. Evaluation requires Windows Server Insider Preview build 29707 or later and installation of the PolicyController Feature on Demand.",
           "product": "Storage",
           "sourceId": "doc-2026-11-18-configure-smb-policy-controller-preview-02"
         },
         {
-          "title": "Chromium M158 forces migration of browser-customized RD Web Access",
-          "detail": "Chromium M158 disables browser-native XSLT beginning November 17, 2026. For affected customizations, the guidance says to leave the updated .aspx pages unchanged, configure a separate stylesheet through RDWebSiteXsltPath, and validate sign-in, resource access and password changes.",
+          "title": "RD Web Access customizations face Chromium M158’s November 17 XSLT cutoff",
+          "detail": "Chromium M158 disables browser-native XSLT beginning November 17, 2026. The migration procedure keeps the updated .aspx pages unchanged, uses a separate stylesheet through RDWebSiteXsltPath, and calls for testing sign-in, resources, and password changes.",
           "product": "Remote Desktop",
           "sourceId": "doc-2026-11-13-migrate-rd-web-access-xslt-customizations-01"
         },
         {
-          "title": "LDAP authentication now requires matching Kerberos and LDAP SPNs",
-          "detail": "Microsoft’s November 12 Message Center update says additional LDAP authentication requirements began with the October 13, 2026, security updates: Kerberos service tickets used for LDAP must match the LDAP service principal name registered on the target domain controller. The alert specifically calls out potential issues with NetApp SMB shares.",
+          "title": "LDAP authentication for affected NetApp SMB shares now depends on SPN matching",
+          "detail": "Microsoft’s security notice says the October 13, 2026, Windows updates introduced a requirement that Kerberos service tickets used for LDAP authentication match the LDAP service principal name SPN registered on the target domain controller.",
           "product": "Windows Server",
           "sourceId": "MC1551001"
         },
         {
           "title": "Windows Server 2016 extended support ends January 13, 2027",
-          "detail": "All editions of Windows Server 2016 reach the end of extended support on January 13, 2027. The January 2027 Windows security update will be the last update provided during extended support.",
+          "detail": "All Windows Server 2016 editions reach the end of extended support on January 13, 2027. The January 2027 Windows security update is the last update scheduled during extended support.",
           "product": "Windows Server",
           "sourceId": "MC1551896"
         }
@@ -441,16 +487,16 @@
       "generatedBy": "openai",
       "model": "gpt-5.6-luna",
       "reasoningEffort": "xhigh",
-      "generatedAt": "2026-11-19T10:34:07.416Z",
+      "generatedAt": "2026-11-20T10:14:57.246Z",
       "usage": {
-        "inputTokens": 6778,
-        "outputTokens": 6890,
-        "costUsd": 0.009624
+        "inputTokens": 6720,
+        "outputTokens": 8411,
+        "costUsd": 0.011437
       }
     }
   },
   "version": 3,
-  "generatedAt": "2026-11-19T10:34:07.416Z",
+  "generatedAt": "2026-11-20T10:14:57.246Z",
   "generator": {
     "model": "gpt-5.6-luna",
     "reasoningEffort": "xhigh"
@@ -503,18 +549,24 @@
       "outputTokens": 16780,
       "requests": 3,
       "costUsd": 0.023143
+    },
+    "2026-11-20": {
+      "inputTokens": 17078,
+      "outputTokens": 16966,
+      "requests": 3,
+      "costUsd": 0.023775
     }
   },
   "lastRun": {
-    "inputTokens": 15036,
-    "outputTokens": 16780,
+    "inputTokens": 17078,
+    "outputTokens": 16966,
     "requests": 3,
-    "costUsd": 0.023143
+    "costUsd": 0.023775
   },
   "totalUsage": {
-    "inputTokens": 66573,
-    "outputTokens": 76042,
-    "requests": 24,
-    "costUsd": 0.104565
+    "inputTokens": 83651,
+    "outputTokens": 93008,
+    "requests": 27,
+    "costUsd": 0.12834
   }
 }
