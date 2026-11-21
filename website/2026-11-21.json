@@ -1,0 +1,61 @@
+{
+  "newFiles": [],
+  "modifiedFiles": [
+    {
+      "filename": "WindowsServerDocs/get-started/removed-deprecated-features-windows-server.md",
+      "status": "modified",
+      "additions": 1,
+      "deletions": 1,
+      "changes": 2,
+      "patch": "diff --git a/WindowsServerDocs/get-started/removed-deprecated-features-windows-server.md b/WindowsServerDocs/get-started/removed-deprecated-features-windows-server.md\nindex 8ff7f7f..c024a11 100644\n--- a/WindowsServerDocs/get-started/removed-deprecated-features-windows-server.md\n+++ b/WindowsServerDocs/get-started/removed-deprecated-features-windows-server.md\n@@ -151,7 +151,7 @@ Windows Server 2028 is in preview. The feature removals in this tab aren't confi\n | Server Message Block version 1 (SMBv1) | Windows Server 2028 no longer includes SMBv1. Update dependent clients, servers, and devices to use SMBv2 or SMBv3. For more information, see [Stop using SMB1](https://techcommunity.microsoft.com/blog/filecab/stop-using-smb1/425858). |\r\n | VBScript | Windows Server 2028 removes VBScript, so scripts and apps that depend on it stop working. Migrate administrative scripts to PowerShell and web scripts to JavaScript. For more information, see [VBScript deprecation: Timelines and next steps](https://techcommunity.microsoft.com/blog/windows-itpro-blog/vbscript-deprecation-timelines-and-next-steps/4148301). |\r\n | Windows Management Instrumentation command-line utility (WMIC) | Windows Server 2028 removes the Windows Management Instrumentation Command-line (WMIC) utility, not Windows Management Instrumentation (WMI). Replace WMIC commands with PowerShell or programmatic WMI queries. For more information, see [WMI command line (WMIC) utility deprecation: Next steps](https://techcommunity.microsoft.com/blog/windows-itpro-blog/wmi-command-line-wmic-utility-deprecation-next-steps/4039242). |\r\n-| Windows Server Update Services (WSUS) | Windows Server 2028 removes the WSUS server role. This change applies only to Windows Server 2028 and doesn't change WSUS availability or support in earlier Windows Server releases.WSUS remains available and supported in earlier Windows Server releases, including Windows Server 2025, for the duration of each release's [support lifecycle](/en-us/lifecycle/). You can continue to use WSUS on those releases to manage updates for supported Windows client and Windows Server releases.Microsoft recognizes the need to manage updates in disconnected and highly controlled environments. We're invested in supporting for these scenarios and we'll share more as the work progresses. For more information about previews of disconnected server patching technologies, contact the [Windows Server TAP team](https://aka.ms/WSTAP). |\r\n+| Windows Server Update Services (WSUS) | Windows Server 2028 removes the WSUS server role. This change applies only to Windows Server 2028 and doesn't change WSUS availability or support in earlier Windows Server releases.WSUS remains available and supported in earlier Windows Server releases, including Windows Server 2025, for the duration of each release's [support lifecycle](/en-us/lifecycle/). You can continue to use WSUS on those releases to manage updates for supported Windows client and Windows Server releases, which includes updates to Windows Server 2028.Microsoft recognizes the need to manage updates in disconnected and highly controlled environments. We're invested in supporting these scenarios and we'll share more as the work progresses. For more information about previews of disconnected server patching technologies, contact the [Windows Server TAP team](https://aka.ms/WSTAP). |\r\n | Legacy basic input/output system (BIOS) support | PC/AT (PCAT) and legacy BIOS boot are removed from Windows Server 2028. Unified Extensible Firmware Interface (UEFI) is required. Windows Server 2028 guest VMs require generation 2 Hyper-V VMs. This requirement doesn't change support for generation 1 VMs that run earlier guest operating systems. For planning guidance, see [Should I create a generation 1 or 2 virtual machine in Hyper-V?](../virtualization/hyper-v/plan/should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v). |\r\n | MultiPoint Services | MultiPoint Services is removed from Windows Server 2028 after being no longer developed since Windows Server 2019. The MultiPoint Connector is available as a Feature on Demand in Windows 11, version 26H2, but won't be included in later Windows releases. Use Remote Desktop Services, in particular Remote Desktop Session Host, for shared desktop and application sessions. For more information, see [Remote Desktop Services overview](../remote/remote-desktop-services/overview). |\r\n | Shielded VMs | Shielded VMs are removed from Windows Server 2028. Use Trusted VMs as an alternative where their capabilities meet your requirements. The preview doesn't support failover clusters or Hyper-V Replica, and VM key portability is limited. For more information, see [Trusted Launch for generation 2 virtual machines](whats-new-windows-server-2028#trusted-launch-for-generation-2-virtual-machines). |\r\n",
+      "baseCommitSha": "24fcdb4afa08769074b11fddeeeb6de572ee9475",
+      "commitSha": "2732806d3fc56681cd595045a08e6c37c074824f",
+      "commitMessage": "Mirror Learn: 1 changed",
+      "commitAuthor": "github-actions[bot]",
+      "commitDate": "2026-11-20 23:02:58 +0000",
+      "githubUrl": "https://github.com/merill/windows-server-docs-mirror/blob/main/WindowsServerDocs/get-started/removed-deprecated-features-windows-server.md",
+      "publicDocsUrl": "https://learn.microsoft.com/en-us/windows-server/get-started/removed-deprecated-features-windows-server",
+      "eventId": "windows-server-docs:2732806d3fc56681cd595045a08e6c37c074824f:modified:WindowsServerDocs/get-started/removed-deprecated-features-windows-server.md",
+      "firstSeenAt": "2026-11-21T09:59:42.541Z",
+      "englishSummary": {
+        "category": "Retirement",
+        "headline": "WSUS server role removed in Windows Server 2028",
+        "summary": "The documentation states that Windows Server 2028 removes the Windows Server Update Services (WSUS) server role. WSUS remains available and supported in earlier Windows Server releases.",
+        "adminImpact": "Administrators planning Windows Server 2028 deployments should account for the WSUS role’s removal.",
+        "actionRequired": false,
+        "generatedBy": "openai",
+        "model": "gpt-5.6-luna"
+      }
+    }
+  ],
+  "deletedFiles": [],
+  "messageCenterItems": [],
+  "summary": {
+    "totalCommits": 1,
+    "totalFiles": 1,
+    "authors": [
+      "github-actions[bot]"
+    ]
+  },
+  "englishSummary": {
+    "overview": "Today's report includes 0 new, 1 updated, and 0 removed Windows Server documentation files across 1 documentation area.",
+    "groups": [
+      {
+        "category": "Retirement",
+        "title": "Windows Server",
+        "summary": "The documentation states that Windows Server 2028 removes the Windows Server Update Services (WSUS) server role. WSUS remains available and supported in earlier Windows Server releases.",
+        "sourceFiles": [
+          "WindowsServerDocs/get-started/removed-deprecated-features-windows-server.md"
+        ]
+      }
+    ],
+    "highlights": [
+      {
+        "category": "Retirement",
+        "headline": "Windows Server",
+        "detail": "The documentation states that Windows Server 2028 removes the Windows Server Update Services (WSUS) server role. WSUS remains available and supported in earlier Windows Server releases."
+      }
+    ],
+    "generatedBy": "fallback"
+  }
+}
