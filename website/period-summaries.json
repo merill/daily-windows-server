@@ -351,6 +351,28 @@
         "outputTokens": 532,
         "costUsd": 0.000846
       }
+    },
+    "2026-11-24": {
+      "headline": "Windows Server 2028 enters public preview with security, storage, management upgrades",
+      "overview": "Microsoft announced Windows Server 2028 is now available in public preview. The release introduces security, storage, and management improvements, while beginning investments in hybrid intelligence for AI inference on local infrastructure.",
+      "adminImpact": "This is a public-preview availability change. The supplied notice does not state deployment prerequisites or require a specific administrator action.",
+      "keyChanges": [
+        {
+          "title": "Windows Server 2028 public preview",
+          "detail": "Windows Server 2028 is available for public preview and adds security, storage, and management improvements. Microsoft also identifies hybrid intelligence investments aimed at supporting AI inference on local infrastructure.",
+          "product": "Windows Server",
+          "sourceId": "MC1567251"
+        }
+      ],
+      "generatedBy": "openai",
+      "model": "gpt-5.6-luna",
+      "reasoningEffort": "xhigh",
+      "generatedAt": "2026-11-25T11:31:40.716Z",
+      "usage": {
+        "inputTokens": 1016,
+        "outputTokens": 596,
+        "costUsd": 0.000918
+      }
     }
   },
   "weeks": {
@@ -467,40 +489,62 @@
         "outputTokens": 7578,
         "costUsd": 0.010724
       }
+    },
+    "2026-11-23": {
+      "headline": "Windows Server 2028 public preview brings security, storage, management, and hybrid AI investments",
+      "overview": "Microsoft’s Message Center says Windows Server 2028 is now available in public preview. The release introduces security, storage, and management improvements while beginning investments in hybrid intelligence to support AI inference on local infrastructure.",
+      "adminImpact": "This marks a public-preview evaluation point for Windows Server administrators. The notice provides no prerequisites, deployment steps, support details, or production rollout guidance, so it establishes awareness and evaluation rather than a production migration task.",
+      "keyChanges": [
+        {
+          "title": "Windows Server 2028 enters public preview",
+          "detail": "Windows Server 2028 is now available in public preview. Microsoft identifies security, storage, and management improvements, alongside initial hybrid-intelligence investments intended to support AI inference on local infrastructure.",
+          "product": "Windows Server 2028",
+          "sourceId": "MC1567251"
+        }
+      ],
+      "generatedBy": "openai",
+      "model": "gpt-5.6-luna",
+      "reasoningEffort": "xhigh",
+      "generatedAt": "2026-11-25T11:31:40.716Z",
+      "usage": {
+        "inputTokens": 815,
+        "outputTokens": 1020,
+        "costUsd": 0.001387
+      }
     }
   },
   "months": {
     "2026-11": {
-      "headline": "Windows Server 2028 Preview flags WINS, SMBv1 and WSUS for migration",
-      "overview": "November’s main planning signal was Windows Server 2028 Preview’s broad legacy-feature list, covering WINS, DirectAccess, SMBv1, VBScript, WMIC, WSUS, legacy BIOS, BranchCache, WDS, and PowerShell 5.1. The period also brought a new LDAP authentication requirement for Kerberos service-ticket and LDAP SPN matching, a November 17 Chromium M158 cutoff for customized RD Web Access XSLT, and a build-gated SMB Policy Controller preview. The remaining activity was largely documentation maintenance, including clearer separation of Windows Admin Center Administration and Virtualization modes.",
-      "adminImpact": "Audit dependencies before testing or planning Windows Server 2028 Preview deployments, using the documented migration paths where applicable. In NetApp SMB environments that use LDAP authentication, verify that Kerberos tickets match the LDAP SPN registered on the target domain controller. Review whether affected RD Web Access customizations met the November 17, 2026, XSLT migration deadline and validate sign-in, resource access, and password changes. Evaluate SMB Policy Controller only with Insider Preview build 29707 or later and the PolicyController Feature on Demand. Add January 13, 2027, and the final January 2027 security update to Windows Server 2016 upgrade plans.",
+      "headline": "Windows Server 2028 preview puts WINS, SMBv1, VBScript and WSUS on migration clock",
+      "overview": "November's defining development was Windows Server 2028 entering public preview, alongside guidance identifying WINS, SMBv1, VBScript, WSUS and other legacy components as deprecated or removed. Microsoft also documented the SMB Policy Controller preview, tightened LDAP authentication requirements relevant to NetApp SMB shares, and reminded administrators that Windows Server 2016 extended support ends January 13, 2027.",
+      "adminImpact": "Use the Windows Server 2028 preview to inventory dependencies on affected components. Where applicable, plan migrations from WINS to DNS, SMBv1 to SMBv2/v3, and VBScript automation to PowerShell; preview plans may change before release. Evaluate SMB Policy Controller only on Insider Preview build 29707 or later with the PolicyController Feature on Demand. For NetApp SMB environments using LDAP authentication, verify that Kerberos service tickets match the LDAP SPN on the target domain controller. Put January 13, 2027, on Windows Server 2016 upgrade plans; the January 2027 security update is the last update during extended support.",
       "keyChanges": [
         {
-          "title": "Windows Server 2028 Preview expands the legacy-feature migration inventory",
-          "detail": "The preview page now lists WINS, DirectAccess, SMBv1, VBScript, WMIC, WSUS, legacy BIOS, BranchCache, WDS, and PowerShell 5.1 among features deprecated or removed. It notes that plans may change before release. Administrators should inventory dependencies and, where applicable, plan moves to DNS, Always On VPN, SMBv2/v3, PowerShell, or UEFI.",
+          "title": "Windows Server 2028 opens for public-preview evaluation",
+          "detail": "Microsoft says Windows Server 2028 is now available in public preview, introducing security, storage and management improvements while beginning investments in hybrid intelligence for AI inference on local infrastructure.",
+          "product": "Windows Server",
+          "sourceId": "MC1567251"
+        },
+        {
+          "title": "Preview guidance flags a broad set of legacy components",
+          "detail": "The Windows Server 2028 Preview page lists WINS, DirectAccess, SMBv1, VBScript, WMIC, WSUS, legacy BIOS, BranchCache, WDS and PowerShell 5.1 among features deprecated or removed. It also warns that plans may change before release.",
           "product": "Windows Server",
           "sourceId": "doc-2026-11-18-windows-server-2028-preview-08"
         },
         {
-          "title": "LDAP authentication now requires Kerberos-to-LDAP SPN alignment",
-          "detail": "Starting with the October 13, 2026, Windows security updates, Kerberos service tickets used for LDAP authentication must match the LDAP service principal name registered on the target domain controller. The requirement is particularly relevant to NetApp SMB environments using LDAP authentication.",
-          "product": "Windows Server",
-          "sourceId": "MC1551001"
-        },
-        {
-          "title": "Chromium M158 cuts off browser-native XSLT for customized RD Web Access",
-          "detail": "Chromium M158 disables browser-native XSLT beginning November 17, 2026, affecting customized RD Web Access pages. The migration procedure keeps the updated .aspx pages unchanged, uses RDWebSiteXsltPath for a separate stylesheet, and requires testing sign-in, resource access, and password changes.",
-          "product": "Remote Desktop",
-          "sourceId": "doc-2026-11-13-migrate-rd-web-access-xslt-customizations-01"
-        },
-        {
-          "title": "SMB Policy Controller preview introduces intent-based reconciliation",
-          "detail": "The new preview capability manages and corrects server-wide and share-level SMB intents, with configuration, verification, troubleshooting, and removal workflows. Evaluation requires Windows Server Insider Preview build 29707 or later and installation of the PolicyController Feature on Demand.",
+          "title": "SMB Policy Controller adds intent-based configuration in preview",
+          "detail": "The new capability manages and corrects server-wide and share-level SMB intents, with guidance for configuration, verification, troubleshooting and removal. It requires Windows Server Insider Preview build 29707 or later and the PolicyController Feature on Demand.",
           "product": "Storage",
           "sourceId": "doc-2026-11-18-configure-smb-policy-controller-preview-02"
         },
         {
-          "title": "Windows Server 2016 extended support ends January 13, 2027",
+          "title": "LDAP authentication requires Kerberos ticket-to-SPN alignment",
+          "detail": "Additional requirements introduced with the October 13, 2026, security updates require Kerberos service tickets used for LDAP authentication to match the LDAP service principal name registered on the target domain controller. The Message Center notice highlights the issue for NetApp SMB shares.",
+          "product": "Windows Server",
+          "sourceId": "MC1551001"
+        },
+        {
+          "title": "Windows Server 2016 support ends January 13, 2027",
           "detail": "All Windows Server 2016 editions reach the end of extended support on January 13, 2027. The January 2027 Windows security update will be the last update provided during extended support.",
           "product": "Windows Server",
           "sourceId": "MC1551896"
@@ -509,16 +553,16 @@
       "generatedBy": "openai",
       "model": "gpt-5.6-luna",
       "reasoningEffort": "xhigh",
-      "generatedAt": "2026-11-21T09:59:48.409Z",
+      "generatedAt": "2026-11-25T11:31:40.716Z",
       "usage": {
-        "inputTokens": 6851,
-        "outputTokens": 7146,
-        "costUsd": 0.009945
+        "inputTokens": 6929,
+        "outputTokens": 5316,
+        "costUsd": 0.007765
       }
     }
   },
   "version": 3,
-  "generatedAt": "2026-11-21T09:59:48.409Z",
+  "generatedAt": "2026-11-25T11:31:40.716Z",
   "generator": {
     "model": "gpt-5.6-luna",
     "reasoningEffort": "xhigh"
@@ -583,18 +627,24 @@
       "outputTokens": 15256,
       "requests": 3,
       "costUsd": 0.021516
+    },
+    "2026-11-25": {
+      "inputTokens": 8760,
+      "outputTokens": 6932,
+      "requests": 3,
+      "costUsd": 0.01007
     }
   },
   "lastRun": {
-    "inputTokens": 16042,
-    "outputTokens": 15256,
+    "inputTokens": 8760,
+    "outputTokens": 6932,
     "requests": 3,
-    "costUsd": 0.021516
+    "costUsd": 0.01007
   },
   "totalUsage": {
-    "inputTokens": 117095,
-    "outputTokens": 126269,
-    "requests": 33,
-    "costUsd": 0.174942
+    "inputTokens": 125855,
+    "outputTokens": 133201,
+    "requests": 36,
+    "costUsd": 0.185012
   }
 }
