@@ -373,6 +373,28 @@
         "outputTokens": 596,
         "costUsd": 0.000918
       }
+    },
+    "2026-11-25": {
+      "headline": "Windows Server 2025 gets OOB hotpatch for IPv6-route stop error 0x139",
+      "overview": "Microsoft released an out-of-band hotpatch update on November 25, 2026, for a Windows Server 2025 issue affecting a limited number of systems with Router Advertisement enabled that receive time-bound IPv6 routes. When a route timer expires, affected servers might stop unexpectedly with stop error 0x139 (KERNEL_SECURITY_CHECK_FAILURE).",
+      "adminImpact": "Administrators should identify Windows Server 2025 systems using Router Advertisement with time-bound IPv6 routes and assess them for the OOB update, particularly where route-timer expiration could trigger unexpected restarts.",
+      "keyChanges": [
+        {
+          "title": "OOB update addresses IPv6 route-timer crashes",
+          "detail": "The update targets unexpected stop error 0x139 (KERNEL_SECURITY_CHECK_FAILURE) on affected Windows Server 2025 systems when a time-bound IPv6 route expires.",
+          "product": "Windows Server 2025",
+          "sourceId": "MC1568439"
+        }
+      ],
+      "generatedBy": "openai",
+      "model": "gpt-5.6-luna",
+      "reasoningEffort": "xhigh",
+      "generatedAt": "2026-11-25T23:12:01.310Z",
+      "usage": {
+        "inputTokens": 1058,
+        "outputTokens": 737,
+        "costUsd": 0.001096
+      }
     }
   },
   "weeks": {
@@ -491,78 +513,84 @@
       }
     },
     "2026-11-23": {
-      "headline": "Windows Server 2028 public preview brings security, storage, management, and hybrid AI investments",
-      "overview": "Microsoft’s Message Center says Windows Server 2028 is now available in public preview. The release introduces security, storage, and management improvements while beginning investments in hybrid intelligence to support AI inference on local infrastructure.",
-      "adminImpact": "This marks a public-preview evaluation point for Windows Server administrators. The notice provides no prerequisites, deployment steps, support details, or production rollout guidance, so it establishes awareness and evaluation rather than a production migration task.",
+      "headline": "Windows Server 2028 enters public preview as hotpatch fixes IPv6 route crashes",
+      "overview": "The week brought two substantive Windows Server notices: the public preview of Windows Server 2028 and a November 25 out-of-band hotpatch update for a Windows Server 2025 stop-error issue. The preview highlights security, storage, management, and local AI-inference investments; the update targets a narrower IPv6 routing failure.",
+      "adminImpact": "Administrators can evaluate Windows Server 2028’s preview capabilities in appropriate preview environments. Windows Server 2025 systems with Router Advertisement enabled that receive time-bound IPv6 routes warrant attention to the out-of-band update, since route-timer expiry can trigger stop error 0x139 and an unexpected shutdown.",
       "keyChanges": [
         {
-          "title": "Windows Server 2028 enters public preview",
-          "detail": "Windows Server 2028 is now available in public preview. Microsoft identifies security, storage, and management improvements, alongside initial hybrid-intelligence investments intended to support AI inference on local infrastructure.",
-          "product": "Windows Server 2028",
+          "title": "Windows Server 2028 public preview begins",
+          "detail": "Microsoft announced Windows Server 2028 in public preview, with security, storage, and management improvements plus initial investments in hybrid intelligence for AI inference on local infrastructure.",
+          "product": "Windows Server",
           "sourceId": "MC1567251"
+        },
+        {
+          "title": "Out-of-band hotpatch addresses IPv6 route-related stop error",
+          "detail": "The November 25, 2026 update addresses a failure affecting a limited number of Windows Server 2025 devices with Router Advertisement enabled that receive time-bound IPv6 routes. When a route timer expires, affected servers might stop unexpectedly with 0x139, KERNEL_SECURITY_CHECK_FAILURE.",
+          "product": "Windows Server",
+          "sourceId": "MC1568439"
         }
       ],
       "generatedBy": "openai",
       "model": "gpt-5.6-luna",
       "reasoningEffort": "xhigh",
-      "generatedAt": "2026-11-25T11:31:40.716Z",
+      "generatedAt": "2026-11-25T23:12:01.310Z",
       "usage": {
-        "inputTokens": 815,
-        "outputTokens": 1020,
-        "costUsd": 0.001387
+        "inputTokens": 961,
+        "outputTokens": 831,
+        "costUsd": 0.001189
       }
     }
   },
   "months": {
     "2026-11": {
-      "headline": "Windows Server 2028 preview puts WINS, SMBv1, VBScript and WSUS on migration clock",
-      "overview": "November's defining development was Windows Server 2028 entering public preview, alongside guidance identifying WINS, SMBv1, VBScript, WSUS and other legacy components as deprecated or removed. Microsoft also documented the SMB Policy Controller preview, tightened LDAP authentication requirements relevant to NetApp SMB shares, and reminded administrators that Windows Server 2016 extended support ends January 13, 2027.",
-      "adminImpact": "Use the Windows Server 2028 preview to inventory dependencies on affected components. Where applicable, plan migrations from WINS to DNS, SMBv1 to SMBv2/v3, and VBScript automation to PowerShell; preview plans may change before release. Evaluate SMB Policy Controller only on Insider Preview build 29707 or later with the PolicyController Feature on Demand. For NetApp SMB environments using LDAP authentication, verify that Kerberos service tickets match the LDAP SPN on the target domain controller. Put January 13, 2027, on Windows Server 2016 upgrade plans; the January 2027 security update is the last update during extended support.",
+      "headline": "Windows Server 2028 public preview flags legacy removals and SMB policy control",
+      "overview": "November brought the public preview of Windows Server 2028, alongside planning guidance that identifies significant legacy-component removals and a new SMB Policy Controller preview. Existing environments also received a stricter LDAP authentication requirement and a Windows Server 2025 out-of-band fix for a narrowly scoped IPv6 routing crash.",
+      "adminImpact": "Use the Windows Server 2028 preview for controlled evaluation and dependency planning. Inventory WINS, DirectAccess, SMBv1, VBScript, WMIC, WSUS, legacy BIOS, BranchCache, WDS, and PowerShell 5.1 dependencies; the supplied guidance points to DNS, Always On VPN, SMBv2/v3, PowerShell, and UEFI as migration paths where applicable. For NetApp SMB deployments using LDAP authentication, verify that Kerberos service tickets match the LDAP SPN on the target domain controller. Review the November 25 OOB update for Windows Server 2025 systems with Router Advertisement enabled that receive time-bound IPv6 routes. Evaluate SMB Policy Controller only on Insider Preview build 29707 or later with the PolicyController Feature on Demand.",
       "keyChanges": [
         {
-          "title": "Windows Server 2028 opens for public-preview evaluation",
-          "detail": "Microsoft says Windows Server 2028 is now available in public preview, introducing security, storage and management improvements while beginning investments in hybrid intelligence for AI inference on local infrastructure.",
+          "title": "Windows Server 2028 enters public preview",
+          "detail": "Microsoft announced that Windows Server 2028 is available in public preview, with security, storage, and management improvements plus investments in hybrid intelligence for AI inference on local infrastructure. Administrators can evaluate these capabilities for testing and deployment planning.",
           "product": "Windows Server",
           "sourceId": "MC1567251"
         },
         {
-          "title": "Preview guidance flags a broad set of legacy components",
-          "detail": "The Windows Server 2028 Preview page lists WINS, DirectAccess, SMBv1, VBScript, WMIC, WSUS, legacy BIOS, BranchCache, WDS and PowerShell 5.1 among features deprecated or removed. It also warns that plans may change before release.",
+          "title": "Preview guidance identifies broad Windows Server 2028 removals",
+          "detail": "The Windows Server 2028 Preview guidance lists WINS, DirectAccess, SMBv1, VBScript, WMIC, WSUS, legacy BIOS, BranchCache, WDS, and PowerShell 5.1 among features deprecated or removed. The plans may change before release, so dependency inventories should distinguish affected workloads from supported migration paths.",
           "product": "Windows Server",
           "sourceId": "doc-2026-11-18-windows-server-2028-preview-08"
         },
         {
-          "title": "SMB Policy Controller adds intent-based configuration in preview",
-          "detail": "The new capability manages and corrects server-wide and share-level SMB intents, with guidance for configuration, verification, troubleshooting and removal. It requires Windows Server Insider Preview build 29707 or later and the PolicyController Feature on Demand.",
+          "title": "SMB Policy Controller preview requires Insider build 29707 or later",
+          "detail": "New Storage guidance describes SMB Policy Controller as a server-side preview capability that manages and corrects server-wide and share-level SMB intents. The documented configuration, verification, troubleshooting, and removal workflows require Windows Server Insider Preview build 29707 or later and the PolicyController Feature on Demand.",
           "product": "Storage",
           "sourceId": "doc-2026-11-18-configure-smb-policy-controller-preview-02"
         },
         {
-          "title": "LDAP authentication requires Kerberos ticket-to-SPN alignment",
-          "detail": "Additional requirements introduced with the October 13, 2026, security updates require Kerberos service tickets used for LDAP authentication to match the LDAP service principal name registered on the target domain controller. The Message Center notice highlights the issue for NetApp SMB shares.",
+          "title": "LDAP authentication now requires Kerberos ticket and LDAP SPN match",
+          "detail": "Microsoft says additional LDAP authentication requirements began with the October 13, 2026, Windows security updates. Kerberos service tickets used for LDAP authentication must match the LDAP service principal name registered on the target domain controller, a change highlighted for environments such as NetApp SMB shares.",
           "product": "Windows Server",
           "sourceId": "MC1551001"
         },
         {
-          "title": "Windows Server 2016 support ends January 13, 2027",
-          "detail": "All Windows Server 2016 editions reach the end of extended support on January 13, 2027. The January 2027 Windows security update will be the last update provided during extended support.",
+          "title": "OOB hotpatch addresses Server 2025 IPv6 route stop error",
+          "detail": "The November 25 out-of-band update addresses a problem affecting a limited number of Windows Server 2025 systems with Router Advertisement enabled that receive time-bound IPv6 routes. When a route timer expires, affected systems can stop unexpectedly with 0x139, KERNEL_SECURITY_CHECK_FAILURE.",
           "product": "Windows Server",
-          "sourceId": "MC1551896"
+          "sourceId": "MC1568439"
         }
       ],
       "generatedBy": "openai",
       "model": "gpt-5.6-luna",
       "reasoningEffort": "xhigh",
-      "generatedAt": "2026-11-25T11:31:40.716Z",
+      "generatedAt": "2026-11-25T23:12:01.310Z",
       "usage": {
-        "inputTokens": 6929,
-        "outputTokens": 5316,
-        "costUsd": 0.007765
+        "inputTokens": 6986,
+        "outputTokens": 4338,
+        "costUsd": 0.006603
       }
     }
   },
   "version": 3,
-  "generatedAt": "2026-11-25T11:31:40.716Z",
+  "generatedAt": "2026-11-25T23:12:01.310Z",
   "generator": {
     "model": "gpt-5.6-luna",
     "reasoningEffort": "xhigh"
@@ -629,22 +657,22 @@
       "costUsd": 0.021516
     },
     "2026-11-25": {
-      "inputTokens": 8760,
-      "outputTokens": 6932,
-      "requests": 3,
-      "costUsd": 0.01007
+      "inputTokens": 17765,
+      "outputTokens": 12838,
+      "requests": 6,
+      "costUsd": 0.018958
     }
   },
   "lastRun": {
-    "inputTokens": 8760,
-    "outputTokens": 6932,
+    "inputTokens": 9005,
+    "outputTokens": 5906,
     "requests": 3,
-    "costUsd": 0.01007
+    "costUsd": 0.008888
   },
   "totalUsage": {
-    "inputTokens": 125855,
-    "outputTokens": 133201,
-    "requests": 36,
-    "costUsd": 0.185012
+    "inputTokens": 134860,
+    "outputTokens": 139107,
+    "requests": 39,
+    "costUsd": 0.1939
   }
 }
